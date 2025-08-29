@@ -42,127 +42,245 @@
             <a href="#contact" class="cta-button">Обратная связь</a>
         </div>
     </section>
+    <section class="quote-section">
+        <div class="decoration-elements">
+            <div class="decoration-element element-1"></div>
+            <div class="decoration-element element-2"></div>
+            <div class="decoration-element element-3"></div>
+        </div>
+        <div class="quote-content">
+            <div class="quote-text">
+                <p>"Мы не просто возводим стены. Мы создаём монолит — основу будущего, которая простоит веками.
+                    Наша работа — это не бетон и арматура, это наследие, которое мы оставляем городу
+                    .Наша философия проста: нет ничего крепче, чем правда, и нет ничего надёжнее, чем наш монолит."</p>
 
+            </div>
+
+        </div>
+    </section>
     <!-- Секция категорий -->
     <section class="categories" id="categories">
         <div class="container">
             <h2 class="section-title">Направления нашей работы</h2>
 
-            <div class="category-buttons">
-                <button class="category-btn" data-category="multifamily">Многоквартирные дома</button>
-                <button class="category-btn" data-category="industrial">Промышленные объекты</button>
-                <button class="category-btn" data-category="individual">Индивидуальное жилищное строительство</button>
+            <div class="container">
+                <div class="category-buttons">
+                    <button class="category-btn active" data-category="multifamily">Многоквартирные дома</button>
+                    <button class="category-btn" data-category="industrial">Промышленные объекты</button>
+                    <button class="category-btn" data-category="individual">Индивидуальное жилищное
+                        строительство</button>
+                </div>
+
+                <!-- Контент для многоквартирных домов -->
+                <div id="multifamily-content" class="category-content active">
+                    <h3 class="content-title">Многоквартирное строительство</h3>
+                    <p>Мы реализуем проекты многоквартирных домов любой сложности, обеспечивая высокое качество и
+                        соблюдение сроков.</p>
+
+                    <div class="subcategory-buttons">
+                        <button class="subcategory-btn" data-subcategory="columns-mf">Колонны</button>
+                        <button class="subcategory-btn" data-subcategory="foundations-mf">Фундаменты</button>
+                        <button class="subcategory-btn" data-subcategory="coverings-mf">Перекрытия</button>
+                        <button class="subcategory-btn" data-subcategory="buildings-mf">Готовые здания</button>
+                    </div>
+
+                    <div class="portfolio-grid">
+                        <div class="portfolio-item">
+                            <div class="portfolio-img">Фото колонны</div>
+                            <div class="portfolio-info">
+                                <h3>Колонны для ЖК "Северный"</h3>
+                                <p>Монолитные колонны диаметром 400 мм с усиленным армированием.</p>
+                            </div>
+                        </div>
+                        <div class="portfolio-item">
+                            <div class="portfolio-img">Фото фундамента</div>
+                            <div class="portfolio-info">
+                                <h3>Фундамент ЖК "Центральный"</h3>
+                                <p>Монолитная плита толщиной 800 мм с противодействием грунтовым водам.</p>
+                            </div>
+                        </div>
+                        <div class="portfolio-item">
+                            <div class="portfolio-img">Фото перекрытия</div>
+                            <div class="portfolio-info">
+                                <h3>Перекрытия для ЖК "Южный"</h3>
+                                <p>Бесшовные монолитные перекрытия с улучшенными теплоизоляционными свойствами.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Контент для промышленных объектов -->
+                <div id="industrial-content" class="category-content">
+                    <h3 class="content-title">Промышленное строительство</h3>
+                    <p>Строительство промышленных объектов, складов, заводов и других коммерческих сооружений.</p>
+
+                    <div class="subcategory-buttons">
+                        <button class="subcategory-btn" data-subcategory="columns-ind">Колонны</button>
+                        <button class="subcategory-btn" data-subcategory="foundations-ind">Фундаменты</button>
+                        <button class="subcategory-btn" data-subcategory="coverings-ind">Покрытия</button>
+                        <button class="subcategory-btn" data-subcategory="buildings-ind">Готовые здания</button>
+                    </div>
+
+                    <div class="portfolio-grid">
+                        <div class="portfolio-item">
+                            <div class="portfolio-img">Фото промышленной колонны</div>
+                            <div class="portfolio-info">
+                                <h3>Колонны для завода "ТехноПром"</h3>
+                                <p>Усиленные колонны для поддержки тяжелого промышленного оборудования.</p>
+                            </div>
+                        </div>
+                        <div class="portfolio-item">
+                            <div class="portfolio-img">Фото промышленного фундамента</div>
+                            <div class="portfolio-info">
+                                <h3>Фундамент логистического центра</h3>
+                                <p>Усиленный фундамент для многоуровневого складского комплекса.</p>
+                            </div>
+                        </div>
+                        <div class="portfolio-item">
+                            <div class="portfolio-img">Фото промышленного здания</div>
+                            <div class="portfolio-info">
+                                <h3>Производственный цех</h3>
+                                <p>Цельномонолитный цех с большепролетными перекрытиями.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Контент для ИЖС -->
+                <div id="individual-content" class="category-content">
+                    <h3 class="content-title">Индивидуальное жилищное строительство</h3>
+                    <p>Строительство частных домов, коттеджей и таунхаусов по индивидуальным проектам.</p>
+
+                    <div class="subcategory-buttons">
+                        <button class="subcategory-btn" data-subcategory="columns-ij">Колонны</button>
+                        <button class="subcategory-btn" data-subcategory="foundations-ij">Фундаменты</button>
+                        <button class="subcategory-btn" data-subcategory="coverings-ij">Перекрытия</button>
+                        <button class="subcategory-btn" data-subcategory="buildings-ij">Готовые дома</button>
+                    </div>
+
+                    <div class="portfolio-grid">
+                        <div class="portfolio-item">
+                            <div class="portfolio-img">Фото коттеджа</div>
+                            <div class="portfolio-info">
+                                <h3>Коттедж в поселке "Сосновый бор"</h3>
+                                <p>Двухэтажный монолитный коттедж с цокольным этажом и гаражом.</p>
+                            </div>
+                        </div>
+                        <div class="portfolio-item">
+                            <div class="portfolio-img">Фото таунхауса</div>
+                            <div class="portfolio-info">
+                                <h3>Таунхаусы в "Зеленом городе"</h3>
+                                <p>Комплекс из 8 монолитных таунхаусов с индивидуальными планировками.</p>
+                            </div>
+                        </div>
+                        <div class="portfolio-item">
+                            <div class="portfolio-img">Фото фундамента дома</div>
+                            <div class="portfolio-info">
+                                <h3>Фундамент загородного дома</h3>
+                                <p>Утепленная шведская плита с системой теплого пола.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!-- Варианты сотрудничества -->
+    <section id="cooperation" class="cooperation-section">
+        <div class="container">
+            <h2>Варианты сотрудничества</h2>
+            <p class="section-subtitle">Выберите наиболее подходящий формат работы</p>
+
+            <div class="cooperation-cards">
+                <!-- Вариант 1 -->
+                <div class="cooperation-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Только работа</h3>
+                        <p class="card-price">от 15 000 руб/м²</p>
+                    </div>
+                    <div class="card-content">
+                        <ul class="card-features">
+                            <li><i class="fas fa-check-circle"></i> Выезд профессиональной бригады</li>
+                            <li><i class="fas fa-check-circle"></i> Собственный инструмент и оборудование</li>
+                            <li><i class="fas fa-check-circle"></i> Контроль качества на всех этапах</li>
+                            <li><i class="fas fa-check-circle"></i> Технический надзор</li>
+                        </ul>
+                        <div class="card-details">
+                            <h4>Заказчик обеспечивает:</h4>
+                            <ul>
+                                <li>Все строительные материалы</li>
+                                <li>Опалубку и конструкции</li>
+                                <li>Доставку материалов на объект</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Вариант 2 -->
+                <div class="cooperation-card popular">
+                    <div class="card-badge">Популярный</div>
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-toolbox"></i>
+                        </div>
+                        <h3>Работа + опалубка</h3>
+                        <p class="card-price">от 18 000 руб/м²</p>
+                    </div>
+                    <div class="card-content">
+                        <ul class="card-features">
+                            <li><i class="fas fa-check-circle"></i> Всё из варианта "Только работа"</li>
+                            <li><i class="fas fa-check-circle"></i> Профессиональная опалубка</li>
+                            <li><i class="fas fa-check-circle"></i> Конструкции для заливки</li>
+                            <li><i class="fas fa-check-circle"></i> Геодезические работы</li>
+                        </ul>
+                        <div class="card-details">
+                            <h4>Заказчик обеспечивает:</h4>
+                            <ul>
+                                <li>Бетон и армирование</li>
+                                <li>Вспомогательные материалы</li>
+                                <li>Грузоподъёмную технику (при необходимости)</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Вариант 3 -->
+                <div class="cooperation-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-hard-hat"></i>
+                        </div>
+                        <h3>Под ключ</h3>
+                        <p class="card-price">от 25 000 руб/м²</p>
+                    </div>
+                    <div class="card-content">
+                        <ul class="card-features">
+                            <li><i class="fas fa-check-circle"></i> Всё из варианта "Работа + опалубка"</li>
+                            <li><i class="fas fa-check-circle"></i> Все материалы и комплектующие</li>
+                            <li><i class="fas fa-check-circle"></i> Собственная техника и оборудование</li>
+                            <li><i class="fas fa-check-circle"></i> Полный цикл "под ключ"</li>
+                        </ul>
+                        <div class="card-details">
+                            <h4>Мы берём на себя:</h4>
+                            <ul>
+                                <li>Все материалы и доставку</li>
+                                <li>Спецтехнику и оборудование</li>
+                                <li>Авторский надзор</li>
+                                <li>Сдачу объекта "под ключ"</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <!-- Контент для многоквартирных домов -->
-            <div id="multifamily-content" class="category-content">
-                <h3 class="section-title">Многоквартирное строительство</h3>
-                <p>Мы реализуем проекты многоквартирных домов любой сложности, обеспечивая высокое качество и соблюдение
-                    сроков.</p>
-
-                <div class="subcategory-buttons">
-                    <button class="subcategory-btn" data-subcategory="columns-mf">Колонны</button>
-                    <button class="subcategory-btn" data-subcategory="foundations-mf">Фундаменты</button>
-                    <button class="subcategory-btn" data-subcategory="coverings-mf">Перекрытия</button>
-                    <button class="subcategory-btn" data-subcategory="buildings-mf">Готовые здания</button>
-                </div>
-
-                <div class="portfolio-grid">
-                    <div class="portfolio-item">
-                        <div class="portfolio-img">Фото колонны</div>
-                        <div class="portfolio-info">
-                            <h3>Колонны для ЖК "Северный"</h3>
-                            <p>Монолитные колонны диаметром 400 мм с усиленным армированием.</p>
-                        </div>
-                    </div>
-                    <div class="portfolio-item">
-                        <div class="portfolio-img">Фото фундамента</div>
-                        <div class="portfolio-info">
-                            <h3>Фундамент ЖК "Центральный"</h3>
-                            <p>Монолитная плита толщиной 800 мм с противодействием грунтовым водам.</p>
-                        </div>
-                    </div>
-                    <div class="portfolio-item">
-                        <div class="portfolio-img">Фото перекрытия</div>
-                        <div class="portfolio-info">
-                            <h3>Перекрытия для ЖК "Южный"</h3>
-                            <p>Бесшовные монолитные перекрытия с улучшенными теплоизоляционными свойствами.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Контент для промышленных объектов -->
-            <div id="industrial-content" class="category-content">
-                <h3 class="section-title">Промышленное строительство</h3>
-                <p>Строительство промышленных объектов, складов, заводов и других коммерческих сооружений.</p>
-
-                <div class="subcategory-buttons">
-                    <button class="subcategory-btn" data-subcategory="columns-ind">Колонны</button>
-                    <button class="subcategory-btn" data-subcategory="foundations-ind">Фундаменты</button>
-                    <button class="subcategory-btn" data-subcategory="coverings-ind">Покрытия</button>
-                    <button class="subcategory-btn" data-subcategory="buildings-ind">Готовые здания</button>
-                </div>
-
-                <div class="portfolio-grid">
-                    <div class="portfolio-item">
-                        <div class="portfolio-img">Фото промышленной колонны</div>
-                        <div class="portfolio-info">
-                            <h3>Колонны для завода "ТехноПром"</h3>
-                            <p>Усиленные колонны для поддержки тяжелого промышленного оборудования.</p>
-                        </div>
-                    </div>
-                    <div class="portfolio-item">
-                        <div class="portfolio-img">Фото промышленного фундамента</div>
-                        <div class="portfolio-info">
-                            <h3>Фундамент логистического центра</h3>
-                            <p>Усиленный фундамент для многоуровневого складского комплекса.</p>
-                        </div>
-                    </div>
-                    <div class="portfolio-item">
-                        <div class="portfolio-img">Фото промышленного здания</div>
-                        <div class="portfolio-info">
-                            <h3>Производственный цех</h3>
-                            <p>Цельномонолитный цех с большепролетными перекрытиями.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Контент для ИЖС -->
-            <div id="individual-content" class="category-content">
-                <h3 class="section-title">Индивидуальное жилищное строительство</h3>
-                <p>Строительство частных домов, коттеджей и таунхаусов по индивидуальным проектам.</p>
-
-                <div class="subcategory-buttons">
-                    <button class="subcategory-btn" data-subcategory="columns-ij">Колонны</button>
-                    <button class="subcategory-btn" data-subcategory="foundations-ij">Фундаменты</button>
-                    <button class="subcategory-btn" data-subcategory="coverings-ij">Перекрытия</button>
-                    <button class="subcategory-btn" data-subcategory="buildings-ij">Готовые дома</button>
-                </div>
-
-                <div class="portfolio-grid">
-                    <div class="portfolio-item">
-                        <div class="portfolio-img">Фото коттеджа</div>
-                        <div class="portfolio-info">
-                            <h3>Коттедж в поселке "Сосновый бор"</h3>
-                            <p>Двухэтажный монолитный коттедж с цокольным этажом и гаражом.</p>
-                        </div>
-                    </div>
-                    <div class="portfolio-item">
-                        <div class="portfolio-img">Фото таунхауса</div>
-                        <div class="portfolio-info">
-                            <h3>Таунхаусы в "Зеленом городе"</h3>
-                            <p>Комплекс из 8 монолитных таунхаусов с индивидуальными планировками.</p>
-                        </div>
-                    </div>
-                    <div class="portfolio-item">
-                        <div class="portfolio-img">Фото фундамента дома</div>
-                        <div class="portfolio-info">
-                            <h3>Фундамент загородного дома</h3>
-                            <p>Утепленная шведская плита с системой теплого пола.</p>
-                        </div>
-                    </div>
+            <div class="cooperation-notes">
+                <div class="note">
+                    <i class="fas fa-info-circle"></i>
+                    <p>Цены указаны за квадратный метр монолитных работ. Окончательная стоимость рассчитывается
+                        индивидуально после осмотра объекта.</p>
                 </div>
             </div>
         </div>
@@ -439,6 +557,7 @@
                 initForm();
             });
         </script>
+        <script src="script.js"></script>
 </body>
 
 </html>
