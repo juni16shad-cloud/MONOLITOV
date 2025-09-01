@@ -50,24 +50,36 @@ header {
 }
 
 .logo {
-    width: 60px;
-    height: 60px;
-    background-color: var(--gold);
-    border-radius: 50%;
     margin-right: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: bold;
-    color: var(--black);
-    font-size: 20px;
-    overflow: hidden;
 }
 
 .logo img {
-    width: 100%;
-    height: 100%;
+    width: 85px;
+    height: 85px;
     object-fit: cover;
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+    .logo {
+        margin-right: 10px;
+    }
+
+    .logo img {
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        width: 50px;
+        height: 50px;
+    }
 }
 
 .company-name {
@@ -77,32 +89,249 @@ header {
 }
 
 .region-info {
-    font-size: 14px;
+    font-size: 18px;
     color: var(--light-gold);
     margin-top: 5px;
 }
 
-nav ul {
+/* Основное навигационное меню (для десктопной версии) */
+.main-nav {
+    display: flex;
+}
+
+.main-nav ul {
     display: flex;
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-nav ul li {
+.main-nav>ul>li {
     margin-left: 20px;
+    position: relative;
 }
 
-nav ul li a {
+.main-nav>ul>li>a {
     color: white;
     text-decoration: none;
     font-weight: bold;
     padding: 8px 15px;
     border-radius: 4px;
     transition: all 0.3s ease;
+    display: block;
 }
 
-nav ul li a:hover {
+.main-nav>ul>li>a:hover {
     background-color: var(--gold);
     color: var(--black);
+}
+
+/* Выпадающее меню для основного навигационного меню */
+.main-nav ul li ul {
+    position: absolute;
+    width: 180px;
+    background-color: #000000;
+    display: none;
+    top: 100%;
+    left: 0;
+    z-index: 1001;
+    margin: 0;
+    padding: 0;
+    border-top: 2px solid var(--gold);
+}
+
+.main-nav ul li ul li {
+    width: 100%;
+    border-bottom: 1px solid rgba(207, 171, 10, 0.3);
+    margin: 0;
+}
+
+.main-nav ul li ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.main-nav ul li ul li a:hover {
+    background-color: var(--gold);
+    color: var(--black);
+}
+
+/* Показываем выпадающее меню при наведении */
+.main-nav ul li:hover>ul {
+    display: block;
+}
+
+.burger-menu {
+    width: 60px;
+    height: 50px;
+    position: fixed;
+    z-index: 1000;
+    top: 1%;
+    right: 1%;
+    background-color: #000000;
+    border-radius: 8px;
+    /* Скрыто по умолчанию для десктопа */
+}
+
+.burger-menu span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -10px;
+}
+
+.burger-menu span,
+.burger-menu span::before,
+.burger-menu span::after {
+    display: block;
+    width: 25px;
+    right: 0;
+    height: 3px;
+    background-color: #ecf0f1;
+    transition-duration: .3s;
+}
+
+.burger-menu span::before,
+.burger-menu span::after {
+    content: '';
+    position: absolute;
+}
+
+.burger-menu span::before {
+    top: -9px;
+    width: 20px;
+}
+
+.burger-menu span::after {
+    top: 9px;
+    width: 33px;
+}
+
+.burger-menu:hover {
+    cursor: pointer;
+}
+
+.burger-menu.clicked span {
+    background-color: transparent;
+}
+
+.burger-menu.clicked span::before {
+    transform: translateY(9px) rotate(45deg);
+    width: 33px;
+}
+
+.burger-menu.clicked span::after {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Боковое меню для мобильной версии */
+#mobile-nav {
+    position: fixed;
+    z-index: 10;
+    background-color: #000000;
+    top: 0;
+    right: 0;
+    height: 100%;
+    max-width: 250px;
+    width: 100%;
+    padding: 100px 40px 60px;
+    transition: transform .5s ease-in;
+    transform: translateX(100%);
+    /* Скрыто по умолчанию для десктопа */
+}
+
+#mobile-nav.show {
+    transform: translateX(0px);
+}
+
+/* Стили для мобильного меню */
+#mobile-nav ul {
+    list-style: circle;
+    color: var(--gold);
+    padding: 0;
+    margin: 0;
+}
+
+
+
+#mobile-nav ul li {
+    margin-bottom: 15px;
+}
+
+#mobile-nav ul li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px 15px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+#mobile-nav ul li a:hover {
+    background-color: var(--gold);
+    color: var(--black);
+}
+
+/* Выпадающие меню в мобильной версии */
+#mobile-nav ul li ul {
+    display: none;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+#mobile-nav ul li ul li {
+    margin-bottom: 10px;
+}
+
+#mobile-nav ul li ul li a {
+    font-weight: normal;
+    padding: 8px 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Адаптивность */
+@media (max-width: 900px) {
+    .main-nav {
+        display: none;
+        /* Скрываем основное меню на мобильных */
+    }
+
+    .burger-menu {
+        display: block;
+        /* Показываем бургер-меню на мобильных */
+    }
+
+    #mobile-nav {
+        display: block;
+        /* Показываем мобильное меню */
+    }
+
+    .tabs_navigation {
+        flex-direction: column;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .subcategory-buttons {
+        flex-direction: column;
+    }
+
+    .tabs_title {
+        padding: 15px;
+        font-size: 1rem;
+    }
+
+    .tabs_body {
+        padding: 20px;
+    }
 }
 
 /* Герой секция */
@@ -121,7 +350,7 @@ nav ul li a:hover {
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-size: 2rem;
     max-width: 800px;
     margin: 0 auto 30px;
 }
@@ -143,133 +372,215 @@ nav ul li a:hover {
 }
 
 /* Секция категорий */
-.categories {
-    padding: 80px 0;
-    background-color: white;
+/* Адаптивность */
+@media (max-width: 900px) {
+    .main-nav {
+        display: none;
+        /* Скрываем основное меню на мобильных */
+    }
+
+    .burger-menu {
+        display: block;
+        /* Показываем бургер-меню на мобильных */
+    }
+
+    #mobile-nav {
+        display: block;
+        /* Показываем мобильное меню */
+    }
+
+    .tabs_navigation {
+        flex-direction: column;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
-.section-title {
-    text-align: center;
-    margin-bottom: 50px;
-    color: var(--dark-brown);
+@media (max-width: 600px) {
+    .subcategory-buttons {
+        flex-direction: column;
+    }
+
+    .tabs_title {
+        padding: 15px;
+        font-size: 1rem;
+    }
+
+    .tabs_body {
+        padding: 20px;
+    }
+}
+
+/* Стили для табов */
+.tabs {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    margin: 40px 0;
+}
+
+.tabs_navigation {
+    display: flex;
+    background: #584b3e;
+    padding: 0 20px;
     position: relative;
 }
 
-.section-title:after {
-    content: '';
-    display: block;
-    width: 80px;
-    height: 3px;
-    background-color: var(--gold);
-    margin: 15px auto;
-}
-
-.category-buttons {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-bottom: 50px;
-}
-
-.category-btn {
-    background-color: var(--dark-brown);
-    color: white;
+.tabs_title {
+    background: none;
     border: none;
-    padding: 15px 30px;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 4px;
     cursor: pointer;
-    transition: all 0.3s ease;
-    min-width: 250px;
+    padding: 20px 25px;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 1.1rem;
+    transition: var(--transition);
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.category-btn:hover {
-    background-color: var(--gold);
-    color: var(--black);
-    transform: translateY(-5px);
+.tabs_title i {
+    font-size: 1.3rem;
 }
 
-.category-content {
-    padding: 40px;
-    margin: 30px 0;
-    border: 2px solid #D4AF37;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+.tabs_title:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.tabs_title.active {
+    color: var(--gold);
+    background: var(--dark-brown);
+}
+
+.tabs_title.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--gold);
+}
+
+.tabs_body {
+    padding: 30px;
+}
+
+.tabs_content {
+    display: none;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tabs_content.active {
+    display: block;
 }
 
 .content-title {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #3C2B1E;
-    font-size: 28px;
-    font-weight: 700;
+    color: var(--dark-brown);
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.category-content>p {
-    text-align: center;
-    font-size: 18px;
-    color: #555;
-    margin-bottom: 35px;
-    line-height: 1.6;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+.tabs_content p {
+    color: var(--text-light);
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    line-height: 1.8;
 }
 
 .subcategory-buttons {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
     gap: 15px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .subcategory-btn {
-    background-color: #3C2B1E;
-    color: white;
-    border: none;
     padding: 12px 25px;
-    font-size: 16px;
-    border-radius: 6px;
+    background: var(--light);
+    border: none;
+    border-radius: 30px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    font-weight: 600;
+    color: var(--text);
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .subcategory-btn:hover {
-    background-color: #D4AF37;
-    color: #000;
+    background: var(--gold);
+    color: var(--black);
+    transform: translateY(-2px);
+}
+
+.subcategory-btn.active {
+    background: var(--gold);
+    color: var(--black);
 }
 
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 25px;
+    margin-top: 20px;
 }
 
 .portfolio-item {
-    background-color: #f9f9f9;
-    border-radius: 8px;
+    background: white;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease;
-    border: 1px solid #eaeaea;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
 }
 
 .portfolio-item:hover {
     transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .portfolio-img {
     height: 200px;
-    background-color: #3C2B1E;
+    background: linear-gradient(45deg, var(--dark-brown), var(--black));
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     color: white;
-    font-weight: 500;
+    font-size: 1.2rem;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-img::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .portfolio-info {
@@ -277,15 +588,17 @@ nav ul li a:hover {
 }
 
 .portfolio-info h3 {
-    color: #3C2B1E;
+    color: var(--dark-brown);
     margin-bottom: 10px;
-    font-size: 18px;
+    font-size: 1.3rem;
 }
 
 .portfolio-info p {
-    color: #666;
-    line-height: 1.5;
+    color: var(--text-light);
+    margin-bottom: 0;
+    font-size: 1rem;
 }
+
 
 /* Адаптивность */
 @media (max-width: 768px) {
@@ -496,6 +809,47 @@ footer {
 .contact-method a:hover {
     color: #bd9b04;
     text-decoration: underline;
+}
+
+/* Адаптация для планшетов */
+@media (max-width: 1024px) {
+    .contact-methods {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .contact-method {
+        padding: 30px 20px;
+    }
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+    .contact-methods {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-top: 40px;
+        padding: 0 15px;
+    }
+
+    .contact-method {
+        padding: 25px 15px;
+    }
+
+    .contact-method i {
+        font-size: 40px;
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    .contact-method h4 {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+
+    .contact-method a {
+        font-size: 14px;
+    }
 }
 
 .work-stages {

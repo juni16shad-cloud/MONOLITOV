@@ -23,14 +23,73 @@
                     <div class="region-info">Работаем в Ленинградской области и Санкт-Петербурге</div>
                 </div>
             </div>
-            <nav>
+            <nav class="main-nav">
                 <ul>
-                    <li><a href="#multifamily">Многоквартирные</a></li>
-                    <li><a href="#industrial">Промышленные</a></li>
-                    <li><a href="#individual">ИЖС</a></li>
+                    <li><a href="#tab-1">Гражданскoe &nabla;</a>
+                        <ul>
+                            <li><a href="#">Готовые здания</a></li>
+                            <li><a href="#">Фундаменты</a></li>
+                            <li><a href="#">Перекрытия</a></li>
+                            <li><a href="#">Колонны</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#tab-2">Промышленное &nabla;</a>
+                        <ul>
+                            <li><a href="#">Готовые здания</a></li>
+                            <li><a href="#">Фундаменты</a></li>
+                            <li><a href="#">Перекрытия</a></li>
+                            <li><a href="#">Колонны</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#tab-3">ИЖС &nabla;</a>
+                        <ul>
+                            <li><a href="#">Готовые здания</a></li>
+                            <li><a href="#">Фундаменты</a></li>
+                            <li><a href="#">Перекрытия</a></li>
+                            <li><a href="#">Колонны</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
         </div>
+        <div class="burger-menu">
+            <span></span>
+        </div>
+
+        <!-- Мобильное меню -->
+        <nav id="mobile-nav">
+            <ul>
+                <li><a href="#">О нас</a></li>
+                <li><a href="#">Виды предоставляемых услуг</a></li>
+                <li><a href="#партнерства">Виды партнерств</a></li>
+                <li><a href="#этапы">Этапы работы</a></li>
+                <li><a href="#Контакты">Контакты</a></li>
+                <li><a href="#tab-1">Гражданское</a>
+                    <ul>
+                        <li><a href="#">Готовые здания</a></li>
+                        <li><a href="#">Фундаменты</a></li>
+                        <li><a href="#">Перекрытия</a></li>
+                        <li><a href="#">Колонны</a></li>
+                    </ul>
+                </li>
+                <li><a href="#tab-2">Промышленное</a>
+                    <ul>
+                        <li><a href="#">Готовые здания</a></li>
+                        <li><a href="#">Фундаменты</a></li>
+                        <li><a href="#">Перекрытия</a></li>
+                        <li><a href="#">Колонны</a></li>
+                    </ul>
+                </li>
+                <li><a href="#tab-3">ИЖС</a>
+                    <ul>
+                        <li><a href="#">Готовые здания</a></li>
+                        <li><a href="#">Фундаменты</a></li>
+                        <li><a href="#">Перекрытия</a></li>
+                        <li><a href="#">Колонны</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
     </header>
 
     <!-- Герой секция -->
@@ -39,7 +98,7 @@
             <h1>Строительство монолитных конструкций</h1>
             <p>Мы специализируемся на возведении прочных и долговечных монолитных конструкций любой сложности. Быстро,
                 качественно и с гарантией.</p>
-            <a href="#contact" class="cta-button">Обратная связь</a>
+            <a href="#contact" class="cta-button">Запрос на обратный звонок</a>
         </div>
     </section>
     <section class="quote-section">
@@ -60,132 +119,140 @@
     </section>
     <!-- Секция категорий -->
     <section class="categories" id="categories">
-        <div class="container">
+        <div class="raboti">
             <h2 class="section-title">Направления нашей работы</h2>
 
-            <div class="container">
-                <div class="category-buttons">
-                    <button class="category-btn active" data-category="multifamily">Многоквартирные дома</button>
-                    <button class="category-btn" data-category="industrial">Промышленные объекты</button>
-                    <button class="category-btn" data-category="individual">Индивидуальное жилищное
-                        строительство</button>
+            <div class="tabs">
+                <div class="tabs_navigation">
+                    <button class="tabs_title active" data-tab="1">Гражданское строительство</button>
+                    <button class="tabs_title" data-tab="2">Промышленные объекты</button>
+                    <button class="tabs_title" data-tab="3">Индивидуальное жилищное строительство</button>
                 </div>
+                <div class="tabs_body">
+                    <!-- Контент для многоквартирных домов -->
+                    <div id="tab-1" class="tabs_content active">
+                        <h3 class="content-title">Гражданское строительство</h3>
+                        <p>Мы реализуем проекты многоквартирных домов любой сложности, обеспечивая высокое
+                            качество и
+                            соблюдение сроков.</p>
 
-                <!-- Контент для многоквартирных домов -->
-                <div id="multifamily-content" class="category-content active">
-                    <h3 class="content-title">Многоквартирное строительство</h3>
-                    <p>Мы реализуем проекты многоквартирных домов любой сложности, обеспечивая высокое качество и
-                        соблюдение сроков.</p>
-
-                    <div class="subcategory-buttons">
-                        <button class="subcategory-btn" data-subcategory="columns-mf">Колонны</button>
-                        <button class="subcategory-btn" data-subcategory="foundations-mf">Фундаменты</button>
-                        <button class="subcategory-btn" data-subcategory="coverings-mf">Перекрытия</button>
-                        <button class="subcategory-btn" data-subcategory="buildings-mf">Готовые здания</button>
-                    </div>
-
-                    <div class="portfolio-grid">
-                        <div class="portfolio-item">
-                            <div class="portfolio-img">Фото колонны</div>
-                            <div class="portfolio-info">
-                                <h3>Колонны для ЖК "Северный"</h3>
-                                <p>Монолитные колонны диаметром 400 мм с усиленным армированием.</p>
-                            </div>
+                        <div class="subcategory-buttons">
+                            <button class="subcategory-btn" data-subcategory="columns-mf">Колонны</button>
+                            <button class="subcategory-btn" data-subcategory="foundations-mf">Фундаменты</button>
+                            <button class="subcategory-btn" data-subcategory="coverings-mf">Перекрытия</button>
+                            <button class="subcategory-btn" data-subcategory="buildings-mf">Готовые
+                                здания</button>
                         </div>
-                        <div class="portfolio-item">
-                            <div class="portfolio-img">Фото фундамента</div>
-                            <div class="portfolio-info">
-                                <h3>Фундамент ЖК "Центральный"</h3>
-                                <p>Монолитная плита толщиной 800 мм с противодействием грунтовым водам.</p>
-                            </div>
-                        </div>
-                        <div class="portfolio-item">
-                            <div class="portfolio-img">Фото перекрытия</div>
-                            <div class="portfolio-info">
-                                <h3>Перекрытия для ЖК "Южный"</h3>
-                                <p>Бесшовные монолитные перекрытия с улучшенными теплоизоляционными свойствами.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Контент для промышленных объектов -->
-                <div id="industrial-content" class="category-content">
-                    <h3 class="content-title">Промышленное строительство</h3>
-                    <p>Строительство промышленных объектов, складов, заводов и других коммерческих сооружений.</p>
-
-                    <div class="subcategory-buttons">
-                        <button class="subcategory-btn" data-subcategory="columns-ind">Колонны</button>
-                        <button class="subcategory-btn" data-subcategory="foundations-ind">Фундаменты</button>
-                        <button class="subcategory-btn" data-subcategory="coverings-ind">Покрытия</button>
-                        <button class="subcategory-btn" data-subcategory="buildings-ind">Готовые здания</button>
-                    </div>
-
-                    <div class="portfolio-grid">
-                        <div class="portfolio-item">
-                            <div class="portfolio-img">Фото промышленной колонны</div>
-                            <div class="portfolio-info">
-                                <h3>Колонны для завода "ТехноПром"</h3>
-                                <p>Усиленные колонны для поддержки тяжелого промышленного оборудования.</p>
+                        <div class="portfolio-grid">
+                            <div class="portfolio-item">
+                                <div class="portfolio-img">Фото колонны</div>
+                                <div class="portfolio-info">
+                                    <h3>Колонны для ЖК "Северный"</h3>
+                                    <p>Монолитные колонны диаметром 400 мм с усиленным армированием.</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="portfolio-item">
-                            <div class="portfolio-img">Фото промышленного фундамента</div>
-                            <div class="portfolio-info">
-                                <h3>Фундамент логистического центра</h3>
-                                <p>Усиленный фундамент для многоуровневого складского комплекса.</p>
+                            <div class="portfolio-item">
+                                <div class="portfolio-img">Фото фундамента</div>
+                                <div class="portfolio-info">
+                                    <h3>Фундамент ЖК "Центральный"</h3>
+                                    <p>Монолитная плита толщиной 800 мм с противодействием грунтовым водам.</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="portfolio-item">
-                            <div class="portfolio-img">Фото промышленного здания</div>
-                            <div class="portfolio-info">
-                                <h3>Производственный цех</h3>
-                                <p>Цельномонолитный цех с большепролетными перекрытиями.</p>
+                            <div class="portfolio-item">
+                                <div class="portfolio-img">Фото перекрытия</div>
+                                <div class="portfolio-info">
+                                    <h3>Перекрытия для ЖК "Южный"</h3>
+                                    <p>Бесшовные монолитные перекрытия с улучшенными теплоизоляционными
+                                        свойствами.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Контент для ИЖС -->
-                <div id="individual-content" class="category-content">
-                    <h3 class="content-title">Индивидуальное жилищное строительство</h3>
-                    <p>Строительство частных домов, коттеджей и таунхаусов по индивидуальным проектам.</p>
+                    <!-- Контент для промышленных объектов -->
+                    <div id="tab-2" class="tabs_content">
+                        <h3 class="content-title">Промышленное строительство</h3>
+                        <p>Строительство промышленных объектов, складов, заводов и других коммерческих
+                            сооружений.</p>
 
-                    <div class="subcategory-buttons">
-                        <button class="subcategory-btn" data-subcategory="columns-ij">Колонны</button>
-                        <button class="subcategory-btn" data-subcategory="foundations-ij">Фундаменты</button>
-                        <button class="subcategory-btn" data-subcategory="coverings-ij">Перекрытия</button>
-                        <button class="subcategory-btn" data-subcategory="buildings-ij">Готовые дома</button>
+                        <div class="subcategory-buttons">
+                            <button class="subcategory-btn" data-subcategory="columns-ind">Колонны</button>
+                            <button class="subcategory-btn" data-subcategory="foundations-ind">Фундаменты</button>
+                            <button class="subcategory-btn" data-subcategory="coverings-ind">Покрытия</button>
+                            <button class="subcategory-btn" data-subcategory="buildings-ind">Готовые
+                                здания</button>
+                        </div>
+
+                        <div class="portfolio-grid">
+                            <div class="portfolio-item">
+                                <div class="portfolio-img">Фото промышленной колонны</div>
+                                <div class="portfolio-info">
+                                    <h3>Колонны для завода "ТехноПром"</h3>
+                                    <p>Усиленные колонны для поддержки тяжелого промышленного оборудования.</p>
+                                </div>
+                            </div>
+                            <div class="portfolio-item">
+                                <div class="portfolio-img">Фото промышленного фундамента</div>
+                                <div class="portfolio-info">
+                                    <h3>Фундамент логистического центра</h3>
+                                    <p>Усиленный фундамент для многоуровневого складского комплекса.</p>
+                                </div>
+                            </div>
+                            <div class="portfolio-item">
+                                <div class="portfolio-img">Фото промышленного здания</div>
+                                <div class="portfolio-info">
+                                    <h3>Производственный цех</h3>
+                                    <p>Цельномонолитный цех с большепролетными перекрытиями.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="portfolio-grid">
-                        <div class="portfolio-item">
-                            <div class="portfolio-img">Фото коттеджа</div>
-                            <div class="portfolio-info">
-                                <h3>Коттедж в поселке "Сосновый бор"</h3>
-                                <p>Двухэтажный монолитный коттедж с цокольным этажом и гаражом.</p>
-                            </div>
+                    <!-- Контент для ИЖС -->
+                    <div id="tab-3" class="tabs_content">
+                        <h3 class="content-title">Индивидуальное жилищное строительство</h3>
+                        <p>Строительство частных домов, коттеджей и таунхаусов по индивидуальным проектам.</p>
+
+                        <div class="subcategory-buttons">
+                            <button class="subcategory-btn" data-subcategory="columns-ij">Колонны</button>
+                            <button class="subcategory-btn" data-subcategory="foundations-ij">Фундаменты</button>
+                            <button class="subcategory-btn" data-subcategory="coverings-ij">Перекрытия</button>
+                            <button class="subcategory-btn" data-subcategory="buildings-ij">Готовые
+                                дома</button>
                         </div>
-                        <div class="portfolio-item">
-                            <div class="portfolio-img">Фото таунхауса</div>
-                            <div class="portfolio-info">
-                                <h3>Таунхаусы в "Зеленом городе"</h3>
-                                <p>Комплекс из 8 монолитных таунхаусов с индивидуальными планировками.</p>
+
+                        <div class="portfolio-grid">
+                            <div class="portfolio-item">
+                                <div class="portfolio-img">Фото коттеджа</div>
+                                <div class="portfolio-info">
+                                    <h3>Коттедж в поселке "Сосновый бор"</h3>
+                                    <p>Двухэтажный монолитный коттедж с цокольным этажом и гаражом.</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="portfolio-item">
-                            <div class="portfolio-img">Фото фундамента дома</div>
-                            <div class="portfolio-info">
-                                <h3>Фундамент загородного дома</h3>
-                                <p>Утепленная шведская плита с системой теплого пола.</p>
+                            <div class="portfolio-item">
+                                <div class="portfolio-img">Фото таунхауса</div>
+                                <div class="portfolio-info">
+                                    <h3>Таунхаусы в "Зеленом городе"</h3>
+                                    <p>Комплекс из 8 монолитных таунхаусов с индивидуальными планировками.</p>
+                                </div>
+                            </div>
+                            <div class="portfolio-item">
+                                <div class="portfolio-img">Фото фундамента дома</div>
+                                <div class="portfolio-info">
+                                    <h3>Фундамент загородного дома</h3>
+                                    <p>Утепленная шведская плита с системой теплого пола.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
     </section>
+
     <!-- Варианты сотрудничества -->
-    <section id="cooperation" class="cooperation-section">
+    <section id="партнерства" class="cooperation-section">
         <div class="container">
             <h2>Варианты сотрудничества</h2>
             <p class="section-subtitle">Выберите наиболее подходящий формат работы</p>
@@ -288,7 +355,7 @@
     <!-- секция этапов работы -->
     <section class="work-stages">
         <div class="container">
-            <h2 class="section-title">Этапы работ</h2>
+            <h2 class="section-title" id="этапы">Этапы работ</h2>
             <div class="stages-line">
                 <div class="stage-item">
                     <div class="stage-icon">
@@ -406,7 +473,7 @@
                 </form>
             </div>
         </div>
-        <div class="contact-methods">
+        <div class="contact-methods" id="Контакты">
             <div class="contact-method">
                 <i class="fab fa-whatsapp"></i>
                 <h4>WhatsApp</h4>
@@ -415,14 +482,9 @@
             <div class="contact-method">
                 <i class="fab fa-telegram"></i>
                 <h4>Telegram</h4>
-                <a href="https://t.me/monolitovvvvv">@monolitovvvvv</a>
-                <h4>Telegram</h4>
-                <a href="https://t.me/monolitovvvvv">ссылка</a>
-            </div>
-            <div class="contact-method">
-                <i class="fab fa-telegram"></i>
-                <h4>Telegram канал</h4>
-                <a href="https://t.me/monolitovvvvv">@monolitovvvvv</a>
+                <a href="https://t.me/monolitovvvvv" target="_blank">Наш канал</a>
+                <h4></h4>
+                <a href="https://t.me/olgabiznesmen" target="_blank">Написать в Telegram</a>
             </div>
             <div class="contact-method">
                 <i class="fas fa-phone"></i>
@@ -467,54 +529,6 @@
         </footer>
 
         <script>
-            // Функция для переключения между категориями
-            document.querySelectorAll('.category-btn').forEach(button => {
-                button.addEventListener('click', () => {
-                    const category = button.getAttribute('data-category');
-
-                    // Скрываем все категории
-                    document.querySelectorAll('.category-content').forEach(content => {
-                        content.classList.remove('active');
-                    });
-
-                    // Показываем выбранную категорию
-                    document.getElementById(`${category}-content`).classList.add('active');
-
-                    // Прокрутка к выбранной категории
-                    document.getElementById(`${category}-content`).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
-
-            // Активируем первую категорию по умолчанию
-            document.querySelector('.category-btn').click();
-
-            // Навигация по якорным ссылкам
-            document.querySelectorAll('nav a').forEach(link => {
-                link.addEventListener('click', function (e) {
-                    e.preventDefault();
-
-                    const targetId = this.getAttribute('href').substring(1);
-
-                    // Скрываем все категории
-                    document.querySelectorAll('.category-content').forEach(content => {
-                        content.classList.remove('active');
-                    });
-
-                    // Показываем выбранную категорию
-                    document.getElementById(`${targetId}-content`).classList.add('active');
-
-                    // Находим соответствующую кнопку и имитируем клик
-                    document.querySelector(`.category-btn[data-category="${targetId}"]`).click();
-
-                    // Прокрутка к категориям
-                    document.getElementById('categories').scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
-
             // Форма обратной связи
             function initForm() {
                 const contactForm = document.getElementById('contactForm');
@@ -555,6 +569,120 @@
             // Инициализация формы при загрузке страницы
             document.addEventListener('DOMContentLoaded', function () {
                 initForm();
+            });
+        </script>
+        <script>
+            let menu = document.querySelector('.burger-menu');
+            let navbar = document.querySelector('#mobile-nav');
+
+            menu.onclick = () => {
+                menu.classList.toggle('clicked');
+                navbar.classList.toggle('show')
+            }
+        </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                // Функция для переключения вкладок
+                function switchTab(tabId) {
+                    // Убираем активный класс со всех вкладок
+                    document.querySelectorAll('.tabs_content').forEach(tab => {
+                        tab.classList.remove('active');
+                    });
+
+                    // Убираем активный класс со всех кнопок
+                    document.querySelectorAll('.tabs_title').forEach(button => {
+                        button.classList.remove('active');
+                    });
+
+                    // Добавляем активный класс к соответствующей вкладке
+                    const targetTab = document.getElementById(tabId);
+                    if (targetTab) {
+                        targetTab.classList.add('active');
+                    }
+
+                    // Добавляем активный класс к соответствующей кнопке
+                    const tabNumber = tabId.split('-')[1];
+                    const targetButton = document.querySelector(`.tabs_title[data-tab="${tabNumber}"]`);
+                    if (targetButton) {
+                        targetButton.classList.add('active');
+                    }
+                }
+
+                // Обработчики кликов для пунктов меню
+                document.querySelectorAll('.main-nav a[href^="#tab-"]').forEach(link => {
+                    link.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const tabId = this.getAttribute('href').substring(1);
+                        switchTab(tabId);
+
+                        // Прокрутка к секции с вкладками (опционально)
+                        document.getElementById('categories').scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    });
+                });
+
+                // Обработчики для кнопок вкладок (если нужно сохранить существующую функциональность)
+                document.querySelectorAll('.tabs_title').forEach(button => {
+                    button.addEventListener('click', function () {
+                        const tabId = 'tab-' + this.getAttribute('data-tab');
+                        switchTab(tabId);
+                    });
+                });
+            });
+        </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                // Функция для переключения вкладок
+                function switchTab(tabId) {
+                    // Убираем активный класс со всех вкладок
+                    document.querySelectorAll('.tabs_content').forEach(tab => {
+                        tab.classList.remove('active');
+                    });
+
+                    // Убираем активный класс со всех кнопок
+                    document.querySelectorAll('.tabs_title').forEach(button => {
+                        button.classList.remove('active');
+                    });
+
+                    // Добавляем активный класс к соответствующей вкладке
+                    const targetTab = document.getElementById(tabId);
+                    if (targetTab) {
+                        targetTab.classList.add('active');
+                    }
+
+                    // Добавляем активный класс к соответствующей кнопке
+                    const tabNumber = tabId.split('-')[1];
+                    const targetButton = document.querySelector(`.tabs_title[data-tab="${tabNumber}"]`);
+                    if (targetButton) {
+                        targetButton.classList.add('active');
+                    }
+                }
+
+                // Обработчики кликов для пунктов меню в мобильной навигации
+                document.querySelectorAll('#mobile-nav a[href^="#tab-"]').forEach(link => {
+                    link.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const tabId = this.getAttribute('href').substring(1);
+                        switchTab(tabId);
+
+                        // Прокрутка к секции с вкладками
+                        document.getElementById('categories').scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    });
+                });
+
+                // Обработчики для кнопок вкладок (основная навигация)
+                document.querySelectorAll('.tabs_title').forEach(button => {
+                    button.addEventListener('click', function () {
+                        const tabId = 'tab-' + this.getAttribute('data-tab');
+                        switchTab(tabId);
+                    });
+                });
+
+
+
             });
         </script>
         <script src="script.js"></script>
