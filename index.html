@@ -104,7 +104,7 @@
                 <span class="contact-text">+7 (991) 000-98-11</span>
             </a>
 
-            <a href="mailto:forvardvladislav@yandex.ru" class="contact-item email">
+            <a href="forvardvladislav@yandex.ru" class="contact-item email">
                 <div class="icon-wrapper email">
                     <i class="fas fa-envelope"></i>
                 </div>
@@ -628,6 +628,59 @@
                 </div>
             </div>
         </footer>
+
+        <script>
+            // Форма обратной связи
+            function initForm() {
+                const contactForm = document.getElementById('contactForm');
+
+                contactForm.addEventListener('submit', async function (e) {
+                    e.preventDefault();
+
+                    const submitBtn = this.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.textContent;
+
+                    submitBtn.textContent = 'Отправка...';
+                    submitBtn.disabled = true;
+
+                    try {
+                        const formData = new FormData(this);
+                        const response = await fetch('https://api.web3forms.com/submit', {
+                            method: 'POST',
+                            body: formData
+                        });
+
+                        const data = await response.json();
+
+                        if (data.success) {
+                            alert('Сообщение отправлено успешно!');
+                            this.reset();
+                        } else {
+                            alert('Ошибка при отправке сообщения');
+                        }
+                    } catch (error) {
+                        alert('Ошибка сети');
+                    } finally {
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                    }
+                });
+            }
+
+            // Инициализация формы при загрузке страницы
+            document.addEventListener('DOMContentLoaded', function () {
+                initForm();
+            });
+        </script>
+        <script>
+            let menu = document.querySelector('.burger-menu');
+            let navbar = document.querySelector('#mobile-nav');
+
+            menu.onclick = () => {
+                menu.classList.toggle('clicked');
+                navbar.classList.toggle('show')
+            }
+        </script>
         <script src="script.js"></script>
 </body>
 
