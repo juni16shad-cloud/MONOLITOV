@@ -7,18 +7,21 @@ document.addEventListener('DOMContentLoaded', function () {
     const subcategoryButtons = document.querySelectorAll('.subcategory-btn');
 
     // Функция для переключения основных вкладок
-    function switchMainTab(tabElement) {
-        console.log('Switching to tab:', tabElement.dataset.tab);
+    function switchMainTab(tabNumber) {
+        console.log('Switching to main tab:', tabNumber);
 
         // Убираем активный класс у всех вкладок
         tabs.forEach(t => t.classList.remove('active'));
         contents.forEach(c => c.classList.remove('active'));
 
         // Добавляем активный класс текущей вкладке
-        tabElement.classList.add('active');
+        const tabElement = document.querySelector(`.tabs_title[data-tab="${tabNumber}"]`);
+        if (tabElement) {
+            tabElement.classList.add('active');
+        }
 
         // Показываем соответствующий контент
-        const tabId = `tab-${tabElement.dataset.tab}`;
+        const tabId = `tab-${tabNumber}`;
         const content = document.getElementById(tabId);
         if (content) {
             content.classList.add('active');
@@ -28,20 +31,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Функция для фильтрации карточек по подкатегориям
-    function filterSubcategory(subcategory, activeTab = null) {
-        if (!activeTab) {
-            activeTab = document.querySelector('.tabs_content.active');
-        }
-
-        if (!activeTab) {
-            console.error('No active tab found!');
-            return;
-        }
-
-        console.log('Filtering subcategory:', subcategory, 'in tab:', activeTab.id);
+    function filterSubcategory(subcategory, tabContent) {
+        console.log('Filtering subcategory:', subcategory, 'in tab:', tabContent.id);
 
         // Находим все карточки в активной вкладке
-        const allItems = activeTab.querySelectorAll('.subcategory-item');
+        const allItems = tabContent.querySelectorAll('.subcategory-item');
 
         // Скрываем все карточки
         allItems.forEach(item => {
@@ -50,12 +44,8 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         // Показываем только карточки выбранной подкатегории
-        const filteredItems = activeTab.querySelectorAll(`.subcategory-item[data-subcategory="${subcategory}"]`);
+        const filteredItems = tabContent.querySelectorAll(`.subcategory-item[data-subcategory="${subcategory}"]`);
         console.log('Found items for subcategory:', filteredItems.length);
-
-        if (filteredItems.length === 0) {
-            console.warn('No items found for subcategory:', subcategory);
-        }
 
         filteredItems.forEach(item => {
             item.style.display = 'block';
@@ -65,122 +55,87 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         // Обновляем активную кнопку подкатегории
-        const allButtons = activeTab.querySelectorAll('.subcategory-btn');
+        const allButtons = tabContent.querySelectorAll('.subcategory-btn');
         allButtons.forEach(btn => {
             btn.classList.remove('active');
         });
 
-        const activeButton = activeTab.querySelector(`.subcategory-btn[data-subcategory="${subcategory}"]`);
+        const activeButton = tabContent.querySelector(`.subcategory-btn[data-subcategory="${subcategory}"]`);
         if (activeButton) {
             activeButton.classList.add('active');
-            console.log('Activated button:', activeButton.id);
-        } else {
-            console.warn('No button found for subcategory:', subcategory);
         }
     }
 
-    // Функция для обработки навигации по подкатегориям
-    function handleSubcategoryNavigation(targetId) {
-        console.log('Handling subcategory navigation for:', targetId);
+    // Функция для обработки навигации по подкатегориям из меню
+    function handleMenuSubcategoryNavigation(targetHash) {
+        console.log('Handling menu navigation for:', targetHash);
 
-        const targetElement = document.getElementById(targetId);
-        if (!targetElement) {
-            console.error('Element not found with id:', targetId);
-            return;
-        }
+        // Извлекаем номер вкладки и идентификатор подкатегории из хэша
+        // Формат: #11гз, #22ф, #33п и т.д.
+        const tabNumber = targetHash.substring(1, 2); // Первая цифра - номер вкладки
+        const subcategoryId = targetHash.substring(2); // Остальное - идентификатор подкатегории
 
-        if (!targetElement.classList.contains('subcategory-btn')) {
-            console.error('Element is not a subcategory button:', targetElement);
-            return;
-        }
+        console.log('Tab number:', tabNumber, 'Subcategory ID:', subcategoryId);
 
-        // Определяем номер вкладки из ID (первая цифра)
-        const tabNumber = targetId.charAt(0);
-        console.log('Tab number from ID:', tabNumber);
+        // Маппинг идентификаторов подкатегорий на data-subcategory значения
+        const subcategoryMap = {
+            'гз': 'гз',
+            'ф': 'фд',
+            'п': 'перек',
+            'к': 'колонны'
+        };
 
-        const tab = document.querySelector(`.tabs_title[data-tab="${tabNumber}"]`);
-        if (!tab) {
-            console.error('Tab not found for number:', tabNumber);
-            return;
-        }
+        const subcategory = subcategoryMap[subcategoryId] || subcategoryId;
+        console.log('Mapped subcategory:', subcategory);
 
         // Переключаемся на нужную вкладку
-        const content = switchMainTab(tab);
+        const tabContent = switchMainTab(tabNumber);
 
-        // Даем время для переключения вкладки
-        setTimeout(() => {
-            const subcategory = targetElement.getAttribute('data-subcategory');
-            console.log('Filtering subcategory:', subcategory);
-
-            filterSubcategory(subcategory, content);
-
-            // Прокрутка к секции
+        if (tabContent) {
+            // Даем время для переключения вкладки
             setTimeout(() => {
-                const categoriesSection = document.getElementById('categories');
-                if (categoriesSection) {
-                    categoriesSection.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+                filterSubcategory(subcategory, tabContent);
+
+                // Прокрутка к секции
+                setTimeout(() => {
+                    const categoriesSection = document.getElementById('categories');
+                    if (categoriesSection) {
+                        categoriesSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }, 100);
             }, 100);
-        }, 100);
-    }
-
-    // Функция для обработки навигации по хэшу
-    function handleHashNavigation() {
-        const hash = window.location.hash;
-        console.log('Hash changed:', hash);
-
-        if (!hash) return;
-
-        // Если хэш указывает на вкладку (tab-1, tab-2, tab-3)
-        if (hash.startsWith('#tab-')) {
-            const tabNumber = hash.replace('#tab-', '');
-            const tab = document.querySelector(`.tabs_title[data-tab="${tabNumber}"]`);
-            if (tab) {
-                switchMainTab(tab);
-            }
-        }
-        // Если хэш указывает на подкатегорию (11гз, 22ф, etc)
-        else {
-            const targetId = hash.replace('#', '');
-            handleSubcategoryNavigation(targetId);
         }
     }
 
     // Обработчики событий для основных вкладок
     tabs.forEach(tab => {
         tab.addEventListener('click', function () {
-            switchMainTab(this);
-            // Обновляем URL
-            window.location.hash = `tab-${this.dataset.tab}`;
+            const tabNumber = this.getAttribute('data-tab');
+            switchMainTab(tabNumber);
         });
     });
 
-    // Обработчики для кнопок подкатегорий
+    // Обработчики для кнопок подкатегорий внутри табов
     subcategoryButtons.forEach(button => {
         button.addEventListener('click', function () {
             const subcategory = this.getAttribute('data-subcategory');
             const activeTab = this.closest('.tabs_content');
             filterSubcategory(subcategory, activeTab);
-
-            // Обновляем URL с хэшем
-            window.location.hash = this.id;
         });
     });
 
-    // Обработчик изменения хэша
-    window.addEventListener('hashchange', handleHashNavigation);
-
-    // Обработчик для всех ссылок с хэшем
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
+    // Обработчик для всех ссылок навигации
+    document.querySelectorAll('a[href*="#"]').forEach(link => {
         link.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
-            if (href !== '#' && !href.startsWith('#tab-')) {
-                // Для подкатегорий обрабатываем вручную
+
+            // Обрабатываем только ссылки на подкатегории (формат #11гз, #22ф и т.д.)
+            if (href.match(/^#\d{2}/)) {
                 e.preventDefault();
-                window.location.hash = href;
+                handleMenuSubcategoryNavigation(href);
             }
         });
     });
@@ -191,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Показываем первую подкатегорию в каждой вкладке
         document.querySelectorAll('.tabs_content').forEach(tab => {
-            const firstSubcategory = tab.querySelector('.subcategory-btn.active');
+            const firstSubcategory = tab.querySelector('.subcategory-btn');
             if (firstSubcategory) {
                 const subcategory = firstSubcategory.getAttribute('data-subcategory');
                 const items = tab.querySelectorAll(`.subcategory-item[data-subcategory="${subcategory}"]`);
@@ -211,31 +166,17 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         // Обрабатываем начальный хэш если он есть
-        if (window.location.hash) {
+        if (window.location.hash && window.location.hash.match(/^#\d{2}/)) {
             console.log('Initial hash found:', window.location.hash);
-            setTimeout(handleHashNavigation, 100);
+            setTimeout(() => {
+                handleMenuSubcategoryNavigation(window.location.hash);
+            }, 100);
         } else {
             // Активируем первую вкладку по умолчанию
-            const firstTab = document.querySelector('.tabs_title.active');
-            if (firstTab) {
-                switchMainTab(firstTab);
-            }
+            switchMainTab('1');
         }
     }
 
     // Запускаем инициализацию
     initializePage();
-
-    // Дебаг функция для проверки элементов
-    function debugElements() {
-        console.log('Available subcategory buttons:');
-        subcategoryButtons.forEach(btn => {
-            console.log('ID:', btn.id, 'Data-subcategory:', btn.getAttribute('data-subcategory'));
-        });
-
-        console.log('Navigation links:');
-        document.querySelectorAll('a[href^="#11"], a[href^="#22"], a[href^="#33"]').forEach(link => {
-            console.log('Link href:', link.getAttribute('href'));
-        });
-    }
 });
