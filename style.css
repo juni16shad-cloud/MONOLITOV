@@ -1,6 +1,7 @@
 :root {
     --black: #000000;
     --gold: #D4AF37;
+    --vvvbrown: #181717;
     --dark-brown: #3C2B1E;
     --light-gold: #F0E68C;
     --dark-gold: #B8860B;
@@ -1946,23 +1947,23 @@ footer {
 }
 
 .icon-wrapper.phone {
-    background: rgba(46, 170, 70, 0.2);
-    color: #2eaa46;
+    background: var(--vvvbrown);
+    color: var(--gold);
 }
 
 .icon-wrapper.email {
-    background: rgba(220, 76, 70, 0.2);
-    color: #dc4c46;
+    background: var(--vvvbrown);
+    color: var(--gold);
 }
 
 .icon-wrapper.telegram {
-    background: rgba(0, 136, 204, 0.2);
-    color: #0088cc;
+    background: var(--vvvbrown);
+    color: var(--gold);
 }
 
 .icon-wrapper.whatsapp {
-    background: rgba(37, 211, 102, 0.2);
-    color: #25d366;
+    background: var(--vvvbrown);
+    color: var(--gold);
 }
 
 .contact-text {
