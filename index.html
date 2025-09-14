@@ -20,12 +20,19 @@
                 </div>
                 <div>
                     <div class="company-name">Монолитов</div>
-                    <div class="region-info">Работаем в Ленинградской области и Санкт-Петербурге</div>
                 </div>
 
 
                 <nav class="main-nav">
                     <ul>
+                        <li><a href="#tab-3">ИЖС &nabla;</a>
+                            <ul>
+                                <li><a href="#33гз">Готовые здания</a></li>
+                                <li><a href="#33ф">Фундаменты</a></li>
+                                <li><a href="#33п">Перекрытия</a></li>
+                                <li><a href="#33к">Колонны</a></li>
+                            </ul>
+                        </li>
                         <li><a href="#tab-1">Гражданскoe &nabla;</a>
                             <ul>
                                 <li><a href="#11гз">Готовые здания</a></li>
@@ -40,14 +47,6 @@
                                 <li><a href="#22ф">Фундаменты</a></li>
                                 <li><a href="#22п">Перекрытия</a></li>
                                 <li><a href="#22к">Колонны</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#tab-3">ИЖС &nabla;</a>
-                            <ul>
-                                <li><a href="#33гз">Готовые здания</a></li>
-                                <li><a href="#33ф">Фундаменты</a></li>
-                                <li><a href="#33п">Перекрытия</a></li>
-                                <li><a href="#33к">Колонны</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -158,13 +157,62 @@
 
             <div class="tabs">
                 <div class="tabs_navigation">
-                    <button class="tabs_title active" data-tab="1">Гражданское строительство</button>
+                    <button class="tabs_title active" data-tab="3">Индивидуальное жилищное строительство</button>
+                    <button class="tabs_title" data-tab="1">Гражданское строительство</button>
                     <button class="tabs_title" data-tab="2">Промышленные объекты</button>
-                    <button class="tabs_title" data-tab="3">Индивидуальное жилищное строительство</button>
                 </div>
                 <div class="tabs_body">
+                    <!-- Контент для ИЖС -->
+                    <div id="tab-3" class="tabs_content active">
+                        <h3 class="content-title">Индивидуальное жилищное строительство</h3>
+                        <p>Строительство частных домов, коттеджей и таунхаусов по индивидуальным проектам.</p>
+
+                        <div class="subcategory-buttons">
+                            <button class="subcategory-btn active" data-subcategory="3гд" id="33гз">Готовые
+                                дома</button>
+                            <button class="subcategory-btn" data-subcategory="3к" id="33к">Колонны</button>
+                            <button class="subcategory-btn" data-subcategory="3ф" id="33ф">Фундаменты</button>
+                            <button class="subcategory-btn" data-subcategory="3п" id="33п">Перекрытия</button>
+                        </div>
+
+                        <div class="portfolio-grid">
+                            <!-- Готовые дома -->
+                            <div class="portfolio-item subcategory-item" data-subcategory="3гд">
+                                <div class="portfolio-img">Фото коттеджа</div>
+                                <div class="portfolio-info">
+                                    <h3>Коттедж в поселке "Сосновый бор"</h3>
+                                    <p>Двухэтажный монолитный коттедж с цокольным этажом и гаражом.</p>
+                                </div>
+                            </div>
+                            <div class="portfolio-item subcategory-item" data-subcategory="3гд">
+                                <div class="portfolio-img">Фото таунхауса</div>
+                                <div class="portfolio-info">
+                                    <h3>Таунхаусы в "Зеленом городе"</h3>
+                                    <p>Комплекс из 8 монолитных таунхаусов с индивидуальными планировками.</p>
+                                </div>
+                            </div>
+
+                            <!-- Фундаменты -->
+                            <div class="portfolio-item subcategory-item" data-subcategory="3ф">
+                                <div class="portfolio-img">Фото фундамента дома</div>
+                                <div class="portfolio-info">
+                                    <h3>Фундамент загородного дома</h3>
+                                    <p>Утепленная шведская плита с системой теплого пола.</p>
+                                </div>
+                            </div>
+
+                            <!-- Перекрытия -->
+                            <div class="portfolio-item subcategory-item" data-subcategory="3п">
+                                <div class="portfolio-img">Фото перекрытия дома</div>
+                                <div class="portfolio-info">
+                                    <h3>Монолитные перекрытия коттеджа</h3>
+                                    <p>Бесшовные перекрытия с улучшенной звукоизоляцией.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <!-- Контент для гражданского строительства -->
-                    <div id="tab-1" class="tabs_content active">
+                    <div id="tab-1" class="tabs_content">
                         <h3 class="content-title">Гражданское строительство</h3>
                         <p>Мы реализуем проекты многоквартирных домов любой сложности, обеспечивая высокое качество и
                             соблюдение сроков.</p>
@@ -283,58 +331,7 @@
                         </div>
                     </div>
 
-                    <!-- Контент для ИЖС -->
-                    <div id="tab-3" class="tabs_content">
-                        <h3 class="content-title">Индивидуальное жилищное строительство</h3>
-                        <p>Строительство частных домов, коттеджей и таунхаусов по индивидуальным проектам.</p>
 
-                        <div class="subcategory-buttons">
-                            <button class="subcategory-btn active" data-subcategory="3гд" id="33гз">Готовые
-                                дома</button>
-                            <button class="subcategory-btn" data-subcategory="3к" id="33к">Колонны</button>
-                            <button class="subcategory-btn" data-subcategory="3ф" id="33ф">Фундаменты</button>
-                            <button class="subcategory-btn" data-subcategory="3п" id="33п">Перекрытия</button>
-                        </div>
-
-                        <div class="portfolio-grid">
-                            <!-- Готовые дома -->
-                            <div class="portfolio-item subcategory-item" data-subcategory="3гд">
-                                <div class="portfolio-img">Фото коттеджа</div>
-                                <div class="portfolio-info">
-                                    <h3>Коттедж в поселке "Сосновый бор"</h3>
-                                    <p>Двухэтажный монолитный коттедж с цокольным этажом и гаражом.</p>
-                                </div>
-                            </div>
-                            <div class="portfolio-item subcategory-item" data-subcategory="3гд">
-                                <div class="portfolio-img">Фото таунхауса</div>
-                                <div class="portfolio-info">
-                                    <h3>Таунхаусы в "Зеленом городе"</h3>
-                                    <p>Комплекс из 8 монолитных таунхаусов с индивидуальными планировками.</p>
-                                </div>
-                            </div>
-
-                            <!-- Фундаменты -->
-                            <div class="portfolio-item subcategory-item" data-subcategory="3ф">
-                                <div class="portfolio-img">Фото фундамента дома</div>
-                                <div class="portfolio-info">
-                                    <h3>Фундамент загородного дома</h3>
-                                    <p>Утепленная шведская плита с системой теплого пола.</p>
-                                </div>
-                            </div>
-
-                            <!-- Перекрытия -->
-                            <div class="portfolio-item subcategory-item" data-subcategory="3п">
-                                <div class="portfolio-img">Фото перекрытия дома</div>
-                                <div class="portfolio-info">
-                                    <h3>Монолитные перекрытия коттеджа</h3>
-                                    <p>Бесшовные перекрытия с улучшенной звукоизоляцией.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
 
     <!-- Варианты сотрудничества -->

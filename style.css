@@ -66,16 +66,12 @@ header {
 }
 
 .company-name {
-    font-size: 24px;
+    font-size: 37px;
     font-weight: bold;
     color: var(--gold);
+    white-space: nowrap;
 }
 
-.region-info {
-    font-size: 18px;
-    color: var(--light-gold);
-    margin-top: 5px;
-}
 
 
 /* Основное навигационное меню (для десктопной версии) */
@@ -98,11 +94,10 @@ header {
 .main-nav>ul>li>a {
     color: white;
     text-decoration: none;
-    font-weight: bold;
-    padding: 8px 15px;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    display: block;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 10px 15px;
+    transition: color 0.3s ease;
 }
 
 .main-nav>ul>li>a:hover {
@@ -317,11 +312,13 @@ header {
 
 /* Стили для табов */
 .tabs {
-    background-color: white;
-    border-radius: 15px;
+    background-color: #f8f5f2;
+    /* Светлый бежево-коричневый фон */
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: var(--shadow);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     margin: 40px 0;
+    border: 1px solid #e8dfd4;
 }
 
 .tabs_navigation {
@@ -329,53 +326,85 @@ header {
     background: #584b3e;
     padding: 0 20px;
     position: relative;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .tabs_title {
-    background: none;
+    background: transparent;
     border: none;
     cursor: pointer;
-    padding: 20px 25px;
+    padding: 18px 25px;
     font-weight: 600;
     color: #ffffff;
     font-size: 1.1rem;
-    transition: var(--transition);
+    transition: all 0.3s ease;
     position: relative;
     display: flex;
     align-items: center;
     gap: 10px;
+    flex: 1;
+    justify-content: center;
+    min-width: 200px;
 }
 
 .tabs_title i {
     font-size: 1.3rem;
+    transition: transform 0.3s ease;
 }
 
 .tabs_title:hover {
     background: rgba(255, 255, 255, 0.1);
+
+}
+
+.tabs_title:hover i {
+    transform: translateY(-2px);
 }
 
 .tabs_title.active {
     color: var(--gold);
     background: var(--dark-brown);
+    font-weight: 700;
 }
 
 .tabs_title.active::after {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 0;
-    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
     height: 4px;
     background: var(--gold);
+    border-radius: 2px 2px 0 0;
+}
+
+.tabs_title.active::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(212, 175, 55, 0.1), transparent);
 }
 
 .tabs_body {
-    padding: 30px;
+    padding: 30px 40px;
+    background: #f8f5f2;
+    /* Увеличиваем отступы слева и справа */
 }
 
 .tabs_content {
     display: none;
     animation: fadeIn 0.5s ease forwards;
+    max-width: 1200px;
+    /* Ограничиваем максимальную ширину */
+    margin: 0 auto;
+    /* Центрируем контент */
+    padding: 0 20px;
+    /* Добавляем отступы по бокам */
 }
 
 @keyframes fadeIn {
@@ -404,10 +433,10 @@ header {
 }
 
 .tabs_content p {
-    color: var(--text-light);
+    color: #6d5d4b;
     margin-bottom: 25px;
     font-size: 1.1rem;
-    line-height: 1.8;
+    line-height: 1.7;
 }
 
 .subcategory-buttons {
@@ -418,28 +447,31 @@ header {
 }
 
 .subcategory-btn {
-    padding: 12px 25px;
-    background: var(--light);
+    padding: 14px 28px;
+    background: #e8dfd4;
     border: none;
     border-radius: 30px;
     cursor: pointer;
     font-weight: 600;
-    color: var(--text);
-    transition: var(--transition);
+    color: #5a4b3c;
+    transition: all 0.3s ease;
     display: flex;
     align-items: center;
     gap: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .subcategory-btn:hover {
-    background: var(--gold);
-    color: var(--black);
-    transform: translateY(-2px);
+    background: #d4af37;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.25);
 }
 
 .subcategory-btn.active {
-    background: var(--gold);
-    color: var(--black);
+    background: #d4af37;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
 }
 
 .portfolio-grid {
@@ -447,6 +479,7 @@ header {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 25px;
     margin-top: 20px;
+
 }
 
 .portfolio-item {
@@ -1255,7 +1288,7 @@ footer {
     }
 
     .company-name {
-        font-size: 18px;
+        font-size: 34px !important;
     }
 
 
@@ -1298,6 +1331,10 @@ footer {
 
     .tabs_body {
         padding: 20px 15px;
+    }
+
+    .tabs_content {
+        padding: 0 10px;
     }
 
     .content-title {
@@ -1424,11 +1461,11 @@ footer {
     }
 
     .logo img {
-        width: 60px !important;
+        width: 100px !important;
     }
 
     .company-name {
-        font-size: 16px;
+        font-size: 21px !important;
     }
 
 
@@ -1475,6 +1512,16 @@ footer {
     }
 }
 
+@media (max-width: 480px) {
+    .tabs_body {
+        padding: 15px 10px;
+    }
+
+    .tabs_content {
+        padding: 0 5px;
+    }
+}
+
 /* Улучшение читаемости текста на мобильных */
 @media (max-width: 768px) {
     body {
@@ -1486,6 +1533,12 @@ footer {
     h2,
     h3 {
         line-height: 1.3;
+    }
+}
+
+@media (max-width: 480px) {
+    .tabs_content p {
+        font-size: 1rem;
     }
 }
 
@@ -1523,7 +1576,7 @@ footer {
     }
 
     .company-name {
-        font-size: 14px;
+        font-size: 16px !important;
     }
 
     .logo img {
@@ -1935,5 +1988,50 @@ footer {
     .burger-menu {
         min-width: 44px;
         min-height: 44px;
+    }
+}
+
+.tabs_navigation {
+    justify-content: center;
+    /* Выравнивание по центру */
+    flex-wrap: wrap;
+    /* Перенос на мобильных устройствах */
+}
+
+.raboti {
+    text-align: center;
+    /* Центрирование заголовка */
+}
+
+.section-title {
+    margin-bottom: 30px;
+    /* Отступ снизу для заголовка */
+}
+
+.tabs_navigation {
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.raboti {
+    text-align: center;
+}
+
+.section-title {
+    margin-bottom: 30px;
+}
+
+/* Для мобильной адаптации */
+@media (max-width: 768px) {
+    .tabs_navigation {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .tabs_title {
+        margin: 5px;
+        flex: 1;
+        min-width: 120px;
+        text-align: center;
     }
 }
