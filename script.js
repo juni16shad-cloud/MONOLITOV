@@ -173,10 +173,48 @@ document.addEventListener('DOMContentLoaded', function () {
             }, 100);
         } else {
             // Активируем первую вкладку по умолчанию
-            switchMainTab('1');
+            switchMainTab('3');
         }
     }
 
     // Запускаем инициализацию
     initializePage();
+});
+// Анимация счетчика (добавить в конец файла script.js)
+function animateCounter() {
+    const counters = document.querySelectorAll('.stat-number');
+    const speed = 200; // Чем меньше, тем быстрее
+
+    counters.forEach(counter => {
+        const target = +counter.getAttribute('data-count');
+        const count = +counter.innerText;
+        const increment = Math.ceil(target / speed);
+
+        if (count < target) {
+            counter.innerText = Math.min(count + increment, target);
+            setTimeout(() => animateCounter(), 1);
+        }
+    });
+}
+
+// Запустить анимацию при скролле до секции
+function initCounterAnimation() {
+    const aboutSection = document.querySelector('.about-section');
+    if (!aboutSection) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter();
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    observer.observe(aboutSection);
+}
+
+// Вызвать инициализацию после загрузки DOM
+document.addEventListener('DOMContentLoaded', function () {
+    initCounterAnimation();
 });
