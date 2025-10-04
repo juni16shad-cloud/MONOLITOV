@@ -145,15 +145,15 @@ header {
 }
 
 .burger-menu {
-    width: 60px;
-    height: 50px;
+    display: block;
     position: fixed;
-    z-index: 1000;
-    top: 1%;
-    right: 1%;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
     background-color: #000000;
     border-radius: 8px;
-    /* Скрыто по умолчанию для десктопа */
+    width: 60px;
+    height: 50px;
 }
 
 .burger-menu span {
@@ -209,6 +209,7 @@ header {
 
 /* Боковое меню для мобильной версии */
 #mobile-nav {
+    display: block;
     position: fixed;
     z-index: 10;
     background-color: #000000;
@@ -220,7 +221,6 @@ header {
     padding: 100px 40px 60px;
     transition: transform .5s ease-in;
     transform: translateX(100%);
-    /* Скрыто по умолчанию для десктопа */
 }
 
 #mobile-nav.show {

@@ -359,51 +359,47 @@ function initMobileMenu() {
     const mobileNav = document.getElementById('mobile-nav');
     const mobileNavOverlay = document.querySelector('.mobile-nav-overlay');
 
-    if (burgerMenu && mobileNav) {
-        burgerMenu.addEventListener('click', function () {
-            this.classList.toggle('clicked');
-            mobileNav.classList.toggle('show');
+    if (mobileNav.classList.contains('show')) {
+        document.body.classList.add('menu-open');
+    } else {
+        document.body.classList.remove('menu-open');
+    };
+}
 
-            if (mobileNavOverlay) {
-                mobileNavOverlay.classList.toggle('show');
-            }
+// Закрытие меню при клике на ссылку
+const mobileLinks = document.querySelectorAll('#mobile-nav a');
+mobileLinks.forEach(link => {
+    link.addEventListener('click', function () {
+        if (burgerMenu) burgerMenu.classList.remove('clicked');
+        if (mobileNav) mobileNav.classList.remove('show');
+        if (mobileNavOverlay) mobileNavOverlay.classList.remove('show');
+    });
+});
+
+// Обработка выпадающих меню в мобильной версии
+const mobileMenuItems = document.querySelectorAll('#mobile-nav ul li');
+mobileMenuItems.forEach(item => {
+    const submenu = item.querySelector('ul');
+    if (submenu) {
+        const link = item.querySelector('a');
+        const toggle = document.createElement('span');
+        toggle.innerHTML = '<i class="fas fa-chevron-down"></i>';
+        toggle.className = 'mobile-submenu-toggle';
+        toggle.style.cssText = 'margin-left: auto; color: var(--gold); cursor: pointer; transition: transform 0.3s ease;';
+
+        link.parentNode.insertBefore(toggle, link.nextSibling);
+
+        toggle.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const isShowing = submenu.style.display === 'block';
+            submenu.style.display = isShowing ? 'none' : 'block';
+            toggle.style.transform = isShowing ? 'rotate(0deg)' : 'rotate(180deg)';
         });
     }
+});
 
-    // Закрытие меню при клике на ссылку
-    const mobileLinks = document.querySelectorAll('#mobile-nav a');
-    mobileLinks.forEach(link => {
-        link.addEventListener('click', function () {
-            if (burgerMenu) burgerMenu.classList.remove('clicked');
-            if (mobileNav) mobileNav.classList.remove('show');
-            if (mobileNavOverlay) mobileNavOverlay.classList.remove('show');
-        });
-    });
-
-    // Обработка выпадающих меню в мобильной версии
-    const mobileMenuItems = document.querySelectorAll('#mobile-nav ul li');
-    mobileMenuItems.forEach(item => {
-        const submenu = item.querySelector('ul');
-        if (submenu) {
-            const link = item.querySelector('a');
-            const toggle = document.createElement('span');
-            toggle.innerHTML = '<i class="fas fa-chevron-down"></i>';
-            toggle.className = 'mobile-submenu-toggle';
-            toggle.style.cssText = 'margin-left: auto; color: var(--gold); cursor: pointer; transition: transform 0.3s ease;';
-
-            link.parentNode.insertBefore(toggle, link.nextSibling);
-
-            toggle.addEventListener('click', function (e) {
-                e.preventDefault();
-                e.stopPropagation();
-
-                const isShowing = submenu.style.display === 'block';
-                submenu.style.display = isShowing ? 'none' : 'block';
-                toggle.style.transform = isShowing ? 'rotate(0deg)' : 'rotate(180deg)';
-            });
-        }
-    });
-}
 
 // Функция для обработки формы обратной связи
 function initContactForm() {
