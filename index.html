@@ -16,12 +16,11 @@
         <div class="container header-content">
             <div class="logo-container">
                 <div class="logo">
-                    <img src="chz.png" alt="Логотип Монолитов">
+                    <img src="чернух.png" alt="Логотип Монолитов">
                 </div>
                 <div>
                     <div class="company-name">Монолитов</div>
                 </div>
-
 
                 <nav class="main-nav">
                     <ul>
@@ -93,7 +92,8 @@
                 </nav>
             </div>
     </header>
-    <!-- Герой секция -->
+
+    <!-- Контакты -->
     <section class="contacts-section">
         <div class="contacts-container">
             <a href="tel:+79910009811" class="contact-item phone">
@@ -125,6 +125,8 @@
             </a>
         </div>
     </section>
+
+    <!-- Герой секция -->
     <section class="hero">
         <div class="container">
             <h1>Возведение монолитных конструкций по Санкт-Петербургу и Ленинградской области</h1>
@@ -134,6 +136,8 @@
             <a href="#contact" class="cta-button">Запрос на обратный звонок</a>
         </div>
     </section>
+
+    <!-- Цитата -->
     <section class="quote-section">
         <div class="decoration-elements">
             <div class="decoration-element element-1"></div>
@@ -145,10 +149,11 @@
                 <p>"Мы не просто возводим стены. Мы создаём монолит — основу будущего, которая простоит веками.
                     Наша работа — это не бетон и арматура, это наследие, которое мы оставляем городу
                     .Наша философия проста: нет ничего крепче, чем правда, и нет ничего надёжнее, чем наш монолит."</p>
-
             </div>
         </div>
     </section>
+
+    <!-- О компании -->
     <section class="about-section" id="about">
         <div class="container">
             <div class="about-content">
@@ -199,29 +204,12 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Блок с цифрами (опционально, очень хорошо работает) -->
-            <!-- <div class="about-stats">
-                <!-- <div class="stat">
-                    <span class="stat-number" data-count="10">10</span>
-                    <span class="stat-text">лет на рынке</span>
-                </div> -->
-            <!-- <div class="stat">
-                    <span class="stat-number" data-count="50">100</span>
-                    <span class="stat-text">реализованных проектов</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number" data-count="100">459</span>
-                    <span class="stat-text">довольных клиентов</span>
-                </div> -->
-        </div>
         </div>
     </section>
-    <!-- Секция категорий -->
+
+    <!-- Обновите всю секцию категорий с этим исправленным кодом -->
     <section class="categories raboti" id="categories">
         <h2 class="section-title">Направления нашей работы</h2>
-        <!-- <div class="raboti">
-            <h2 class="section-title">Направления нашей работы</h2> -->
 
         <div class="tabs" style="margin: 10px 40px;">
             <div class="tabs_navigation">
@@ -233,173 +221,809 @@
                 <!-- Контент для ИЖС -->
                 <div id="tab-3" class="tabs_content active">
                     <h3 class="content-title">Индивидуальное жилищное строительство</h3>
-                    <p>Строительство частных домов, коттеджей и таунхаусов по индивидуальным проектам.</p>
+                    <p>Строительство частных домов, коттеджей и таунхаусов по индивидуальным проектам с гарантией
+                        качества и соблюдением сроков.</p>
 
                     <div class="subcategory-buttons">
-                        <button class="subcategory-btn active" data-subcategory="3гд" id="33гз">Готовые
-                            дома</button>
-                        <button class="subcategory-btn" data-subcategory="3к" id="33к">Колонны</button>
-                        <button class="subcategory-btn" data-subcategory="3ф" id="33ф">Фундаменты</button>
-                        <button class="subcategory-btn" data-subcategory="3п" id="33п">Перекрытия</button>
+                        <button class="subcategory-btn active" data-subcategory="3гд">Готовые дома</button>
+                        <button class="subcategory-btn" data-subcategory="3ф">Фундаменты</button>
+                        <button class="subcategory-btn" data-subcategory="3п">Перекрытия</button>
+                        <button class="subcategory-btn" data-subcategory="3к">Колонны</button>
                     </div>
 
-                    <div class="portfolio-grid">
-                        <!-- Готовые дома -->
-                        <div class="portfolio-item subcategory-item" data-subcategory="3гд">
-                            <div class="portfolio-img">Фото коттеджа</div>
-                            <div class="portfolio-info">
-                                <h3>Коттедж в поселке "Сосновый бор"</h3>
-                                <p>Двухэтажный монолитный коттедж с цокольным этажом и гаражом.</p>
+                    <!-- Вкладки для готовых домов -->
+                    <div class="house-tabs-container" style="display: none;">
+                        <div class="house-tabs-navigation">
+                            <button class="house-tab-btn active" data-house-type="монолитные">Монолитные дома</button>
+                            <button class="house-tab-btn" data-house-type="монолит-газоблок">Монолит + Газоблок</button>
+                        </div>
+
+                        <div class="house-tabs-content">
+                            <!-- Монолитные дома -->
+                            <div class="house-tab active" data-house-type="монолитные">
+                                <div class="portfolio-grid">
+                                    <div class="portfolio-item">
+                                        <div class="portfolio-slider">
+                                            <div class="slider-container">
+                                                <div class="slide active">
+                                                    <img src="фотографии_работ/дома/монолитные/дом1/photo1.jpg"
+                                                        alt="Монолитный коттедж Премиум - фото 1">
+                                                </div>
+                                                <div class="slide">
+                                                    <img src="фотографии_работ/дома/монолитные/дом1/photo2.jpg"
+                                                        alt="Монолитный коттедж Премиум - фото 2">
+                                                </div>
+                                            </div>
+                                            <button class="slider-btn prev-btn">
+                                                <i class="fas fa-chevron-left"></i>
+                                            </button>
+                                            <button class="slider-btn next-btn">
+                                                <i class="fas fa-chevron-right"></i>
+                                            </button>
+                                            <div class="slider-indicators">
+                                                <span class="indicator active" data-slide="0"></span>
+                                                <span class="indicator" data-slide="1"></span>
+                                            </div>
+                                            <div class="slider-counter">
+                                                <span class="current-slide">1</span> / <span
+                                                    class="total-slides">2</span>
+                                            </div>
+                                        </div>
+                                        <div class="portfolio-info">
+                                            <h3>Коттедж "Премиум" в поселке "Сосновый бор"</h3>
+                                            <p>Двухэтажный монолитный коттедж с цокольным этажом, гаражом и панорамным
+                                                остеклением. Площадь 280 м².</p>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio-item">
+                                        <div class="portfolio-slider">
+                                            <div class="slider-container">
+                                                <div class="slide active">
+                                                    <img src="фотографии_работ/дома/монолитные/таунхаус/photo1.jpg"
+                                                        alt="Таунхаусы Европейский квартал - фото 1">
+                                                </div>
+                                            </div>
+                                            <div class="portfolio-info">
+                                                <h3>Таунхаусы "Европейский квартал"</h3>
+                                                <p>Комплекс из 8 монолитных таунхаусов с индивидуальными планировками и
+                                                    современной отделкой.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Монолит + Газоблок -->
+                            <div class="house-tab" data-house-type="монолит-газоблок">
+                                <div class="portfolio-grid">
+                                    <div class="portfolio-item">
+                                        <div class="portfolio-slider">
+                                            <div class="slider-container">
+                                                <div class="slide active">
+                                                    <img src="фотографии_работ/дома/газоблок/дом1/photo1.jpg"
+                                                        alt="Коттедж Эконом-класс - фото 1">
+                                                </div>
+                                            </div>
+                                            <div class="portfolio-info">
+                                                <h3>Коттедж "Эконом-класс"</h3>
+                                                <p>Энергоэффективный дом с монолитным каркасом и газобетонными стенами.
+                                                    Идеальное соотношение цены и качества.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="portfolio-item subcategory-item" data-subcategory="3гд">
-                            <div class="portfolio-img">Фото таунхауса</div>
-                            <div class="portfolio-info">
-                                <h3>Таунхаусы в "Зеленом городе"</h3>
-                                <p>Комплекс из 8 монолитных таунхаусов с индивидуальными планировками.</p>
+                    </div>
+
+                    <!-- Вкладки для фундаментов -->
+                    <div class="foundation-tabs-container" style="display: none;">
+                        <div class="foundation-tabs-navigation">
+                            <button class="foundation-tab-btn active" data-foundation="ленточный">Ленточный</button>
+                            <button class="foundation-tab-btn" data-foundation="плитный">Плитный</button>
+                            <button class="foundation-tab-btn" data-foundation="ростверк">Ростверк</button>
+                        </div>
+
+                        <div class="foundation-tabs-content">
+                            <!-- Ленточный фундамент -->
+                            <!-- Ленточный фундамент -->
+                            <div class="foundation-tab active" data-foundation="ленточный">
+                                <div class="portfolio-item">
+                                    <div class="portfolio-slider">
+                                        <div class="slider-container">
+                                            <div class="slide active">
+                                                <img src="фотографии_работ/фундаментЛента/1теплица/фудтеп8.jpg"
+                                                    alt="Ленточный фундамент под теплицу - фото 1">
+                                            </div>
+                                            <div class="slide">
+                                                <img src="фотографии_работ/фундаментЛента/1теплица/фудтеп7.jpg"
+                                                    alt="Ленточный фундамент под теплицу - фото 2">
+                                            </div>
+                                            <div class="slide">
+                                                <img src="фотографии_работ/фундаментЛента/1теплица/фудтеп1.jpg"
+                                                    alt="Ленточный фундамент под теплицу - фото 3">
+                                            </div>
+                                            <div class="slide">
+                                                <img src="фотографии_работ/фундаментЛента/1теплица/фудтеп2.jpg"
+                                                    alt="Ленточный фундамент под теплицу - фото 4">
+                                            </div>
+                                            <div class="slide">
+                                                <img src="фотографии_работ/фундаментЛента/1теплица/фудтеп3.jpg"
+                                                    alt="Ленточный фундамент под теплицу - фото 5">
+                                            </div>
+                                            <div class="slide">
+                                                <img src="фотографии_работ/фундаментЛента/1теплица/фудтеп5.jpg"
+                                                    alt="Ленточный фундамент под теплицу - фото 6">
+                                            </div>
+                                        </div>
+
+                                        <button class="slider-btn prev-btn">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </button>
+                                        <button class="slider-btn next-btn">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </button>
+                                        <div class="slider-indicators">
+                                            <span class="indicator active" data-slide="0"></span>
+                                            <span class="indicator" data-slide="1"></span>
+                                            <span class="indicator" data-slide="2"></span>
+                                            <span class="indicator" data-slide="3"></span>
+                                            <span class="indicator" data-slide="4"></span>
+                                            <span class="indicator" data-slide="5"></span>
+                                        </div>
+                                        <div class="slider-counter">
+                                            <span class="current-slide">1</span> / <span class="total-slides">6</span>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio-info">
+                                        <h3>Ленточный фундамент под теплицу</h3>
+                                        <p>Прочный ленточный фундамент для круглогодичной теплицы. Глубина заложения 800
+                                            мм, ширина 400 мм.</p>
+                                    </div>
+                                </div>
+
+                                <div class="portfolio-item">
+                                    <div class="portfolio-slider">
+                                        <div class="slider-container">
+                                            <div class="slide active">
+                                                <img src="фотографии_работ/фундаментЛента/разнбаня/лентфундбаня1.jpg"
+                                                    alt="Ленточный фундамент под баню - фото 1">
+                                            </div>
+                                            <div class="slide">
+                                                <img src="фотографии_работ/фундаментЛента/разнбаня/лентфундбаня2.jpg"
+                                                    alt="Ленточный фундамент под баню - фото 2">
+                                            </div>
+                                            <div class="slide">
+                                                <img src="фотографии_работ/фундаментЛента/разнбаня/лентфундбаня3.jpg"
+                                                    alt="Ленточный фундамент под баню - фото 3">
+                                            </div>
+                                            <div class="slide">
+                                                <img src="фотографии_работ/фундаментЛента/разнбаня/лентфундбаня4.jpg"
+                                                    alt="Ленточный фундамент под баню - фото 4">
+                                            </div>
+                                            <div class="slide">
+                                                <img src="фотографии_работ/фундаментЛента/разнбаня/лентфундбаня5.jpg"
+                                                    alt="Ленточный фундамент под баню - фото 5">
+                                            </div>
+                                            <div class="slide">
+                                                <img src="фотографии_работ/фундаментЛента/разнбаня/лентфундбаня6.jpg"
+                                                    alt="Ленточный фундамент под баню - фото 6">
+                                            </div>
+                                        </div>
+
+                                        <button class="slider-btn prev-btn">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </button>
+                                        <button class="slider-btn next-btn">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </button>
+                                        <div class="slider-indicators">
+                                            <span class="indicator active" data-slide="0"></span>
+                                            <span class="indicator" data-slide="1"></span>
+                                            <span class="indicator" data-slide="2"></span>
+                                            <span class="indicator" data-slide="3"></span>
+                                            <span class="indicator" data-slide="4"></span>
+                                            <span class="indicator" data-slide="5"></span>
+                                        </div>
+                                        <div class="slider-counter">
+                                            <span class="current-slide">1</span> / <span class="total-slides">6</span>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio-info">
+                                        <h3>Ленточные фундаменты под баню</h3>
+                                        <p>Монолитные ленточные фундаменты для банных комплексов. Гидроизоляция и
+                                            утепление по периметру.</p>
+                                    </div>
+                                </div>
+
+                                <div class="portfolio-item">
+                                    <div class="portfolio-slider">
+                                        <div class="slider-container">
+                                            <div class="slide active">
+                                                <img src="фотографии_работ/фундаментЛента/дом1/лента1.jpg"
+                                                    alt="Ленточный фундамент под дом - фото 1">
+                                            </div>
+                                            <div class="slide">
+                                                <img src="фотографии_работ/фундаментЛента/дом1/лента2.jpg"
+                                                    alt="Ленточный фундамент под дом - фото 2">
+                                            </div>
+                                            <div class="slide">
+                                                <img src="фотографии_работ/фундаментЛента/дом1/лента3.jpg"
+                                                    alt="Ленточный фундамент под дом - фото 3">
+                                            </div>
+                                        </div>
+
+                                        <button class="slider-btn prev-btn">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </button>
+                                        <button class="slider-btn next-btn">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </button>
+                                        <div class="slider-indicators">
+                                            <span class="indicator active" data-slide="0"></span>
+                                            <span class="indicator" data-slide="1"></span>
+                                            <span class="indicator" data-slide="2"></span>
+                                        </div>
+                                        <div class="slider-counter">
+                                            <span class="current-slide">1</span> / <span class="total-slides">3</span>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio-info">
+                                        <h3>Ленточный фундамент для жилого дома</h3>
+                                        <p>Заглубленный ленточный фундамент для двухэтажного коттеджа. Глубина 1.2
+                                            метра, армирование 12 мм.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Плитный фундамент -->
+                            <div class="foundation-tab" data-foundation="плитный">
+                                <div class="portfolio-item">
+                                    <div class="portfolio-slider">
+                                        <div class="slider-container">
+                                            <div class="slide active">
+                                                <img src="фотографии_работ/фундплит/утепленная/photo_2025-10-03_21-09-47.jpg"
+                                                    alt="Плитный фундамент утепленный - фото 1">
+                                            </div>
+                                            <div class="slide">
+                                                <img src="фотографии_работ/фундплит/утепленная/photo_2025-10-03_21-10-06.jpg"
+                                                    alt="Плитный фундамент утепленный - фото 2">
+                                            </div>
+                                            <div class="slide">
+                                                <img src="фотографии_работ/фундплит/утепленная/photo_2025-10-03_21-10-28.jpg"
+                                                    alt="Плитный фундамент утепленный - фото 3">
+                                            </div>
+                                            <div class="slide">
+                                                <img src="фотографии_работ/фундплит/утепленная/photo_2025-10-03_21-17-50.jpg"
+                                                    alt="Плитный фундамент утепленный - фото 4">
+                                            </div>
+                                            <div class="slide">
+                                                <img src="фотографии_работ/фундплит/утепленная/photo_2025-10-03_21-18-10.jpg"
+                                                    alt="Плитный фундамент утепленный - фото 5">
+                                            </div>
+                                        </div>
+
+                                        <button class="slider-btn prev-btn">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </button>
+                                        <button class="slider-btn next-btn">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </button>
+                                        <div class="slider-indicators">
+                                            <span class="indicator active" data-slide="0"></span>
+                                            <span class="indicator" data-slide="1"></span>
+                                            <span class="indicator" data-slide="2"></span>
+                                            <span class="indicator" data-slide="3"></span>
+                                            <span class="indicator" data-slide="4"></span>
+                                        </div>
+                                        <div class="slider-counter">
+                                            <span class="current-slide">1</span> / <span class="total-slides">5</span>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio-info">
+                                        <h3>Утепленный плитный фундамент</h3>
+                                        <p>Монолитная плита с системой утепления шведская плита. Толщина плиты 300 мм,
+                                            слой утеплителя 200 мм.</p>
+                                    </div>
+                                </div>
+
+                                <div class="portfolio-item">
+                                    <div class="portfolio-slider">
+                                        <div class="slider-container">
+                                            <div class="slide active">
+                                                <img src="фотографии_работ/фундплит/уклонгараж/гр1.jpg"
+                                                    alt="Плитный фундамент гараж - фото 1">
+                                            </div>
+                                            <div class="slide">
+                                                <img src="фотографии_работ/фундплит/уклонгараж/гр2.jpg"
+                                                    alt="Плитный фундамент гараж - фото 2">
+                                            </div>
+                                            <div class="slide">
+                                                <img src="фотографии_работ/фундплит/уклонгараж/гр3.jpg"
+                                                    alt="Плитный фундамент гараж - фото 3">
+                                            </div>
+                                            <div class="slide">
+                                                <img src="фотографии_работ/фундплит/уклонгараж/гр4.jpg"
+                                                    alt="Плитный фундамент гараж - фото 4">
+                                            </div>
+                                        </div>
+
+                                        <button class="slider-btn prev-btn">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </button>
+                                        <button class="slider-btn next-btn">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </button>
+                                        <div class="slider-indicators">
+                                            <span class="indicator active" data-slide="0"></span>
+                                            <span class="indicator" data-slide="1"></span>
+                                            <span class="indicator" data-slide="2"></span>
+                                            <span class="indicator" data-slide="3"></span>
+                                        </div>
+                                        <div class="slider-counter">
+                                            <span class="current-slide">1</span> / <span class="total-slides">4</span>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio-info">
+                                        <h3>Наклоненный фундамент для гаража</h3>
+                                        <p>Плитный фундамент с уклоном для организации естественного стока воды. Уклон
+                                            2%, толщина плиты 250 мм.</p>
+                                    </div>
+                                </div>
+
+                                <div class="portfolio-item">
+                                    <div class="portfolio-slider">
+                                        <div class="slider-container">
+                                            <div class="slide active">
+                                                <img src="фотографии_работ/фундплит/промышленный/плита1.jpg"
+                                                    alt="Промышленный плитный фундамент - фото 1">
+                                            </div>
+                                            <div class="slide">
+                                                <img src="фотографии_работ/фундплит/промышленный/плита2.jpg"
+                                                    alt="Промышленный плитный фундамент - фото 2">
+                                            </div>
+                                            <div class="slide">
+                                                <img src="фотографии_работ/фундплит/промышленный/плита3.jpg"
+                                                    alt="Промышленный плитный фундамент - фото 3">
+                                            </div>
+                                        </div>
+
+                                        <button class="slider-btn prev-btn">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </button>
+                                        <button class="slider-btn next-btn">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </button>
+                                        <div class="slider-indicators">
+                                            <span class="indicator active" data-slide="0"></span>
+                                            <span class="indicator" data-slide="1"></span>
+                                            <span class="indicator" data-slide="2"></span>
+                                        </div>
+                                        <div class="slider-counter">
+                                            <span class="current-slide">1</span> / <span class="total-slides">3</span>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio-info">
+                                        <h3>Промышленный плитный фундамент</h3>
+                                        <p>Усиленная монолитная плита для промышленного оборудования. Толщина 400 мм,
+                                            двойное армирование.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Ростверк -->
+                            <div class="foundation-tab" data-foundation="ростверк">
+                                <div class="portfolio-item">
+                                    <div class="portfolio-slider">
+                                        <div class="slider-container">
+                                            <div class="slide active">
+                                                <img src="фотографии_работ/фундаментРостверк/дом1/ростверк1.jpg"
+                                                    alt="Ростверк на свайном поле - фото 1">
+                                            </div>
+                                            <div class="slide">
+                                                <img src="фотографии_работ/фундаментРостверк/дом1/ростверк2.jpg"
+                                                    alt="Ростверк на свайном поле - фото 2">
+                                            </div>
+                                            <div class="slide">
+                                                <img src="фотографии_работ/фундаментРостверк/дом1/ростверк3.jpg"
+                                                    alt="Ростверк на свайном поле - фото 3">
+                                            </div>
+                                            <div class="slide">
+                                                <img src="фотографии_работ/фундаментРостверк/дом1/ростверк4.jpg"
+                                                    alt="Ростверк на свайном поле - фото 4">
+                                            </div>
+                                        </div>
+
+                                        <button class="slider-btn prev-btn">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </button>
+                                        <button class="slider-btn next-btn">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </button>
+                                        <div class="slider-indicators">
+                                            <span class="indicator active" data-slide="0"></span>
+                                            <span class="indicator" data-slide="1"></span>
+                                            <span class="indicator" data-slide="2"></span>
+                                            <span class="indicator" data-slide="3"></span>
+                                        </div>
+                                        <div class="slider-counter">
+                                            <span class="current-slide">1</span> / <span class="total-slides">4</span>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio-info">
+                                        <h3>Ростверк на свайном поле</h3>
+                                        <p>Высокий ростверк для дома на склоне с буронабивными сваями. Высота ростверка
+                                            600 мм, диаметр свай 300 мм.</p>
+                                    </div>
+                                </div>
+
+                                <div class="portfolio-item">
+                                    <div class="portfolio-slider">
+                                        <div class="slider-container">
+                                            <div class="slide active">
+                                                <img src="фотографии_работ/фундаментРостверк/каркасник/ростверк1.jpg"
+                                                    alt="Ростверк для каркасного дома - фото 1">
+                                            </div>
+                                            <div class="slide">
+                                                <img src="фотографии_работ/фундаментРостверк/каркасник/ростверк2.jpg"
+                                                    alt="Ростверк для каркасного дома - фото 2">
+                                            </div>
+                                            <div class="slide">
+                                                <img src="фотографии_работ/фундаментРостверк/каркасник/ростверк3.jpg"
+                                                    alt="Ростверк для каркасного дома - фото 3">
+                                            </div>
+                                        </div>
+
+                                        <button class="slider-btn prev-btn">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </button>
+                                        <button class="slider-btn next-btn">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </button>
+                                        <div class="slider-indicators">
+                                            <span class="indicator active" data-slide="0"></span>
+                                            <span class="indicator" data-slide="1"></span>
+                                            <span class="indicator" data-slide="2"></span>
+                                        </div>
+                                        <div class="slider-counter">
+                                            <span class="current-slide">1</span> / <span class="total-slides">3</span>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio-info">
+                                        <h3>Ростверк для каркасного дома</h3>
+                                        <p>Монолитный ростверк по винтовым сваям для каркасного дома. Ширина ростверка
+                                            400 мм, высота 500 мм.</p>
+                                    </div>
+                                </div>
+
+                                <div class="portfolio-item">
+                                    <div class="portfolio-slider">
+                                        <div class="slider-container">
+                                            <div class="slide active">
+                                                <img src="фотографии_работ/фундаментРостверк/промышленный/промростверк1.jpg"
+                                                    alt="Промышленный ростверк - фото 1">
+                                            </div>
+                                            <div class="slide">
+                                                <img src="фотографии_работ/фундаментРостверк/промышленный/промростверк2.jpg"
+                                                    alt="Промышленный ростверк - фото 2">
+                                            </div>
+                                        </div>
+
+                                        <button class="slider-btn prev-btn">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </button>
+                                        <button class="slider-btn next-btn">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </button>
+                                        <div class="slider-indicators">
+                                            <span class="indicator active" data-slide="0"></span>
+                                            <span class="indicator" data-slide="1"></span>
+                                        </div>
+                                        <div class="slider-counter">
+                                            <span class="current-slide">1</span> / <span class="total-slides">2</span>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio-info">
+                                        <h3>Промышленный ростверк</h3>
+                                        <p>Усиленный ростверк для промышленного здания. Сечение 600×800 мм,
+                                            предварительно напряженная арматура.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Контент для перекрытий -->
+                            <div class="portfolio-grid">
+                                <div class="portfolio-item subcategory-item" data-subcategory="3п"
+                                    style="display: none; opacity: 0;">
+                                    <div class="portfolio-slider">
+                                        <div class="slider-container">
+                                            <div class="slide active">
+                                                <img src="фотографии_работ/перекрытия/дом1/перекрытие1.jpg"
+                                                    alt="Монолитные перекрытия коттеджа - фото 1">
+                                            </div>
+                                            <div class="slide">
+                                                <img src="фотографии_работ/перекрытия/дом1/перекрытие2.jpg"
+                                                    alt="Монолитные перекрытия коттеджа - фото 2">
+                                            </div>
+                                        </div>
+                                        <button class="slider-btn prev-btn">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </button>
+                                        <button class="slider-btn next-btn">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </button>
+                                        <div class="slider-indicators">
+                                            <span class="indicator active" data-slide="0"></span>
+                                            <span class="indicator" data-slide="1"></span>
+                                        </div>
+                                        <div class="slider-counter">
+                                            <span class="current-slide">1</span> / <span class="total-slides">2</span>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio-info">
+                                        <h3>Монолитные перекрытия коттеджа</h3>
+                                        <p>Бесшовные перекрытия с улучшенной звукоизоляцией. Толщина 200 мм, армирование
+                                            двойной
+                                            сеткой.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Колонны -->
+                                <div class="portfolio-item subcategory-item" data-subcategory="3к"
+                                    style="display: none; opacity: 0;">
+                                    <div class="portfolio-slider">
+                                        <div class="slider-container">
+                                            <div class="slide active">
+                                                <img src="фотографии_работ/колонны/дом1/колонна1.jpg"
+                                                    alt="Декоративные колонны для частного дома - фото 1">
+                                            </div>
+                                            <div class="slide">
+                                                <img src="фотографии_работ/колонны/дом1/колонна2.jpg"
+                                                    alt="Декоративные колонны для частного дома - фото 2">
+                                            </div>
+                                        </div>
+                                        <button class="slider-btn prev-btn">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </button>
+                                        <button class="slider-btn next-btn">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </button>
+                                        <div class="slider-indicators">
+                                            <span class="indicator active" data-slide="0"></span>
+                                            <span class="indicator" data-slide="1"></span>
+                                        </div>
+                                        <div class="slider-counter">
+                                            <span class="current-slide">1</span> / <span class="total-slides">2</span>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio-info">
+                                        <h3>Колонны для частного дома</h3>
+                                        <p>Декоративные монолитные колонны с отделкой под камень. Диаметр 400 мм, высота
+                                            3.2 м.
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- Фундаменты -->
-                        <div class="portfolio-item subcategory-item" data-subcategory="3ф">
-                            <div class="portfolio-img">Фото фундамента дома</div>
-                            <div class="portfolio-info">
-                                <h3>Фундамент загородного дома</h3>
-                                <p>Утепленная шведская плита с системой теплого пола.</p>
+                        <!-- Контент для гражданского строительства -->
+                        <div id="tab-1" class="tabs_content">
+                            <h3 class="content-title">Гражданское строительство</h3>
+                            <p>Мы реализуем проекты многоквартирных домов, детских садов, школ, ФОК и бассейны любой
+                                сложности,
+                                обеспечивая высокое качество и соблюдение сроков.</p>
+
+                            <div class="subcategory-buttons">
+                                <button class="subcategory-btn active" data-subcategory="1гз">Школы</button>
+                                <button class="subcategory-btn" data-subcategory="1к">Детские сады</button>
+                                <button class="subcategory-btn" data-subcategory="1ф">ФОК</button>
+                                <button class="subcategory-btn" data-subcategory="1п">Бассейны</button>
+                            </div>
+
+                            <div class="portfolio-grid">
+                                <!-- Школы -->
+                                <div class="portfolio-item subcategory-item" data-subcategory="1гз">
+                                    <div class="portfolio-slider">
+                                        <div class="slider-container">
+                                            <div class="slide active">
+                                                <img src="фотографии_работ/гражданские/школы/школа123/photo1.jpg"
+                                                    alt="Школа №123 в СПб - фото 1">
+                                            </div>
+                                            <div class="slide">
+                                                <img src="фотографии_работ/гражданские/школы/школа123/photo2.jpg"
+                                                    alt="Школа №123 в СПб - фото 2">
+                                            </div>
+                                        </div>
+                                        <button class="slider-btn prev-btn">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </button>
+                                        <button class="slider-btn next-btn">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </button>
+                                        <div class="slider-indicators">
+                                            <span class="indicator active" data-slide="0"></span>
+                                            <span class="indicator" data-slide="1"></span>
+                                        </div>
+                                        <div class="slider-counter">
+                                            <span class="current-slide">1</span> / <span class="total-slides">2</span>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio-info">
+                                        <h3>Школа №123 в СПб</h3>
+                                        <p>Трехэтажное монолитное здание школы на 800 учащихся. Общая площадь 6500 м².
+                                            Срок
+                                            строительства - 14 месяцев.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Детские сады -->
+                                <div class="portfolio-item subcategory-item" data-subcategory="1к"
+                                    style="display: none; opacity: 0;">
+                                    <div class="portfolio-slider">
+                                        <div class="slider-container">
+                                            <div class="slide active">
+                                                <img src="фотографии_работ/гражданские/детсады/солнышко/photo1.jpg"
+                                                    alt="Детский сад Солнышко - фото 1">
+                                            </div>
+                                        </div>
+                                        <div class="portfolio-info">
+                                            <h3>Детский сад "Солнышко"</h3>
+                                            <p>Двухэтажное здание детского сада на 150 мест. Безопасные монолитные
+                                                конструкции,
+                                                специализированные игровые зоны.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- ФОК -->
+                                <div class="portfolio-item subcategory-item" data-subcategory="1ф"
+                                    style="display: none; opacity: 0;">
+                                    <div class="portfolio-slider">
+                                        <div class="slider-container">
+                                            <div class="slide active">
+                                                <img src="фотографии_работ/гражданские/фок/фок1/photo1.jpg"
+                                                    alt="Физкультурно-оздоровительный комплекс - фото 1">
+                                            </div>
+                                        </div>
+                                        <div class="portfolio-info">
+                                            <h3>Физкультурно-оздоровительный комплекс</h3>
+                                            <p>Монолитный ФОК с бассейном и спортивными залами. Вместимость до 200
+                                                человек
+                                                одновременно.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Бассейны -->
+                                <div class="portfolio-item subcategory-item" data-subcategory="1п"
+                                    style="display: none; opacity: 0;">
+                                    <div class="portfolio-slider">
+                                        <div class="slider-container">
+                                            <div class="slide active">
+                                                <img src="фотографии_работ/гражданские/бассейны/волна/photo1.jpg"
+                                                    alt="Спортивный бассейн Волна - фото 1">
+                                            </div>
+                                        </div>
+                                        <div class="portfolio-info">
+                                            <h3>Спортивный бассейн "Волна"</h3>
+                                            <p>50-метровый бассейн с монолитными конструкциями. 8 дорожек, современная
+                                                система
+                                                фильтрации.</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- Перекрытия -->
-                        <div class="portfolio-item subcategory-item" data-subcategory="3п">
-                            <div class="portfolio-img">Фото перекрытия дома</div>
-                            <div class="portfolio-info">
-                                <h3>Монолитные перекрытия коттеджа</h3>
-                                <p>Бесшовные перекрытия с улучшенной звукоизоляцией.</p>
+                        <!-- Контент для промышленных объектов -->
+                        <div id="tab-2" class="tabs_content">
+                            <h3 class="content-title">Промышленное строительство</h3>
+                            <p>Строительство промышленных объектов, складов, заводов и других коммерческих сооружений с
+                                применением современных технологий.</p>
+
+                            <div class="subcategory-buttons">
+                                <button class="subcategory-btn active" data-subcategory="2гз">Ангары</button>
+                                <button class="subcategory-btn" data-subcategory="2к">Склады</button>
+                                <button class="subcategory-btn" data-subcategory="2ф">Быстро возводимые здания</button>
+                                <button class="subcategory-btn" data-subcategory="2п">Заводы</button>
+                            </div>
+
+                            <div class="portfolio-grid">
+                                <!-- Ангары -->
+                                <div class="portfolio-item subcategory-item" data-subcategory="2гз">
+                                    <div class="portfolio-slider">
+                                        <div class="slider-container">
+                                            <div class="slide active">
+                                                <img src="фотографии_работ/промышленные/ангары/ангар1/photo1.jpg"
+                                                    alt="Производственный ангар - фото 1">
+                                            </div>
+                                            <div class="slide">
+                                                <img src="фотографии_работ/промышленные/ангары/ангар1/photo2.jpg"
+                                                    alt="Производственный ангар - фото 2">
+                                            </div>
+                                        </div>
+                                        <button class="slider-btn prev-btn">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </button>
+                                        <button class="slider-btn next-btn">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </button>
+                                        <div class="slider-indicators">
+                                            <span class="indicator active" data-slide="0"></span>
+                                            <span class="indicator" data-slide="1"></span>
+                                        </div>
+                                        <div class="slider-counter">
+                                            <span class="current-slide">1</span> / <span class="total-slides">2</span>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio-info">
+                                        <h3>Производственный ангар</h3>
+                                        <p>Цельномонолитный ангар для промышленного оборудования. Площадь 1200 м²,
+                                            высота
+                                            потолков 8 м.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Склады -->
+                                <div class="portfolio-item subcategory-item" data-subcategory="2к"
+                                    style="display: none; opacity: 0;">
+                                    <div class="portfolio-slider">
+                                        <div class="slider-container">
+                                            <div class="slide active">
+                                                <img src="фотографии_работ/промышленные/склады/склад1/photo1.jpg"
+                                                    alt="Логистический склад - фото 1">
+                                            </div>
+                                        </div>
+                                        <div class="portfolio-info">
+                                            <h3>Логистический склад</h3>
+                                            <p>Многоуровневый складской комплекс с монолитными перекрытиями. Общая
+                                                площадь 5000
+                                                м², система климат-контроля.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Быстро возводимые здания -->
+                                <div class="portfolio-item subcategory-item" data-subcategory="2ф"
+                                    style="display: none; opacity: 0;">
+                                    <div class="portfolio-slider">
+                                        <div class="slider-container">
+                                            <div class="slide active">
+                                                <img src="фотографии_работ/промышленные/быстровозводимые/админ/photo1.jpg"
+                                                    alt="Административный корпус - фото 1">
+                                            </div>
+                                        </div>
+                                        <div class="portfolio-info">
+                                            <h3>Административный корпус</h3>
+                                            <p>Быстровозводимое здание с монолитным каркасом. Срок строительства - 3
+                                                месяца,
+                                                площадь 800 м².</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Заводы -->
+                                <div class="portfolio-item subcategory-item" data-subcategory="2п"
+                                    style="display: none; opacity: 0;">
+                                    <div class="portfolio-slider">
+                                        <div class="slider-container">
+                                            <div class="slide active">
+                                                <img src="фотографии_работ/промышленные/заводы/завод1/photo1.jpg"
+                                                    alt="Производственный завод - фото 1">
+                                            </div>
+                                        </div>
+                                        <div class="portfolio-info">
+                                            <h3>Производственный завод</h3>
+                                            <p>Промышленный комплекс с монолитными цехами. Общая площадь 15000 м²,
+                                                современные
+                                                инженерные системы.</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Контент для гражданского строительства -->
-                <div id="tab-1" class="tabs_content">
-                    <h3 class="content-title">Гражданское строительство</h3>
-                    <p>Мы реализуем проекты многоквартирных домов, детских садов, школ, ФОК и бассейны любой сложности,
-                        обеспечивая высокое качество и
-                        соблюдение сроков.</p>
-
-                    <div class="subcategory-buttons">
-                        <button class="subcategory-btn active" data-subcategory="1гз" id="11гз">Школы</button>
-                        <button class="subcategory-btn" data-subcategory="1колонны" id="11к">Деткие сады</button>
-                        <button class="subcategory-btn" data-subcategory="1фд" id="11ф">ФОК</button>
-                        <button class="subcategory-btn" data-subcategory="1перек" id="11п">Бассейны</button>
-                    </div>
-
-                    <div class="portfolio-grid">
-                        <!-- Готовые здания -->
-                        <div class="portfolio-item subcategory-item" data-subcategory="1гз">
-                            <div class="portfolio-img">Фото готового здания</div>
-                            <div class="portfolio-info">
-                                <h3>ЖК "Северный"</h3>
-                                <p>Многоэтажный жилой комплекс с монолитным каркасом.</p>
-                            </div>
-                        </div>
-                        <div class="portfolio-item subcategory-item" data-subcategory="1гз">
-                            <div class="portfolio-img">Фото готового здания</div>
-                            <div class="portfolio-info">
-                                <h3>Бизнес-центр "Престиж"</h3>
-                                <p>Офисное здание с современной архитектурой.</p>
-                            </div>
-                        </div>
-
-                        <!-- Колонны -->
-                        <div class="portfolio-item subcategory-item" data-subcategory="1колонны">
-                            <div class="portfolio-img">Фото колонны</div>
-                            <div class="portfolio-info">
-                                <h3>Колонны для ЖК "Северный"</h3>
-                                <p>Монолитные колонны диаметром 400 мм с усиленным армированием.</p>
-                            </div>
-                        </div>
-                        <div class="portfolio-item subcategory-item" data-subcategory="1колонны">
-                            <div class="portfolio-img">Фото колонны</div>
-                            <div class="portfolio-info">
-                                <h3>Колонны торгового центра</h3>
-                                <p>Декоративные колонны с финишной отделкой.</p>
-                            </div>
-                        </div>
-
-                        <!-- Фундаменты -->
-                        <div class="portfolio-item subcategory-item" data-subcategory="1фд">
-                            <div class="portfolio-img">Фото фундамента</div>
-                            <div class="portfolio-info">
-                                <h3>Фундамент ЖК "Центральный"</h3>
-                                <p>Монолитная плита толщиной 800 мм с противодействием грунтовым водам.</p>
-                            </div>
-                        </div>
-
-                        <!-- Перекрытия -->
-                        <div class="portfolio-item subcategory-item" data-subcategory="1перек">
-                            <div class="portfolio-img">Фото перекрытия</div>
-                            <div class="portfolio-info">
-                                <h3>Перекрытия для ЖК "Южный"</h3>
-                                <p>Бесшовные монолитные перекрытия с улучшенными теплоизоляционными свойствами.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Аналогично для остальных вкладок (промышленные объекты и ИЖС) -->
-                <!-- Контент для промышленных объектов -->
-                <div id="tab-2" class="tabs_content">
-                    <h3 class="content-title">Промышленное строительство</h3>
-                    <p>Строительство промышленных объектов, складов, заводов и других коммерческих сооружений.</p>
-
-                    <div class="subcategory-buttons">
-                        <button class="subcategory-btn active" data-subcategory="2гз" id="22гз">Ангары</button>
-                        <button class="subcategory-btn" data-subcategory="2к" id="22к">Склады</button>
-                        <button class="subcategory-btn" data-subcategory="2ф" id="22ф">Быстро возводимые здания</button>
-                        <button class="subcategory-btn" data-subcategory="2п" id="22п">Заводы</button>
-                        <button class="subcategory-btn" data-subcategory="2п" id="22п">удали</button>
-                    </div>
-
-                    <div class="portfolio-grid">
-                        <!-- Готовые здания -->
-                        <div class="portfolio-item subcategory-item" data-subcategory="2гз">
-                            <div class="portfolio-img">Фото промышленного здания</div>
-                            <div class="portfolio-info">
-                                <h3>Производственный цех</h3>
-                                <p>Цельномонолитный цех с большепролетными перекрытиями.</p>
-                            </div>
-                        </div>
-
-                        <!-- Колонны -->
-                        <div class="portfolio-item subcategory-item" data-subcategory="2к">
-                            <div class="portfolio-img">Фото промышленной колонны</div>
-                            <div class="portfolio-info">
-                                <h3>Колонны для завода "ТехноПром"</h3>
-                                <p>Усиленные колонны для поддержки тяжелого промышленного оборудования.</p>
-                            </div>
-                        </div>
-
-                        <!-- Фундаменты -->
-                        <div class="portfolio-item subcategory-item" data-subcategory="2ф">
-                            <div class="portfolio-img">Фото промышленного фундамента</div>
-                            <div class="portfolio-info">
-                                <h3>Фундамент логистического центра</h3>
-                                <p>Усиленный фундамент для многоуровневого складского комплекса.</p>
-                            </div>
-                        </div>
-
-                        <!-- Покрытия -->
-                        <div class="portfolio-item subcategory-item" data-subcategory="2п">
-                            <div class="portfolio-img">Фото покрытия</div>
-                            <div class="portfolio-info">
-                                <h3>Промышленные перекрытия</h3>
-                                <p>Специальные покрытия для производственных помещений.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
     </section>
 
     <!-- Варианты сотрудничества -->

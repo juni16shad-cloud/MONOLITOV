@@ -619,47 +619,32 @@ header {
 
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 25px;
-    margin-top: 20px;
-
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
 }
 
 .portfolio-item {
     background: white;
-    border-radius: 10px;
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    min-height: 500px;
 }
 
 .portfolio-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    border-color: var(--gold);
 }
 
-.portfolio-img {
-    height: 200px;
-    background: linear-gradient(45deg, var(--dark-brown), var(--black));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 1.2rem;
-    font-weight: 600;
-    position: relative;
-    overflow: hidden;
-}
 
-.portfolio-img::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.2);
-}
+
 
 .portfolio-info {
     padding: 20px;
@@ -2134,23 +2119,21 @@ footer {
     }
 }
 
-.tabs_navigation {
-    justify-content: center;
-    /* Выравнивание по центру */
-    flex-wrap: wrap;
-    /* Перенос на мобильных устройствах */
+
+.portfolio-item {
+    animation: fadeInUp 0.6s ease-out;
 }
 
-.raboti {
+.categories.raboti {
+    padding: 60px 0;
     background-color: #584b3e;
-    padding: 60px 0 30px;
-    text-align: center;
 }
 
 .raboti .section-title {
     color: white;
-    margin-bottom: 0;
+    margin-bottom: 40px;
     font-size: 2.2rem;
+    text-align: center;
 }
 
 .raboti .section-title:after {
@@ -2162,18 +2145,559 @@ footer {
     margin: 15px auto;
 }
 
-.section-title {
-    margin-bottom: 30px;
-    /* Отступ снизу для заголовка */
-}
-
+/* Tabs Navigation */
 .tabs_navigation {
+    display: flex;
+    background: #584b3e;
+    padding: 0 20px;
+    position: relative;
     justify-content: center;
     flex-wrap: wrap;
 }
 
+.tabs_title {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 18px 25px;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    justify-content: center;
+    min-width: 200px;
+}
 
-/* Для мобильной адаптации */
+.tabs_title i {
+    font-size: 1.3rem;
+    transition: transform 0.3s ease;
+}
+
+.tabs_title:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.tabs_title:hover i {
+    transform: translateY(-2px);
+}
+
+.tabs_title.active {
+    color: var(--gold);
+    background: var(--dark-brown);
+    font-weight: 700;
+}
+
+.tabs_title.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 4px;
+    background: var(--gold);
+    border-radius: 2px 2px 0 0;
+}
+
+.tabs_title.active::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(212, 175, 55, 0.1), transparent);
+}
+
+/* Tabs Content */
+.tabs_body {
+    padding: 30px 40px;
+    background: #f8f5f2;
+}
+
+.tabs_content {
+    display: none;
+    animation: fadeIn 0.5s ease forwards;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tabs_content.active {
+    display: block;
+}
+
+.content-title {
+    color: var(--dark-brown);
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tabs_content p {
+    color: #6d5d4b;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* Subcategory Buttons */
+.subcategory-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+.subcategory-btn {
+    padding: 14px 28px;
+    background: white;
+    border: 2px solid #e8dfd4;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #5a4b3c;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.subcategory-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.subcategory-btn:hover::before {
+    left: 100%;
+}
+
+.subcategory-btn:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.2);
+}
+
+.subcategory-btn.active {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: white;
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+}
+
+/* Portfolio Grid - 2 карточки в ширину */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.portfolio-item {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    min-height: 500px;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    border-color: var(--gold);
+}
+
+/* Portfolio Slider */
+.portfolio-slider {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    background: #000;
+    flex-shrink: 0;
+}
+
+.slider-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    flex: 0 0 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover .slide img {
+    transform: scale(1.05);
+}
+
+/* Slider Controls */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.slider-btn:hover {
+    background: rgba(255, 255, 255, 1);
+}
+
+.prev-btn {
+    left: 15px;
+}
+
+.next-btn {
+    right: 15px;
+}
+
+.slider-btn i {
+    color: #333;
+    font-size: 1rem;
+}
+
+/* Slider Indicators */
+.slider-indicators {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    background: rgba(255, 255, 255, 1);
+    transform: scale(1.2);
+}
+
+/* Slider Counter */
+.slider-counter {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    z-index: 10;
+}
+
+/* Portfolio Info */
+.portfolio-info {
+    padding: 20px;
+    background: linear-gradient(to bottom, white, #fafafa);
+}
+
+.portfolio-info h3 {
+    color: var(--dark-brown);
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    line-height: 1.3;
+    min-height: 3.2em;
+}
+
+.portfolio-info p {
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* House Tabs */
+.house-tabs-container,
+.foundation-tabs-container {
+    margin-top: 30px;
+}
+
+.house-tabs-navigation,
+.foundation-tabs-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.house-tab-btn,
+.foundation-tab-btn {
+    padding: 10px 20px;
+    background: #fff;
+    border: 2px solid #dee2e6;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #495057;
+    transition: all 0.3s ease;
+}
+
+.house-tab-btn.active,
+.house-tab-btn:hover,
+.foundation-tab-btn.active,
+.foundation-tab-btn:hover {
+    background: #17a2b8;
+    color: #fff;
+    border-color: #17a2b8;
+}
+
+.house-tabs-content,
+.foundation-tabs-content {
+    position: relative;
+}
+
+.house-tab,
+.foundation-tab {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.house-tab.active,
+.foundation-tab.active {
+    display: block;
+}
+
+/* Subcategory Items */
+.subcategory-item {
+    opacity: 0;
+    display: none;
+    transition: opacity 0.5s ease;
+}
+
+.subcategory-item.active {
+    opacity: 1;
+    display: block;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        max-width: 900px;
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        gap: 20px;
+    }
+
+    .tabs_navigation {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tabs_title {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+
+    .subcategory-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .subcategory-btn {
+        width: 100%;
+        max-width: 250px;
+        text-align: center;
+    }
+
+    .portfolio-slider {
+        height: 250px;
+    }
+
+    .house-tabs-navigation,
+    .foundation-tabs-navigation {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .house-tab-btn,
+    .foundation-tab-btn {
+        width: 100%;
+        max-width: 250px;
+        text-align: center;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .content-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tabs {
+        margin: 10px 20px !important;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .portfolio-slider {
+        height: 200px;
+    }
+
+    .slider-btn {
+        width: 35px;
+        height: 35px;
+    }
+
+    .portfolio-info {
+        padding: 15px;
+    }
+
+    .portfolio-info h3 {
+        font-size: 1.1rem;
+    }
+}
+
+/* Ensure images are always fully visible */
+.slide img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Fix for single slide items */
+.portfolio-slider:has(.slider-container .slide:only-child) {
+    height: auto;
+}
+
+.portfolio-slider:has(.slider-container .slide:only-child) .slide img {
+    object-fit: contain;
+    max-height: 400px;
+}
+
+/* Loading state for images */
+.slide img {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Remove loading animation when image is loaded */
+.slide img.loaded {
+    animation: none;
+    background: none;
+}
+
+/* Центрирование контента для случаев, когда карточек меньше 2 */
+.portfolio-grid:has(.portfolio-item:only-child) {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+}
+
+.portfolio-grid:has(.portfolio-item:nth-child(2)):not(:has(.portfolio-item:nth-child(3))) {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* Адаптация для мобильных */
 @media (max-width: 768px) {
     .tabs_navigation {
         flex-direction: row;
@@ -2185,5 +2709,173 @@ footer {
         flex: 1;
         min-width: 120px;
         text-align: center;
+    }
+}
+
+/* Стили для вкладок фундаментов */
+.foundation-tabs-container {
+    margin: 25px 0;
+    background: white;
+    border-radius: 12px;
+    padding: 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e8dfd4;
+}
+
+.foundation-tabs-navigation {
+    display: flex;
+    background: #f8f5f2;
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+    border-bottom: 2px solid var(--gold);
+}
+
+.foundation-tab-btn {
+    flex: 1;
+    padding: 18px 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--dark-brown);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.foundation-tab-btn:hover {
+    background: rgba(212, 175, 55, 0.1);
+    color: var(--gold);
+}
+
+.foundation-tab-btn.active {
+    background: var(--gold);
+    color: white;
+}
+
+.foundation-tab-btn.active::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--gold);
+}
+
+.foundation-tabs-content {
+    padding: 30px;
+}
+
+.foundation-tab {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.foundation-tab.active {
+    display: block;
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+    .foundation-tabs-navigation {
+        flex-direction: column;
+    }
+
+    .foundation-tab-btn {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+
+    .foundation-tabs-content {
+        padding: 20px 15px;
+    }
+}
+
+/* Стили для вкладок типов домов */
+.house-tabs-container {
+    margin: 25px 0;
+    background: white;
+    border-radius: 12px;
+    padding: 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e8dfd4;
+}
+
+.house-tabs-navigation {
+    display: flex;
+    background: #f8f5f2;
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+    border-bottom: 2px solid var(--gold);
+}
+
+.house-tab-btn {
+    flex: 1;
+    padding: 18px 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--dark-brown);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.house-tab-btn:hover {
+    background: rgba(212, 175, 55, 0.1);
+    color: var(--gold);
+}
+
+.house-tab-btn.active {
+    background: var(--gold);
+    color: white;
+}
+
+.house-tab-btn.active::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--gold);
+}
+
+.house-tabs-content {
+    padding: 30px;
+}
+
+.house-tab {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.house-tab.active {
+    display: block;
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+    .house-tabs-navigation {
+        flex-direction: column;
+    }
+
+    .house-tab-btn {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+
+    .house-tabs-content {
+        padding: 20px 15px;
     }
 }
