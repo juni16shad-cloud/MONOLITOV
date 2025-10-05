@@ -60,7 +60,7 @@ header {
 }
 
 .logo img {
-    width: 140px;
+    width: 100px;
     height: auto;
     object-fit: contain;
     transition: all 0.3s ease;
@@ -541,7 +541,6 @@ header {
 
 .tabs_content {
     display: none;
-    animation: fadeIn 0.5s ease forwards;
     max-width: 1200px;
     /* Ограничиваем максимальную ширину */
     margin: 0 auto;
@@ -550,17 +549,6 @@ header {
     /* Добавляем отступы по бокам */
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
 .tabs_content.active {
     display: block;
@@ -638,8 +626,6 @@ header {
 }
 
 .portfolio-item:hover {
-    transform: translateY(-12px) scale(1.02);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
     border-color: var(--gold);
 }
 
@@ -2119,11 +2105,6 @@ footer {
     }
 }
 
-
-.portfolio-item {
-    animation: fadeInUp 0.6s ease-out;
-}
-
 .categories.raboti {
     padding: 60px 0;
     background-color: #584b3e;
@@ -2228,17 +2209,7 @@ footer {
     padding: 0 20px;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
 .tabs_content.active {
     display: block;
@@ -2297,6 +2268,7 @@ footer {
     transition: left 0.5s ease;
 }
 
+
 .subcategory-btn:hover::before {
     left: 100%;
 }
@@ -2331,7 +2303,6 @@ footer {
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border: 1px solid #f0f0f0;
     display: flex;
     flex-direction: column;
@@ -2341,7 +2312,7 @@ footer {
 }
 
 .portfolio-item:hover {
-    transform: translateY(-12px) scale(1.02);
+
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
     border-color: var(--gold);
 }
@@ -2352,7 +2323,7 @@ footer {
     width: 100%;
     height: 300px;
     overflow: hidden;
-    background: #000;
+    background: rgba(255, 255, 255, 0.8);
     flex-shrink: 0;
 }
 
@@ -2361,14 +2332,19 @@ footer {
     width: 100%;
     height: 100%;
     transition: transform 0.5s ease;
+    position: relative;
 }
 
 .slide {
     flex: 0 0 100%;
     height: 100%;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
+}
+
+.slide.active {
+    display: flex;
 }
 
 .slide img {
@@ -2377,11 +2353,6 @@ footer {
     object-fit: cover;
     object-position: center;
     display: block;
-    transition: transform 0.3s ease;
-}
-
-.portfolio-item:hover .slide img {
-    transform: scale(1.05);
 }
 
 /* Slider Controls */
@@ -2542,18 +2513,6 @@ footer {
     display: block;
 }
 
-/* Animations */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
 /* Responsive Design */
 @media (max-width: 1024px) {
@@ -2664,28 +2623,6 @@ footer {
     max-height: 400px;
 }
 
-/* Loading state for images */
-.slide img {
-    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-    background-size: 200% 100%;
-    animation: loading 1.5s infinite;
-}
-
-@keyframes loading {
-    0% {
-        background-position: 200% 0;
-    }
-
-    100% {
-        background-position: -200% 0;
-    }
-}
-
-/* Remove loading animation when image is loaded */
-.slide img.loaded {
-    animation: none;
-    background: none;
-}
 
 /* Центрирование контента для случаев, когда карточек меньше 2 */
 .portfolio-grid:has(.portfolio-item:only-child) {
