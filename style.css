@@ -1432,15 +1432,38 @@ footer {
 
 /* Адаптация табов */
 @media (max-width: 768px) {
+    .tabs {
+        margin: 10px 15px !important;
+        border-radius: 8px;
+    }
+
     .tabs_navigation {
         flex-direction: column;
         padding: 0;
+        gap: 1px;
+        background: var(--dark-brown);
     }
 
     .tabs_title {
-        padding: 15px;
+        min-width: auto;
+        padding: 16px 20px;
         font-size: 1rem;
-        justify-content: center;
+        justify-content: flex-start;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .tabs_title:last-child {
+        border-bottom: none;
+    }
+
+    .tabs_title.active::after {
+        display: none;
+    }
+
+    .tabs_title.active {
+        background: var(--gold);
+        color: var(--black);
+        font-weight: 700;
     }
 
     .tabs_body {
@@ -1448,25 +1471,51 @@ footer {
     }
 
     .tabs_content {
-        padding: 0 10px;
+        padding: 0 5px;
     }
 
     .content-title {
         font-size: 1.4rem;
-        justify-content: center;
         text-align: center;
+        justify-content: center;
+        margin-bottom: 20px;
     }
-}
 
-/* Адаптация портфолио */
-@media (max-width: 768px) {
+    .tabs_content p {
+        font-size: 1rem;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    /* Адаптация кнопок подкатегорий */
+    .subcategory-buttons {
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 25px;
+    }
+
+    .subcategory-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 16px 20px;
+        font-size: 0.95rem;
+    }
+
+    /* Адаптация портфолио */
     .portfolio-grid {
         grid-template-columns: 1fr;
-        gap: 15px;
+        gap: 20px;
+        margin-top: 20px;
     }
 
-    .portfolio-img {
-        height: 160px;
+    .portfolio-item {
+        min-height: auto;
+        margin: 0 auto;
+        max-width: 400px;
+    }
+
+    .portfolio-slider {
+        height: 250px;
     }
 
     .portfolio-info {
@@ -1474,7 +1523,55 @@ footer {
     }
 
     .portfolio-info h3 {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
+        min-height: auto;
+        margin-bottom: 8px;
+    }
+
+    /* Адаптация вкладок домов и фундаментов */
+    .house-tabs-navigation,
+    .foundation-tabs-navigation {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .house-tab-btn,
+    .foundation-tab-btn {
+        width: 100%;
+        padding: 14px 16px;
+        font-size: 0.9rem;
+        justify-content: center;
+    }
+
+    .house-tabs-content,
+    .foundation-tabs-content {
+        padding: 15px 0;
+    }
+
+    /* Улучшение слайдеров для мобильных */
+    .slider-btn {
+        width: 35px;
+        height: 35px;
+    }
+
+    .slider-btn i {
+        font-size: 0.9rem;
+    }
+
+    .slider-counter {
+        top: 10px;
+        right: 10px;
+        font-size: 0.7rem;
+        padding: 3px 8px;
+    }
+
+    .slider-indicators {
+        bottom: 10px;
+    }
+
+    .indicator {
+        width: 8px;
+        height: 8px;
     }
 }
 
@@ -1627,12 +1724,35 @@ footer {
 }
 
 @media (max-width: 480px) {
+    .tabs {
+        margin: 10px 10px !important;
+    }
+
     .tabs_body {
         padding: 15px 10px;
     }
 
-    .tabs_content {
-        padding: 0 5px;
+    .content-title {
+        font-size: 1.3rem;
+    }
+
+    .portfolio-slider {
+        height: 200px;
+    }
+
+    .portfolio-info h3 {
+        font-size: 1.1rem;
+    }
+
+    .subcategory-btn {
+        padding: 14px 16px;
+        font-size: 0.9rem;
+    }
+
+    .house-tab-btn,
+    .foundation-tab-btn {
+        padding: 12px 14px;
+        font-size: 0.85rem;
     }
 }
 
@@ -1756,6 +1876,26 @@ footer {
     }
 }
 
+@media (max-width: 360px) {
+    .tabs_title {
+        padding: 14px 16px;
+        font-size: 0.95rem;
+    }
+
+    .portfolio-slider {
+        height: 180px;
+    }
+
+    .portfolio-info {
+        padding: 12px;
+    }
+
+    .slider-btn {
+        width: 30px;
+        height: 30px;
+    }
+}
+
 @media (max-width: 900px) {
     #mobile-nav {
         display: block;
@@ -1765,6 +1905,24 @@ footer {
     .burger-menu {
         display: block;
         /* Показываем бургер-меню на мобильных */
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+
+    .tabs_title,
+    .subcategory-btn,
+    .house-tab-btn,
+    .foundation-tab-btn,
+    .slider-btn {
+        min-height: 44px;
+    }
+
+    .subcategory-btn,
+    .house-tab-btn,
+    .foundation-tab-btn {
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
     }
 }
 
@@ -2627,11 +2785,11 @@ footer {
 /* Центрирование контента для случаев, когда карточек меньше 2 */
 .portfolio-grid:has(.portfolio-item:only-child) {
     grid-template-columns: 1fr;
-    max-width: 600px;
+    justify-items: center;
 }
 
 .portfolio-grid:has(.portfolio-item:nth-child(2)):not(:has(.portfolio-item:nth-child(3))) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 /* Адаптация для мобильных */
