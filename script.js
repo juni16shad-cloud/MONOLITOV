@@ -33,100 +33,126 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         return null;
     }
+    function handleMenuSubcategoryNavigation(hash) {
+        const subcategory = hash.substring(1); // убираем #
+        const mainTabNumber = subcategory.charAt(0); // первая цифра - основная вкладка
 
-    // Функция для сброса подкатегорий
-    function filterSubcategory(subcategory, tabContent) {
-        console.log('Filtering subcategory:', subcategory, 'in tab:', tabContent.id);
+        // Переключаем основную вкладку
+        const tabElement = document.querySelector(`.tabs_title[data-tab="${mainTabNumber}"]`);
+        if (tabElement) {
+            tabElement.click();
 
-        // Скрываем все контейнеры вкладок
+            // После переключения вкладки активируем подкатегорию
+            setTimeout(() => {
+                const activeTab = document.querySelector('.tabs_content.active');
+                if (activeTab) {
+                    const subcategoryBtn = activeTab.querySelector(`.subcategory-btn[data-subcategory="${subcategory}"]`);
+                    if (subcategoryBtn) {
+                        subcategoryBtn.click();
+                    }
+                }
+            }, 200);
+        }
+    }
+
+    function resetSubcategories(tabContent) {
+        const allPortfolioItems = tabContent.querySelectorAll('.portfolio-item');
+        const allSubcategoryContents = tabContent.querySelectorAll('.subcategory-content');
         const foundationTabsContainer = tabContent.querySelector('.foundation-tabs-container');
         const houseTabsContainer = tabContent.querySelector('.house-tabs-container');
-        const allSubcategoryContents = tabContent.querySelectorAll('.subcategory-content');
 
-        // Скрываем всё
+        // Сбрасываем отображение
+        allPortfolioItems.forEach(item => {
+            item.style.display = 'none';
+            item.style.opacity = '0';
+        });
+
+        allSubcategoryContents.forEach(content => {
+            content.style.display = 'none';
+        });
+
         if (foundationTabsContainer) foundationTabsContainer.style.display = 'none';
         if (houseTabsContainer) houseTabsContainer.style.display = 'none';
-        allSubcategoryContents.forEach(content => content.style.display = 'none');
 
-        // Для гражданского и промышленного строительства - простая фильтрация
-        if (subcategory.startsWith('1') || subcategory.startsWith('2')) {
-            // Скрываем все элементы портфолио
-            const allPortfolioItems = tabContent.querySelectorAll('.portfolio-item');
-            allPortfolioItems.forEach(item => {
-                item.style.display = 'none';
-                item.style.opacity = '0';
-            });
+        // Сбрасываем активные кнопки подкатегорий
+        const allButtons = tabContent.querySelectorAll('.subcategory-btn');
+        allButtons.forEach(btn => btn.classList.remove('active'));
+    }
+    // Функция для сброса подкатегорий
+function filterSubcategory(subcategory, tabContent) {
+    console.log('Filtering subcategory:', subcategory, 'in tab:', tabContent.id);
 
-            // Показываем элементы нужной подкатегории
-            const activeItems = tabContent.querySelectorAll(`.portfolio-item[data-subcategory="${subcategory}"]`);
-            activeItems.forEach(item => {
-                item.style.display = 'flex';
-                setTimeout(() => {
-                    item.style.opacity = '1';
-                }, 50);
-            });
+    // Скрываем все контейнеры вкладок
+    const foundationTabsContainer = tabContent.querySelector('.foundation-tabs-container');
+    const houseTabsContainer = tabContent.querySelector('.house-tabs-container');
+    const allSubcategoryContents = tabContent.querySelectorAll('.subcategory-content');
 
+    // Скрываем всё
+    if (foundationTabsContainer) foundationTabsContainer.style.display = 'none';
+    if (houseTabsContainer) houseTabsContainer.style.display = 'none';
+    allSubcategoryContents.forEach(content => {
+        content.style.display = 'none';
+        content.classList.remove('active');
+    });
+
+    // Убираем активный класс у всех portfolio-cards
+    const allPortfolioCards = tabContent.querySelectorAll('.portfolio-cards');
+    allPortfolioCards.forEach(cards => cards.classList.remove('active'));
+
+    // Для гражданского и промышленного строительства
+    if (subcategory.startsWith('1') || subcategory.startsWith('2')) {
+        // Показываем нужный subcategory-content
+        const activeContent = tabContent.querySelector(`.subcategory-content[data-subcategory="${subcategory}"]`);
+        if (activeContent) {
+            activeContent.style.display = 'block';
+            activeContent.classList.add('active');
+            
             // Инициализируем слайдеры после отображения
             setTimeout(() => {
                 initPortfolioSliders();
             }, 100);
-
         }
-        // Для ИЖС - сложная структура с вкладками
-        else if (subcategory.startsWith('3')) {
-            const simpleSubcategory = subcategory.replace('3', '');
+    }
+    // Для ИЖС - сложная структура с вкладками
+    else if (subcategory.startsWith('3')) {
+        const simpleSubcategory = subcategory.replace('3', '');
 
-            // Для готовых домов
-            if (simpleSubcategory === 'гд' && houseTabsContainer) {
-                houseTabsContainer.style.display = 'block';
+        // Для готовых домов
+        if (simpleSubcategory === 'гд' && houseTabsContainer) {
+            houseTabsContainer.style.display = 'block';
+            setTimeout(() => {
+                initHouseTabs();
+                initPortfolioSliders();
+            }, 50);
+        }
+        // Для фундаментов
+        else if (simpleSubcategory === 'ф' && foundationTabsContainer) {
+            foundationTabsContainer.style.display = 'block';
+            setTimeout(() => {
+                initFoundationTabs();
+                initPortfolioSliders();
+            }, 50);
+        }
+        // Для простых подкатегорий
+        else {
+            const subcategoryContent = tabContent.querySelector(`.subcategory-content[data-subcategory="${subcategory}"]`);
+            if (subcategoryContent) {
+                subcategoryContent.style.display = 'block';
+                subcategoryContent.classList.add('active');
                 setTimeout(() => {
-                    initHouseTabs();
                     initPortfolioSliders();
                 }, 50);
             }
-            // Для фундаментов
-            else if (simpleSubcategory === 'ф' && foundationTabsContainer) {
-                foundationTabsContainer.style.display = 'block';
-                setTimeout(() => {
-                    initFoundationTabs();
-                    initPortfolioSliders();
-                }, 50);
-            }
-            // Для простых подкатегорий (перекрытия, колонны)
-            else {
-                const subcategoryContent = tabContent.querySelector(`.subcategory-content[data-subcategory="${simpleSubcategory}"]`);
-                if (subcategoryContent) {
-                    subcategoryContent.style.display = 'block';
-                    setTimeout(() => {
-                        initPortfolioSliders();
-                    }, 50);
-                } else {
-                    // Для перекрытий и колонн в ИЖС
-                    const portfolioItems = tabContent.querySelectorAll('.portfolio-item');
-                    portfolioItems.forEach(item => {
-                        if (item.getAttribute('data-subcategory') === subcategory) {
-                            item.style.display = 'flex';
-                            setTimeout(() => {
-                                item.style.opacity = '1';
-                            }, 50);
-                        } else {
-                            item.style.display = 'none';
-                            item.style.opacity = '0';
-                        }
-                    });
-                    setTimeout(initPortfolioSliders, 100);
-                }
-            }
         }
-
-        // Обновляем активную кнопку
-        const allButtons = tabContent.querySelectorAll('.subcategory-btn');
-        allButtons.forEach(btn => btn.classList.remove('active'));
-
-        const activeButton = tabContent.querySelector(`.subcategory-btn[data-subcategory="${subcategory}"]`);
-        if (activeButton) activeButton.classList.add('active');
     }
 
+    // Обновляем активную кнопку
+    const allButtons = tabContent.querySelectorAll('.subcategory-btn');
+    allButtons.forEach(btn => btn.classList.remove('active'));
+
+    const activeButton = tabContent.querySelector(`.subcategory-btn[data-subcategory="${subcategory}"]`);
+    if (activeButton) activeButton.classList.add('active');
+}
     // Обработчики событий для основных вкладок
     tabs.forEach(tab => {
         tab.addEventListener('click', function () {
@@ -268,9 +294,11 @@ function initHouseTabs() {
 
 // Функция для инициализации слайдеров
 function initPortfolioSliders() {
-    const sliders = document.querySelectorAll('.portfolio-slider:not([data-initialized])');
+    // const sliders = document.querySelectorAll('.portfolio-slider:not([data-initialized])');
+    const cardSliders = document.querySelectorAll('.portfolio-card .portfolio-slider:not([data-initialized])');
 
-    sliders.forEach(slider => {
+    // sliders.forEach(slider => 
+    cardSliders.forEach(slider => {
         // Проверяем, виден ли слайдер на экране
         const isVisible = slider.offsetParent !== null;
 
@@ -279,6 +307,7 @@ function initPortfolioSliders() {
         }
 
         const container = slider.querySelector('.slider-container');
+        // const slides = slider.querySelectorAll('.slide');
         const slides = slider.querySelectorAll('.slide');
         const prevBtn = slider.querySelector('.prev-btn');
         const nextBtn = slider.querySelector('.next-btn');
