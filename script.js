@@ -390,3 +390,68 @@ function initModal() {
         }
     });
 }
+
+// Функция для активации табов
+function activateTab(tabId) {
+    // Находим все кнопки табов и убираем активный класс
+    const tabButtons = document.querySelectorAll('.tabs_title');
+    tabButtons.forEach(button => button.classList.remove('active'));
+
+    // Находим все контенты табов и скрываем их
+    const tabContents = document.querySelectorAll('.tabs_content');
+    tabContents.forEach(content => content.classList.remove('active'));
+
+    // Активируем нужную кнопку и контент
+    const targetButton = document.querySelector(`.tabs_title[data-tab="${tabId}"]`);
+    const targetContent = document.getElementById(`tab-${tabId}`);
+
+    if (targetButton && targetContent) {
+        targetButton.classList.add('active');
+        targetContent.classList.add('active');
+    }
+}
+
+// Инициализация навигации в шапке
+document.addEventListener('DOMContentLoaded', function () {
+    // Обработчики для навигации в шапке
+    const headerNavLinks = document.querySelectorAll('.main-nav a[href^="#tab-"]');
+
+    headerNavLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            // Получаем ID таба из href (убираем #tab-)
+            const tabId = this.getAttribute('href').replace('#tab-', '');
+
+            // Активируем таб
+            activateTab(tabId);
+
+            // Прокручиваем к секции с табами
+            const tabsSection = document.querySelector('.categories.raboti');
+            if (tabsSection) {
+                tabsSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+
+            // Закрываем мобильное меню если оно открыто
+            const mobileNav = document.querySelector('#mobile-nav');
+            const burgerMenu = document.querySelector('.burger-menu');
+            if (mobileNav && mobileNav.classList.contains('show')) {
+                mobileNav.classList.remove('show');
+                burgerMenu.classList.remove('clicked');
+                document.body.style.overflow = '';
+            }
+        });
+    });
+
+    // Обработчики для кнопок табов (если их еще нет)
+    const tabButtons = document.querySelectorAll('.tabs_title');
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const tabId = this.getAttribute('data-tab');
+            activateTab(tabId);
+        });
+    });
+});
