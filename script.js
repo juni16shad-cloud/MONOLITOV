@@ -104,26 +104,6 @@ function initSmoothScroll() {
     });
 }
 
-// Функция для ленивой загрузки изображений
-function initLazyLoading() {
-    const lazyImages = document.querySelectorAll('img[data-src]');
-
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.getAttribute('data-src');
-                img.removeAttribute('data-src');
-                imageObserver.unobserve(img);
-            }
-        });
-    });
-
-    lazyImages.forEach(img => imageObserver.observe(img));
-}
-
-
-
 // Адаптация для мобильных устройств
 function checkMobileDevice() {
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
@@ -132,356 +112,281 @@ function checkMobileDevice() {
     }
 }
 
-// Инициализация проверки устройства
-document.addEventListener('DOMContentLoaded', checkMobileDevice);
-// Основная функция для инициализации портфолио
-document.addEventListener('DOMContentLoaded', function() {
-    initializePortfolioTabs();
-    initializeSubcategories();
-    initializeHouseTabs();
-    initializeFoundationTabs();
-    initializeSliders();
-    
-    // Активируем первую подкатегорию в каждой вкладке
-    activateFirstSubcategories();
+document.addEventListener('DOMContentLoaded', function () {
+    // Инициализация вкладок
+    initTabs();
+
+    // Инициализация слайдеров в карточках
+    initCardSliders();
+
+    // Инициализация модального окна
+    initModal();
 });
 
-// Активация первых подкатегорий во всех вкладках
-function activateFirstSubcategories() {
+// Функция инициализации вкладок
+function initTabs() {
+    // Основные вкладки
+    const tabTitles = document.querySelectorAll('.tabs_title');
     const tabContents = document.querySelectorAll('.tabs_content');
-    
-    tabContents.forEach(tabContent => {
-        if (tabContent.classList.contains('active')) {
-            const firstSubcategoryBtn = tabContent.querySelector('.subcategory-btn.active');
-            if (firstSubcategoryBtn) {
-                firstSubcategoryBtn.click();
-            }
-        }
-    });
-}
 
-// Инициализация основных табов
-function initializePortfolioTabs() {
-    const tabButtons = document.querySelectorAll('.tabs_title');
-    const tabContents = document.querySelectorAll('.tabs_content');
-    
-    tabButtons.forEach(button => {
-        button.addEventListener('click', function() {
+    tabTitles.forEach(title => {
+        title.addEventListener('click', function () {
             const tabId = this.getAttribute('data-tab');
-            
-            // Убираем активный класс у всех кнопок и контента
-            tabButtons.forEach(btn => btn.classList.remove('active'));
-            tabContents.forEach(content => content.classList.remove('active'));
-            
-            // Добавляем активный класс текущей кнопке и контенту
+
+            // Убираем активный класс у всех вкладок
+            tabTitles.forEach(t => t.classList.remove('active'));
+            tabContents.forEach(c => c.classList.remove('active'));
+
+            // Добавляем активный класс к текущей вкладке
             this.classList.add('active');
             document.getElementById(`tab-${tabId}`).classList.add('active');
-            
-            // Активируем первую подкатегорию в новой вкладке
-            activateFirstSubcategoryInTab(`tab-${tabId}`);
         });
     });
-}
 
-// Активация первой подкатегории в конкретной вкладке
-function activateFirstSubcategoryInTab(tabId) {
-    const tabContent = document.getElementById(tabId);
-    if (tabContent) {
-        const firstSubcategoryBtn = tabContent.querySelector('.subcategory-btn');
-        if (firstSubcategoryBtn) {
-            // Сбрасываем все подкатегории
-            tabContent.querySelectorAll('.subcategory-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            tabContent.querySelectorAll('.subcategory-content').forEach(content => {
-                content.classList.remove('active');
-                content.style.display = 'none';
-            });
-            
-            // Активируем первую подкатегорию
-            firstSubcategoryBtn.classList.add('active');
-            showSubcategoryContent(firstSubcategoryBtn.getAttribute('data-subcategory'), tabContent);
-        }
-    }
-}
+    // Подкатегории
+    const subcategoryBtns = document.querySelectorAll('.subcategory-btn');
 
-// Инициализация подкатегорий
-function initializeSubcategories() {
-    const subcategoryButtons = document.querySelectorAll('.subcategory-btn');
-    
-    subcategoryButtons.forEach(button => {
-        button.addEventListener('click', function() {
+    subcategoryBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
             const subcategory = this.getAttribute('data-subcategory');
             const parentTab = this.closest('.tabs_content');
-            
+
             // Убираем активный класс у всех кнопок подкатегорий в текущей вкладке
-            parentTab.querySelectorAll('.subcategory-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            
-            // Добавляем активный класс текущей кнопке
+            parentTab.querySelectorAll('.subcategory-btn').forEach(b => b.classList.remove('active'));
+
+            // Добавляем активный класс к текущей кнопке
             this.classList.add('active');
-            
-            // Показываем соответствующий контент
-            showSubcategoryContent(subcategory, parentTab);
+
+            // Скрываем все контейнеры подкатегорий в текущей вкладке
+            parentTab.querySelectorAll('.house-tabs-container, .foundation-tabs-container, .portfolio-cards.subcategory-content').forEach(container => {
+                container.style.display = 'none';
+            });
+
+            // Показываем выбранную подкатегорию
+            if (subcategory === '3гд') {
+                parentTab.querySelector('.house-tabs-container').style.display = 'block';
+                // Активируем первую вкладку домов
+                activateFirstHouseTab(parentTab);
+            } else if (subcategory === '3ф') {
+                parentTab.querySelector('.foundation-tabs-container').style.display = 'block';
+                // Активируем первую вкладку фундаментов
+                activateFirstFoundationTab(parentTab);
+            } else {
+                const content = parentTab.querySelector(`.subcategory-content[data-subcategory="${subcategory}"]`);
+                if (content) content.style.display = 'block';
+            }
         });
     });
-}
 
-// Показ контента подкатегории
-function showSubcategoryContent(subcategory, parentTab) {
-    // Скрываем весь контент подкатегорий в текущей вкладке
-    parentTab.querySelectorAll('.subcategory-content').forEach(content => {
-        content.classList.remove('active');
-        content.style.display = 'none';
-    });
-    
-    // Скрываем контейнеры вкладок домов и фундаментов
-    const houseTabsContainer = parentTab.querySelector('.house-tabs-container');
-    const foundationTabsContainer = parentTab.querySelector('.foundation-tabs-container');
-    
-    if (houseTabsContainer) {
-        houseTabsContainer.classList.remove('active');
-        houseTabsContainer.style.display = 'none';
-    }
-    if (foundationTabsContainer) {
-        foundationTabsContainer.classList.remove('active');
-        foundationTabsContainer.style.display = 'none';
-    }
-    
-    // Показываем соответствующий контент
-    if (subcategory === '3гд') {
-        // Для готовых домов показываем вкладки типов домов
-        if (houseTabsContainer) {
-            houseTabsContainer.classList.add('active');
-            houseTabsContainer.style.display = 'block';
-            // Активируем первую вкладку домов
-            const firstHouseTabBtn = houseTabsContainer.querySelector('.house-tab-btn');
-            if (firstHouseTabBtn) firstHouseTabBtn.click();
-        }
-    } else if (subcategory === '3ф') {
-        // Для фундаментов показываем вкладки типов фундаментов
-        if (foundationTabsContainer) {
-            foundationTabsContainer.classList.add('active');
-            foundationTabsContainer.style.display = 'block';
-            // Активируем первую вкладку фундаментов
-            const firstFoundationTabBtn = foundationTabsContainer.querySelector('.foundation-tab-btn');
-            if (firstFoundationTabBtn) firstFoundationTabBtn.click();
-        }
-    } else {
-        // Для остальных подкатегорий показываем обычный контент
-        const targetContent = parentTab.querySelector(`.subcategory-content[data-subcategory="${subcategory}"]`);
-        if (targetContent) {
-            targetContent.classList.add('active');
-            targetContent.style.display = 'block';
-            // Переинициализируем слайдеры в этом контенте
-            initializeSlidersInContainer(targetContent);
-        }
-    }
-}
+    // Вкладки для домов
+    const houseTabBtns = document.querySelectorAll('.house-tab-btn');
 
-// Инициализация вкладок типов домов
-function initializeHouseTabs() {
-    const houseTabButtons = document.querySelectorAll('.house-tab-btn');
-    const houseTabs = document.querySelectorAll('.house-tab');
-    
-    houseTabButtons.forEach(button => {
-        button.addEventListener('click', function() {
+    houseTabBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
             const houseType = this.getAttribute('data-house-type');
-            
-            // Убираем активный класс у всех кнопок и вкладок
-            houseTabButtons.forEach(btn => btn.classList.remove('active'));
-            houseTabs.forEach(tab => {
-                tab.classList.remove('active');
-                tab.style.display = 'none';
-            });
-            
-            // Добавляем активный класс текущей кнопке и вкладке
+            const container = this.closest('.house-tabs-container');
+
+            // Убираем активный класс у всех кнопок
+            container.querySelectorAll('.house-tab-btn').forEach(b => b.classList.remove('active'));
+            container.querySelectorAll('.house-tab').forEach(t => t.classList.remove('active'));
+
+            // Добавляем активный класс к текущей кнопке и вкладке
             this.classList.add('active');
-            const activeHouseTab = document.querySelector(`.house-tab[data-house-type="${houseType}"]`);
-            if (activeHouseTab) {
-                activeHouseTab.classList.add('active');
-                activeHouseTab.style.display = 'block';
-                
-                // Переинициализируем слайдеры в активной вкладке
-                initializeSlidersInContainer(activeHouseTab);
-            }
+            container.querySelector(`.house-tab[data-house-type="${houseType}"]`).classList.add('active');
         });
     });
-}
 
-// Инициализация вкладок типов фундаментов
-function initializeFoundationTabs() {
-    const foundationTabButtons = document.querySelectorAll('.foundation-tab-btn');
-    const foundationTabs = document.querySelectorAll('.foundation-tab');
-    
-    foundationTabButtons.forEach(button => {
-        button.addEventListener('click', function() {
+    // Вкладки для фундаментов
+    const foundationTabBtns = document.querySelectorAll('.foundation-tab-btn');
+
+    foundationTabBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
             const foundationType = this.getAttribute('data-foundation');
-            
-            // Убираем активный класс у всех кнопок и вкладок
-            foundationTabButtons.forEach(btn => btn.classList.remove('active'));
-            foundationTabs.forEach(tab => {
-                tab.classList.remove('active');
-                tab.style.display = 'none';
-            });
-            
-            // Добавляем активный класс текущей кнопке и вкладке
+            const container = this.closest('.foundation-tabs-container');
+
+            // Убираем активный класс у всех кнопок
+            container.querySelectorAll('.foundation-tab-btn').forEach(b => b.classList.remove('active'));
+            container.querySelectorAll('.foundation-tab').forEach(t => t.classList.remove('active'));
+
+            // Добавляем активный класс к текущей кнопке и вкладке
             this.classList.add('active');
-            const activeFoundationTab = document.querySelector(`.foundation-tab[data-foundation="${foundationType}"]`);
-            if (activeFoundationTab) {
-                activeFoundationTab.classList.add('active');
-                activeFoundationTab.style.display = 'block';
-                
-                // Переинициализируем слайдеры в активной вкладке
-                initializeSlidersInContainer(activeFoundationTab);
+            container.querySelector(`.foundation-tab[data-foundation="${foundationType}"]`).classList.add('active');
+        });
+    });
+
+    // Активируем первую подкатегорию в каждой вкладке
+    document.querySelectorAll('.tabs_content.active .subcategory-btn.active').forEach(btn => {
+        btn.click();
+    });
+}
+
+// Активировать первую вкладку домов
+function activateFirstHouseTab(parentTab) {
+    const firstBtn = parentTab.querySelector('.house-tab-btn');
+    if (firstBtn) firstBtn.click();
+}
+
+// Активировать первую вкладку фундаментов
+function activateFirstFoundationTab(parentTab) {
+    const firstBtn = parentTab.querySelector('.foundation-tab-btn');
+    if (firstBtn) firstBtn.click();
+}
+
+// Функция инициализации слайдеров в карточках
+function initCardSliders() {
+    document.querySelectorAll('.portfolio-slider').forEach(slider => {
+        const container = slider.querySelector('.slider-container');
+        const slides = slider.querySelectorAll('.slide');
+        const prevBtn = slider.querySelector('.prev-btn');
+        const nextBtn = slider.querySelector('.next-btn');
+        const indicators = slider.querySelectorAll('.indicator');
+        const currentSlide = slider.querySelector('.current-slide');
+        const totalSlides = slider.querySelector('.total-slides');
+
+        // Устанавливаем общее количество слайдов
+        if (totalSlides) {
+            totalSlides.textContent = slides.length;
+        }
+
+        let currentIndex = 0;
+
+        // Функция обновления слайдера
+        function updateSlider() {
+            container.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+            // Обновляем индикаторы
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === currentIndex);
+            });
+
+            // Обновляем счетчик
+            if (currentSlide) {
+                currentSlide.textContent = currentIndex + 1;
             }
+
+            // Скрываем/показываем кнопки навигации
+            if (slides.length <= 1) {
+                if (prevBtn) prevBtn.style.display = 'none';
+                if (nextBtn) nextBtn.style.display = 'none';
+            }
+        }
+
+        // Обработчики для кнопок навигации
+        if (prevBtn) {
+            prevBtn.addEventListener('click', function () {
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                updateSlider();
+            });
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', function () {
+                currentIndex = (currentIndex + 1) % slides.length;
+                updateSlider();
+            });
+        }
+
+        // Обработчики для индикаторов
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', function () {
+                currentIndex = index;
+                updateSlider();
+            });
+        });
+
+        // Инициализация слайдера
+        updateSlider();
+    });
+}
+
+// Функция инициализации модального окна
+function initModal() {
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalClose = document.getElementById('modalClose');
+    const modalPrev = document.getElementById('modalPrev');
+    const modalNext = document.getElementById('modalNext');
+    const modalCounter = document.getElementById('modalCounter');
+
+    let currentImages = [];
+    let currentIndex = 0;
+
+    // Открытие модального окна при клике на изображение
+    document.querySelectorAll('.slide img').forEach(img => {
+        img.addEventListener('click', function () {
+            const slider = this.closest('.portfolio-slider');
+            const slides = slider.querySelectorAll('.slide');
+
+            // Собираем все изображения из слайдера
+            currentImages = Array.from(slides).map(slide => {
+                return slide.querySelector('img').src;
+            });
+
+            // Находим индекс текущего изображения
+            currentIndex = Array.from(slides).findIndex(slide => {
+                return slide.querySelector('img') === this;
+            });
+
+            openModal();
         });
     });
-}
 
-// Инициализация всех слайдеров
-function initializeSliders() {
-    const sliders = document.querySelectorAll('.portfolio-slider');
-    
-    sliders.forEach(slider => {
-        initializeSingleSlider(slider);
-    });
-}
+    // Функция открытия модального окна
+    function openModal() {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        updateModalImage();
+    }
 
-// Инициализация слайдеров в конкретном контейнере
-function initializeSlidersInContainer(container) {
-    const sliders = container.querySelectorAll('.portfolio-slider');
-    
-    sliders.forEach(slider => {
-        initializeSingleSlider(slider);
-    });
-}
+    // Функция закрытия модального окна
+    function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
 
-// Инициализация одного слайдера (остается без изменений)
-function initializeSingleSlider(slider) {
-    const container = slider.querySelector('.slider-container');
-    const slides = slider.querySelectorAll('.slide');
-    const prevBtn = slider.querySelector('.prev-btn');
-    const nextBtn = slider.querySelector('.next-btn');
-    const indicators = slider.querySelectorAll('.indicator');
-    const currentSlideElement = slider.querySelector('.current-slide');
-    const totalSlidesElement = slider.querySelector('.total-slides');
-    
-    // Если слайд только один, скрываем элементы управления
-    if (slides.length <= 1) {
-        if (prevBtn) prevBtn.style.display = 'none';
-        if (nextBtn) nextBtn.style.display = 'none';
-        if (indicators.length > 0) {
-            indicators[0].parentElement.style.display = 'none';
-        }
-        if (currentSlideElement) {
-            currentSlideElement.parentElement.style.display = 'none';
-        }
-        return;
-    }
-    
-    // Показываем элементы управления если они были скрыты
-    if (prevBtn) prevBtn.style.display = 'flex';
-    if (nextBtn) nextBtn.style.display = 'flex';
-    if (indicators.length > 0) {
-        indicators[0].parentElement.style.display = 'flex';
-    }
-    if (currentSlideElement) {
-        currentSlideElement.parentElement.style.display = 'block';
-    }
-    
-    let currentSlide = 0;
-    
-    // Устанавливаем общее количество слайдов
-    if (totalSlidesElement) {
-        totalSlidesElement.textContent = slides.length;
-    }
-    
-    // Функция для показа слайда
-    function showSlide(index) {
-        slides.forEach((slide, i) => {
-            slide.classList.toggle('active', i === index);
-        });
-        
-        indicators.forEach((indicator, i) => {
-            indicator.classList.toggle('active', i === index);
-        });
-        
-        if (currentSlideElement) {
-            currentSlideElement.textContent = index + 1;
-        }
-        
-        currentSlide = index;
-    }
-    
-    // Следующий слайд
-    function nextSlide() {
-        let newIndex = currentSlide + 1;
-        if (newIndex >= slides.length) {
-            newIndex = 0;
-        }
-        showSlide(newIndex);
-    }
-    
-    // Предыдущий слайд
-    function prevSlide() {
-        let newIndex = currentSlide - 1;
-        if (newIndex < 0) {
-            newIndex = slides.length - 1;
-        }
-        showSlide(newIndex);
-    }
-    
-    // Обработчики событий для кнопок
-    if (nextBtn) {
-        nextBtn.addEventListener('click', nextSlide);
-    }
-    
-    if (prevBtn) {
-        prevBtn.addEventListener('click', prevSlide);
-    }
-    
-    // Обработчики для индикаторов
-    indicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', () => {
-            showSlide(index);
-        });
-    });
-    
-    // Автопрокрутка (опционально)
-    let autoSlideInterval = setInterval(nextSlide, 5000);
-    
-    // Останавливаем автопрокрутку при наведении
-    slider.addEventListener('mouseenter', () => {
-        clearInterval(autoSlideInterval);
-    });
-    
-    slider.addEventListener('mouseleave', () => {
-        autoSlideInterval = setInterval(nextSlide, 5000);
-    });
-    
-    // Инициализация первого слайда
-    showSlide(0);
-}
+    // Функция обновления изображения в модальном окне
+    function updateModalImage() {
+        modalImage.src = currentImages[currentIndex];
+        modalCounter.textContent = `${currentIndex + 1} / ${currentImages.length}`;
 
-// Обработка изменения размера окна
-window.addEventListener('resize', function() {
-    // Переинициализируем слайдеры при изменении размера окна
-    initializeSliders();
-});
+        // Скрываем кнопки навигации, если изображение одно
+        if (currentImages.length <= 1) {
+            modalPrev.style.display = 'none';
+            modalNext.style.display = 'none';
+            modalCounter.style.display = 'none';
+        } else {
+            modalPrev.style.display = 'flex';
+            modalNext.style.display = 'flex';
+            modalCounter.style.display = 'block';
+        }
+    }
 
-// Дебаг функция для проверки состояния
-function debugPortfolioState() {
-    console.log('Active tab:', document.querySelector('.tabs_title.active')?.textContent);
-    console.log('Active subcategory buttons:');
-    document.querySelectorAll('.subcategory-btn.active').forEach(btn => {
-        console.log('-', btn.textContent, 'data:', btn.getAttribute('data-subcategory'));
+    // Обработчики событий для модального окна
+    modalClose.addEventListener('click', closeModal);
+
+    modalPrev.addEventListener('click', function () {
+        currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+        updateModalImage();
     });
-    console.log('Visible content blocks:');
-    document.querySelectorAll('.subcategory-content[style*="display: block"]').forEach(content => {
-        console.log('-', content.getAttribute('data-subcategory'));
+
+    modalNext.addEventListener('click', function () {
+        currentIndex = (currentIndex + 1) % currentImages.length;
+        updateModalImage();
+    });
+
+    // Закрытие модального окна при клике на фон
+    modal.addEventListener('click', function (e) {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+    // Навигация с помощью клавиатуры
+    document.addEventListener('keydown', function (e) {
+        if (modal.classList.contains('active')) {
+            if (e.key === 'Escape') closeModal();
+            if (e.key === 'ArrowLeft') modalPrev.click();
+            if (e.key === 'ArrowRight') modalNext.click();
+        }
     });
 }
-
-

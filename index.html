@@ -340,477 +340,292 @@
         </div>
     </section>
     <section class="categories raboti" id="categories">
-        <h2 class="section-title">Наши работы</h2>
-        <div class="tabs" style="margin: 10px 40px;">
-            <div class="tabs_navigation">
-                <button class="tabs_title active" data-tab="3">Индивидуальное жилищное строительство</button>
-                <button class="tabs_title" data-tab="1">Гражданское строительство</button>
-                <button class="tabs_title" data-tab="2">Промышленные объекты</button>
-            </div>
-            <div class="tabs_body">
-                <!-- Контент для ИЖС -->
-                <div id="tab-3" class="tabs_content active">
-
-                    <div class="subcategory-buttons">
-                        <button class="subcategory-btn active" data-subcategory="3гд">Готовые дома</button>
-                        <button class="subcategory-btn" data-subcategory="3ф">Фундаменты</button>
-                        <!-- <button class="subcategory-btn" data-subcategory="3п">Конструкции</button>
-                        <button class="subcategory-btn" data-subcategory="3к">Колонны</button> -->
-                    </div>
-
-                    <!-- Вкладки для готовых домов -->
-                    <div class="house-tabs-container" style="display: none;">
-                        <div class="house-tabs-navigation">
-                            <button class="house-tab-btn active" data-house-type="монолитные">Монолитные дома</button>
-                            <button class="house-tab-btn" data-house-type="монолит-газоблок">Монолит + Газоблок</button>
+        <div class="container">
+            <h2 class="section-title">Наши работы</h2>
+            <div class="tabs">
+                <div class="tabs_navigation">
+                    <button class="tabs_title active" data-tab="3">Индивидуальное жилищное строительство</button>
+                    <button class="tabs_title" data-tab="1">Гражданское строительство</button>
+                    <button class="tabs_title" data-tab="2">Промышленные объекты</button>
+                </div>
+                <div class="tabs_body">
+                    <!-- Контент для ИЖС -->
+                    <div id="tab-3" class="tabs_content active">
+                        <div class="subcategory-buttons">
+                            <button class="subcategory-btn active" data-subcategory="3гд">Готовые дома</button>
+                            <button class="subcategory-btn" data-subcategory="3ф">Фундаменты</button>
                         </div>
 
-                        <div class="house-tabs-content">
-                            <!-- Монолитные дома -->
-                            <div class="house-tab active" data-house-type="монолитные">
-                                <div class="portfolio-cards">
-                                    <!-- Карточка 1 - со слайдером -->
-                                    <div class="portfolio-card">
-                                        <div class="portfolio-slider">
-                                            <div class="slider-container">
-                                                <div class="slide active">
-                                                    <img src="фотографии_работ/монолитдом/30.jpg"
-                                                        alt="Монолитный коттедж Премиум - фото 1">
+                        <!-- Вкладки для готовых домов -->
+                        <div class="house-tabs-container" data-subcategory="3гд">
+                            <div class="house-tabs-navigation">
+                                <button class="house-tab-btn active" data-house-type="монолитные">Монолитные
+                                    дома</button>
+                                <button class="house-tab-btn" data-house-type="монолит-газоблок">Монолит +
+                                    Газоблок</button>
+                            </div>
+
+                            <div class="house-tabs-content">
+                                <!-- Монолитные дома -->
+                                <div class="house-tab active" data-house-type="монолитные">
+                                    <div class="portfolio-cards">
+                                        <!-- Карточка 1 - со слайдером -->
+                                        <div class="portfolio-card">
+                                            <div class="portfolio-slider">
+                                                <div class="slider-container">
+                                                    <div class="slide active">
+                                                        <img src="фотографии_работ/монолитдом/38.jpg"
+                                                            alt="Монолитный коттедж Премиум - фото 1">
+                                                    </div>
+                                                    <div class="slide">
+                                                        <img src="фотографии_работ/монолитдом/32.jpg"
+                                                            alt="Монолитный коттедж Премиум - фото 2">
+                                                    </div>
+                                                    <div class="slide">
+                                                        <img src="фотографии_работ/монолитдом/37.jpg"
+                                                            alt="Монолитный коттедж Премиум - фото 3">
+                                                    </div>
+                                                    <div class="slide">
+                                                        <img src="фотографии_работ/монолитдом/34.jpg"
+                                                            alt="Монолитный коттедж Премиум - фото 4">
+                                                    </div>
                                                 </div>
-                                                <div class="slide">
-                                                    <img src="фотографии_работ/монолитдом/31.jpg"
-                                                        alt="Монолитный коттедж Премиум - фото 2">
+                                                <button class="slider-btn prev-btn">
+                                                    <i class="fas fa-chevron-left"></i>
+                                                </button>
+                                                <button class="slider-btn next-btn">
+                                                    <i class="fas fa-chevron-right"></i>
+                                                </button>
+                                                <div class="slider-indicators">
+                                                    <span class="indicator active" data-slide="0"></span>
+                                                    <span class="indicator" data-slide="1"></span>
+                                                    <span class="indicator" data-slide="2"></span>
+                                                    <span class="indicator" data-slide="3"></span>
                                                 </div>
-                                                <div class="slide">
-                                                    <img src="фотографии_работ/монолитдом/37.jpg"
-                                                        alt="Монолитный коттедж Премиум - фото 3">
-                                                </div>
-                                                <div class="slide">
-                                                    <img src="фотографии_работ/монолитдом/39.jpg"
-                                                        alt="Монолитный коттедж Премиум - фото 4">
+                                                <div class="slider-counter">
+                                                    <span class="current-slide">1</span> / <span
+                                                        class="total-slides">4</span>
                                                 </div>
                                             </div>
-                                            <button class="slider-btn prev-btn">
-                                                <i class="fas fa-chevron-left"></i>
-                                            </button>
-                                            <button class="slider-btn next-btn">
-                                                <i class="fas fa-chevron-right"></i>
-                                            </button>
-                                            <div class="slider-indicators">
-                                                <span class="indicator active" data-slide="0"></span>
-                                                <span class="indicator" data-slide="1"></span>
-                                                <span class="indicator" data-slide="2"></span>
-                                                <span class="indicator" data-slide="3"></span>
-                                            </div>
-                                            <div class="slider-counter">
-                                                <span class="current-slide">1</span> / <span
-                                                    class="total-slides">4</span>
+                                            <div class="portfolio-card__content">
+                                                <h3 class="portfolio-card__heading">Подборка фотографий строительства
+                                                </h3>
                                             </div>
                                         </div>
-                                        <div class="portfolio-card__content">
-                                            <h3 class="portfolio-card__heading">Подборка фотографий строительства</h3>
-                                        </div>
-                                    </div>
 
-                                    <!-- Карточка 2 - с одним изображением -->
-                                    <div class="portfolio-card">
-                                        <div class="portfolio-slider">
-                                            <div class="slider-container">
-                                                <div class="slide active">
-                                                    <img src="фотографии_работ/монолитдом/11111.jpg"
-                                                        alt="Монолитный дом - фото 1">
+                                        <!-- Карточка 2 - с одним изображением -->
+                                        <div class="portfolio-card">
+                                            <div class="portfolio-slider">
+                                                <div class="slider-container">
+                                                    <div class="slide active">
+                                                        <img src="фотографии_работ/монолитдом/222.jpg"
+                                                            alt="Монолитный дом - фото 1">
+                                                    </div>
                                                 </div>
                                             </div>
-
+                                            <div class="portfolio-card__content">
+                                                <h3 class="portfolio-card__heading">Современный частный дом</h3>
+                                            </div>
                                         </div>
-                                        <div class="portfolio-card__content">
-                                            <h3 class="portfolio-card__heading">Современный частный дом</h3>
-                                        </div>
-                                    </div>
 
-                                    <!-- Карточка 3 - с одним изображением -->
-                                    <div class="portfolio-card">
-                                        <div class="portfolio-slider">
-                                            <div class="slider-container">
-                                                <div class="slide active">
-                                                    <img src="фотографии_работ/монолитдом/222.jpg"
-                                                        alt="Монолитный дом - фото 1">
+                                        <!-- Карточка 3 - с одним изображением -->
+                                        <div class="portfolio-card">
+                                            <div class="portfolio-slider">
+                                                <div class="slider-container">
+                                                    <div class="slide active">
+                                                        <img src="фотографии_работ/монолитдом/11111.jpg"
+                                                            alt="Монолитный дом - фото 1">
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <!-- Скрываем элементы управления для одного слайда -->
-
-                                        </div>
-                                        <div class="portfolio-card__content">
-
-                                            <h3 class="portfolio-card__heading">Проект индивидуальной планировки</h3>
+                                            <div class="portfolio-card__content">
+                                                <h3 class="portfolio-card__heading">Проект индивидуальной планировки
+                                                </h3>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <!-- Монолит + Газоблок -->
-                            <div class="house-tab" data-house-type="монолит-газоблок">
-                                <div class="portfolio-cards">
-                                    <!-- Карточка 1 - с одним изображением -->
-                                    <div class="portfolio-card">
-                                        <div class="portfolio-slider">
-                                            <div class="slider-container">
-                                                <div class="slide active">
-                                                    <img src="фотографии_работ/домгазоблок/photo_2025-10-03_21-14-10.jpg"
-                                                        alt="Коттедж Эконом-класс - фото 1">
+                                <!-- Монолит + Газоблок -->
+                                <div class="house-tab" data-house-type="монолит-газоблок">
+                                    <div class="portfolio-cards">
+                                        <!-- Карточка 1 - с одним изображением -->
+                                        <div class="portfolio-card">
+                                            <div class="portfolio-slider">
+                                                <div class="slider-container">
+                                                    <div class="slide active">
+                                                        <img src="фотографии_работ/домгазоблок/photo_2025-10-03_21-14-10.jpg"
+                                                            alt="Коттедж Эконом-класс - фото 1">
+                                                    </div>
                                                 </div>
                                             </div>
-
+                                            <div class="portfolio-card__content">
+                                                <h3 class="portfolio-card__heading">Коттедж премиум-класса </h3>
+                                            </div>
                                         </div>
-                                        <div class="portfolio-card__content">
-                                            <h3 class="portfolio-card__heading">Современный коттедж</h3>
-                                        </div>
-                                    </div>
 
-                                    <!-- Карточка 2 - со слайдером -->
-                                    <div class="portfolio-card">
-                                        <div class="portfolio-slider">
-                                            <div class="slider-container">
-                                                <div class="slide active">
-                                                    <img src="фотографии_работ/домгазоблок/photo_2025-10-03_21-00-04.jpg"
-                                                        alt="Монолитный коттедж Премиум - фото 1">
+                                        <!-- Карточка 2 - со слайдером -->
+                                        <div class="portfolio-card">
+                                            <div class="portfolio-slider">
+                                                <div class="slider-container">
+                                                    <div class="slide active">
+                                                        <img src="фотографии_работ/домгазоблок/photo_2025-10-03_21-00-10.jpg"
+                                                            alt="Монолитный коттедж Премиум - фото 1">
+                                                    </div>
+                                                    <div class="slide">
+                                                        <img src="фотографии_работ/домгазоблок/photo_2025-10-03_21-00-04.jpg"
+                                                            alt="Монолитный коттедж Премиум - фото 2">
+                                                    </div>
                                                 </div>
-                                                <div class="slide">
-                                                    <img src="фотографии_работ/домгазоблок/photo_2025-10-03_21-00-10.jpg"
-                                                        alt="Монолитный коттедж Премиум - фото 2">
+                                                <button class="slider-btn prev-btn">
+                                                    <i class="fas fa-chevron-left"></i>
+                                                </button>
+                                                <button class="slider-btn next-btn">
+                                                    <i class="fas fa-chevron-right"></i>
+                                                </button>
+                                                <div class="slider-indicators">
+                                                    <span class="indicator active" data-slide="0"></span>
+                                                    <span class="indicator" data-slide="1"></span>
                                                 </div>
-                                            </div>
-                                            <button class="slider-btn prev-btn">
-                                                <i class="fas fa-chevron-left"></i>
-                                            </button>
-                                            <button class="slider-btn next-btn">
-                                                <i class="fas fa-chevron-right"></i>
-                                            </button>
-                                            <div class="slider-indicators">
-                                                <span class="indicator active" data-slide="0"></span>
-                                                <span class="indicator" data-slide="1"></span>
-                                            </div>
-                                            <div class="slider-counter">
-                                                <span class="current-slide">1</span> / <span
-                                                    class="total-slides">2</span>
-                                            </div>
-                                        </div>
-                                        <div class="portfolio-card__content">
-                                            <h3 class="portfolio-card__heading">Коттедж премиум-класса</h3>
-                                        </div>
-                                    </div>
-
-                                    <!-- Карточка 3 - с одним изображением -->
-                                    <div class="portfolio-card">
-                                        <div class="portfolio-slider">
-                                            <div class="slider-container">
-                                                <div class="slide active">
-                                                    <img src="фотографии_работ/домгазоблок/photo_2025-10-03_20-56-47.jpg"
-                                                        alt="Коттедж Эконом-класс - фото 1">
+                                                <div class="slider-counter">
+                                                    <span class="current-slide">1</span> / <span
+                                                        class="total-slides">2</span>
                                                 </div>
                                             </div>
-                                            <!-- Скрываем элементы управления для одного слайда -->
-
+                                            <div class="portfolio-card__content">
+                                                <h3 class="portfolio-card__heading">Коттедж Эконом-класс</h3>
+                                            </div>
                                         </div>
-                                        <div class="portfolio-card__content">
 
-                                            <h3 class="portfolio-card__heading">Эконом-класс проект</h3>
-
+                                        <!-- Карточка 3 - с одним изображением -->
+                                        <div class="portfolio-card">
+                                            <div class="portfolio-slider">
+                                                <div class="slider-container">
+                                                    <div class="slide active">
+                                                        <img src="фотографии_работ/домгазоблок/photo_2025-10-03_20-56-47.jpg"
+                                                            alt="Коттедж Эконом-класс - фото 1">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="portfolio-card__content">
+                                                <h3 class="portfolio-card__heading">Эконом-класс проект</h3>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- <div class="portfolio-cards subcategory-content" data-subcategory="3п" style="display: none;">
-                        <div class="portfolio-card">
-                            <div class="portfolio-slider">
-                                <div class="slider-container">
-                                    <div class="slide active">
-                                        <img src="фотографии_работ/ижсконструкции/лестница.jpg"
-                                            alt="Монолитные перекрытия коттеджа - фото 1">
-                                    </div>
-                                    <div class="slide">
-                                        <img src="фотографии_работ/ижсконструкции/лестница1.jpg"
-                                            alt="Монолитные перекрытия коттеджа - фото 2">
-                                    </div>
-                                </div>
-                                <button class="slider-btn prev-btn">
-                                    <i class="fas fa-chevron-left"></i>
-                                </button>
-                                <button class="slider-btn next-btn">
-                                    <i class="fas fa-chevron-right"></i>
-                                </button>
-                                <div class="slider-indicators">
-                                    <span class="indicator active" data-slide="0"></span>
-                                    <span class="indicator" data-slide="1"></span>
-                                </div>
-                                <div class="slider-counter">
-                                    <span class="current-slide">1</span> / <span class="total-slides">2</span>
-                                </div>
-                            </div>
-                            <div class="portfolio-card__content">
-                                <p class="portfolio-card__category">Монолитная конструкция</p>
-                                <h3 class="portfolio-card__heading">Лестница</h3>
-                                <p class="portfolio-card__description">Профессиональное изготовление монолитных
-                                    лестниц. Индивидуальный дизайн и надежная конструкция для частных домов.</p>
-                            </div>
-                        </div> -->
-                    <!-- 
-                        <div class="portfolio-card">
-                            <div class="portfolio-slider">
-                                <div class="slider-container">
-                                    <div class="slide active">
-                                        <img src="фотографии_работ/гражданское/конструкции/переправадлялодок2.jpg"
-                                            alt="Переправа для лодок - фото 1">
-                                    </div>
-                                    <div class="slide">
-                                        <img src="фотографии_работ/гражданское/конструкции/переправадлялодок6.jpg"
-                                            alt="Переправа для лодок - фото 2">
-                                    </div>
-                                    <div class="slide">
-                                        <img src="фотографии_работ/гражданское/конструкции/переправадлялодок10.jpg"
-                                            alt="Переправа для лодок - фото 3">
-                                    </div>
-                                    <div class="slide">
-                                        <img src="фотографии_работ/гражданское/конструкции/переправадлялодок8.jpg"
-                                            alt="Переправа для лодок - фото 4">
-                                    </div>
-                                    <div class="slide">
-                                        <img src="фотографии_работ/гражданское/конструкции/переправадлялодок5.jpg"
-                                            alt="Переправа для лодок - фото 5">
-                                    </div>
-                                </div>
-                                <button class="slider-btn prev-btn">
-                                    <i class="fas fa-chevron-left"></i>
-                                </button>
-                                <button class="slider-btn next-btn">
-                                    <i class="fas fa-chevron-right"></i>
-                                </button>
-                                <div class="slider-indicators">
-                                    <span class="indicator active" data-slide="0"></span>
-                                    <span class="indicator" data-slide="1"></span>
-                                    <span class="indicator" data-slide="2"></span>
-                                    <span class="indicator" data-slide="3"></span>
-                                    <span class="indicator" data-slide="4"></span>
-                                </div>
-                                <div class="slider-counter">
-                                    <span class="current-slide">1</span> / <span class="total-slides">5</span>
-                                </div>
-                            </div>
-                            <div class="portfolio-card__content">
-                                <p class="portfolio-card__category">Гражданское строительство</p>
-                                <h3 class="portfolio-card__heading">Переправа для лодок</h3>
-                                <p class="portfolio-card__description">Строительство монолитной переправы для
-                                    лодок. Прочная конструкция, устойчивая к водной среде и нагрузкам.</p>
-                            </div>
-                        </div> -->
 
-                    <!-- Вкладки для фундаментов -->
-                    <div class="foundation-tabs-container" style="display: none;">
-                        <div class="foundation-tabs-navigation">
-                            <button class="foundation-tab-btn active" data-foundation="ленточный">Ленточный</button>
-                            <button class="foundation-tab-btn" data-foundation="плитный">Плитный</button>
-                            <button class="foundation-tab-btn" data-foundation="ростверк">Ростверк</button>
-                        </div>
+                        <!-- Вкладки для фундаментов -->
+                        <div class="foundation-tabs-container" data-subcategory="3ф" style="display: none;">
+                            <div class="foundation-tabs-navigation">
+                                <button class="foundation-tab-btn active" data-foundation="ленточный">Ленточный</button>
+                                <button class="foundation-tab-btn" data-foundation="плитный">Плитный</button>
+                                <button class="foundation-tab-btn" data-foundation="ростверк">Ростверк</button>
+                            </div>
 
-                        <div class="foundation-tabs-content">
-                            <!-- Ленточный фундамент -->
-                            <div class="foundation-tab active" data-foundation="ленточный">
-                                <div class="portfolio-cards">
-                                    <!-- Карточка 1 -->
-                                    <div class="portfolio-card">
-                                        <div class="portfolio-slider">
-                                            <div class="slider-container">
-                                                <div class="slide active">
-                                                    <img src="фотографии_работ/фундаментЛента/1теплица/фудтеп8.jpg"
-                                                        alt="Ленточный фундамент под теплицу - фото 1">
+                            <div class="foundation-tabs-content">
+                                <!-- Ленточный фундамент -->
+                                <div class="foundation-tab active" data-foundation="ленточный">
+                                    <div class="portfolio-cards">
+                                        <!-- Карточка 1 -->
+                                        <div class="portfolio-card">
+                                            <div class="portfolio-slider">
+                                                <div class="slider-container">
+                                                    <div class="slide active">
+                                                        <img src="фотографии_работ/фундаментЛента/1теплица/фудтеп5.jpg"
+                                                            alt="Ленточный фундамент под теплицу - фото 1">
+                                                    </div>
+                                                    <div class="slide">
+                                                        <img src="фотографии_работ/фундаментЛента/1теплица/фудтеп4.jpg."
+                                                            alt="Ленточный фундамент под теплицу - фото 2">
+                                                    </div>
+                                                    <div class="slide">
+                                                        <img src="фотографии_работ/фундаментЛента/1теплица/фудтеп1.jpg"
+                                                            alt="Ленточный фундамент под теплицу - фото 3">
+                                                    </div>
+                                                    <div class="slide">
+                                                        <img src="фотографии_работ/фундаментЛента/1теплица/фудтеп8.jpg"
+                                                            alt="Ленточный фундамент под теплицу - фото 4">
+                                                    </div>
                                                 </div>
-                                                <div class="slide">
-                                                    <img src="фотографии_работ/фундаментЛента/1теплица/фудтеп7.jpg"
-                                                        alt="Ленточный фундамент под теплицу - фото 2">
+                                                <button class="slider-btn prev-btn">
+                                                    <i class="fas fa-chevron-left"></i>
+                                                </button>
+                                                <button class="slider-btn next-btn">
+                                                    <i class="fas fa-chevron-right"></i>
+                                                </button>
+                                                <div class="slider-indicators">
+                                                    <span class="indicator active" data-slide="0"></span>
+                                                    <span class="indicator" data-slide="3"></span>
+                                                </div>
+                                                <div class="slider-counter">
+                                                    <span class="current-slide">1</span> / <span
+                                                        class="total-slides">4</span>
                                                 </div>
                                             </div>
-                                            <button class="slider-btn prev-btn">
-                                                <i class="fas fa-chevron-left"></i>
-                                            </button>
-                                            <button class="slider-btn next-btn">
-                                                <i class="fas fa-chevron-right"></i>
-                                            </button>
-                                            <div class="slider-indicators">
-                                                <span class="indicator active" data-slide="0"></span>
-                                                <span class="indicator" data-slide="1"></span>
-                                            </div>
-                                            <div class="slider-counter">
-                                                <span class="current-slide">1</span> / <span
-                                                    class="total-slides">2</span>
+                                            <div class="portfolio-card__content">
+                                                <h3 class="portfolio-card__heading">Фундамент под теплицу</h3>
                                             </div>
                                         </div>
-                                        <div class="portfolio-card__content">
-                                            <h3 class="portfolio-card__heading">Фундамент под теплицу</h3>
-                                        </div>
-                                    </div>
 
-                                    <!-- Карточка 2 -->
-                                    <div class="portfolio-card">
-                                        <div class="portfolio-slider">
-                                            <div class="slider-container">
-                                                <div class="slide active">
-                                                    <img src="фотографии_работ/фундаментЛента/разнбаня/лентфундбаня1.jpg"
-                                                        alt="Ленточный фундамент под баню - фото 1">
+                                        <!-- Карточка 2 -->
+                                        <div class="portfolio-card">
+                                            <div class="portfolio-slider">
+                                                <div class="slider-container">
+                                                    <div class="slide active">
+                                                        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                                                            alt="Ленточный фундамент под баню - фото 1">
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="portfolio-card__content">
-                                            <h3 class="portfolio-card__heading">Фундамент под баню</h3>
+                                            <div class="portfolio-card__content">
+                                                <h3 class="portfolio-card__heading">Фундамент под баню</h3>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <!-- Плитный фундамент -->
-                            <div class="foundation-tab" data-foundation="плитный">
-                                <div class="portfolio-cards">
-                                    <!-- Карточка 1 -->
-                                    <div class="portfolio-card">
-                                        <div class="portfolio-slider">
-                                            <div class="slider-container">
-                                                <div class="slide active">
-                                                    <img src="фотографии_работ/фундплит/утепленная/photo_2025-10-03_21-09-47.jpg"
-                                                        alt="Утепленный плитный фундамент - фото 1">
+                                <!-- Плитный фундамент -->
+                                <div class="foundation-tab" data-foundation="плитный">
+                                    <div class="portfolio-cards">
+                                        <!-- Карточка 1 -->
+                                        <div class="portfolio-card">
+                                            <div class="portfolio-slider">
+                                                <div class="slider-container">
+                                                    <div class="slide active">
+                                                        <img src="https://images.unsplash.com/photo-1632869605857-42e51b544e6f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                                                            alt="Утепленный плитный фундамент - фото 1">
+                                                    </div>
+                                                    <div class="slide">
+                                                        <img src="https://images.unsplash.com/photo-1582139329536-e7284fece509?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                                                            alt="Утепленный плитный фундамент - фото 2">
+                                                    </div>
                                                 </div>
-                                                <div class="slide">
-                                                    <img src="фотографии_работ/фундплит/утепленная/photo_2025-10-03_21-10-06.jpg"
-                                                        alt="Утепленный плитный фундамент - фото 2">
+                                                <button class="slider-btn prev-btn">
+                                                    <i class="fas fa-chevron-left"></i>
+                                                </button>
+                                                <button class="slider-btn next-btn">
+                                                    <i class="fas fa-chevron-right"></i>
+                                                </button>
+                                                <div class="slider-indicators">
+                                                    <span class="indicator active" data-slide="0"></span>
+                                                    <span class="indicator" data-slide="1"></span>
+                                                </div>
+                                                <div class="slider-counter">
+                                                    <span class="current-slide">1</span> / <span
+                                                        class="total-slides">2</span>
                                                 </div>
                                             </div>
-                                            <button class="slider-btn prev-btn">
-                                                <i class="fas fa-chevron-left"></i>
-                                            </button>
-                                            <button class="slider-btn next-btn">
-                                                <i class="fas fa-chevron-right"></i>
-                                            </button>
-                                            <div class="slider-indicators">
-                                                <span class="indicator active" data-slide="0"></span>
-                                                <span class="indicator" data-slide="1"></span>
+                                            <div class="portfolio-card__content">
+                                                <h3 class="portfolio-card__heading">Утепленный плитный фундамент</h3>
                                             </div>
-                                            <div class="slider-counter">
-                                                <span class="current-slide">1</span> / <span
-                                                    class="total-slides">2</span>
-                                            </div>
-                                        </div>
-                                        <div class="portfolio-card__content">
-                                            <h3 class="portfolio-card__heading">Утепленный плитный фундамент</h3>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <!-- Ростверк -->
-                            <div class="foundation-tab" data-foundation="ростверк">
-                                <div class="coming-soon-projects">
-                                    <div class="construction-icon">🚧</div>
-                                    <h2>В процессе строительства</h2>
-                                    <p>Наша команда усердно трудится над новыми проектами. Скоро здесь будет что-то
-                                        удивительное!</p>
-                                    <div class="status-badge">Скоро</div>
-                                </div>
-                            </div>
-
-
-
-                        </div>
-                    </div>
-                    <!-- Конструкции -->
-                    <!-- <div class="portfolio-cards subcategory-content" data-subcategory="3п"
-                                style="display: none;">
-                                <div class="portfolio-card">
-                                    <div class="portfolio-slider">
-                                        <div class="slider-container">
-                                            <div class="slide active">
-                                                <img src="фотографии_работ/ижсконструкции/лестница.jpg"
-                                                    alt="Монолитные перекрытия коттеджа - фото 1">
-                                            </div>
-                                            <div class="slide">
-                                                <img src="фотографии_работ/ижсконструкции/лестница1.jpg"
-                                                    alt="Монолитные перекрытия коттеджа - фото 2">
-                                            </div>
-                                        </div>
-                                        <button class="slider-btn prev-btn">
-                                            <i class="fas fa-chevron-left"></i>
-                                        </button>
-                                        <button class="slider-btn next-btn">
-                                            <i class="fas fa-chevron-right"></i>
-                                        </button>
-                                        <div class="slider-indicators">
-                                            <span class="indicator active" data-slide="0"></span>
-                                            <span class="indicator" data-slide="1"></span>
-                                        </div>
-                                        <div class="slider-counter">
-                                            <span class="current-slide">1</span> / <span class="total-slides">2</span>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio-card__content">
-                                        <p class="portfolio-card__category">Монолитная конструкция</p>
-                                        <h3 class="portfolio-card__heading">Лестница</h3>
-                                        <p class="portfolio-card__description">Профессиональное изготовление монолитных
-                                            лестниц. Индивидуальный дизайн и надежная конструкция для частных домов.</p>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio-card">
-                                    <div class="portfolio-slider">
-                                        <div class="slider-container">
-                                            <div class="slide active">
-                                                <img src="фотографии_работ/гражданское/конструкции/переправадлялодок2.jpg"
-                                                    alt="Переправа для лодок - фото 1">
-                                            </div>
-                                            <div class="slide">
-                                                <img src="фотографии_работ/гражданское/конструкции/переправадлялодок6.jpg"
-                                                    alt="Переправа для лодок - фото 2">
-                                            </div>
-                                            <div class="slide">
-                                                <img src="фотографии_работ/гражданское/конструкции/переправадлялодок10.jpg"
-                                                    alt="Переправа для лодок - фото 3">
-                                            </div>
-                                            <div class="slide">
-                                                <img src="фотографии_работ/гражданское/конструкции/переправадлялодок8.jpg"
-                                                    alt="Переправа для лодок - фото 4">
-                                            </div>
-                                            <div class="slide">
-                                                <img src="фотографии_работ/гражданское/конструкции/переправадлялодок5.jpg"
-                                                    alt="Переправа для лодок - фото 5">
-                                            </div>
-                                        </div>
-                                        <button class="slider-btn prev-btn">
-                                            <i class="fas fa-chevron-left"></i>
-                                        </button>
-                                        <button class="slider-btn next-btn">
-                                            <i class="fas fa-chevron-right"></i>
-                                        </button>
-                                        <div class="slider-indicators">
-                                            <span class="indicator active" data-slide="0"></span>
-                                            <span class="indicator" data-slide="1"></span>
-                                            <span class="indicator" data-slide="2"></span>
-                                            <span class="indicator" data-slide="3"></span>
-                                            <span class="indicator" data-slide="4"></span>
-                                        </div>
-                                        <div class="slider-counter">
-                                            <span class="current-slide">1</span> / <span class="total-slides">5</span>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio-card__content">
-                                        <p class="portfolio-card__category">Гражданское строительство</p>
-                                        <h3 class="portfolio-card__heading">Переправа для лодок</h3>
-                                        <p class="portfolio-card__description">Строительство монолитной переправы для
-                                            лодок. Прочная конструкция, устойчивая к водной среде и нагрузкам.</p>
-                                    </div>
-                                </div>
-                            </div> -->
-
-                    <!-- Колонны -->
-                    <!-- <div class="subcategory-content" data-subcategory="3к" style="display: none;">
-                                <div class="portfolio-card">
+                                <!-- Ростверк -->
+                                <div class="foundation-tab" data-foundation="ростверк">
                                     <div class="coming-soon-projects">
                                         <div class="construction-icon">🚧</div>
                                         <h2>В процессе строительства</h2>
@@ -819,453 +634,261 @@
                                         <div class="status-badge">Скоро</div>
                                     </div>
                                 </div>
-                            </div> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Контент для гражданского строительства -->
+                    <div id="tab-1" class="tabs_content">
+                        <div class="subcategory-buttons">
+                            <button class="subcategory-btn active" data-subcategory="1гз">Многоквартирные дома</button>
+                            <button class="subcategory-btn" data-subcategory="1к">Конструкции</button>
+                            <button class="subcategory-btn" data-subcategory="1ф">ФОК</button>
+                            <button class="subcategory-btn" data-subcategory="1п">Бассейны</button>
+                        </div>
+
+                        <!-- Многоквартирные дома -->
+                        <div class="portfolio-cards subcategory-content active" data-subcategory="1гз">
+                            <div class="portfolio-card">
+                                <div class="portfolio-slider">
+                                    <div class="slider-container">
+                                        <div class="slide active">
+                                            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                                                alt="Многоэтажное строительство - фото 1">
+                                        </div>
+                                        <div class="slide">
+                                            <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                                                alt="Многоэтажное строительство - фото 2">
+                                        </div>
+                                        <div class="slide">
+                                            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                                                alt="Многоэтажное строительство - фото 3">
+                                        </div>
+                                    </div>
+                                    <button class="slider-btn prev-btn">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </button>
+                                    <button class="slider-btn next-btn">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </button>
+                                    <div class="slider-indicators">
+                                        <span class="indicator active" data-slide="0"></span>
+                                        <span class="indicator" data-slide="1"></span>
+                                        <span class="indicator" data-slide="2"></span>
+                                    </div>
+                                    <div class="slider-counter">
+                                        <span class="current-slide">1</span> / <span class="total-slides">3</span>
+                                    </div>
+                                </div>
+                                <div class="portfolio-card__content">
+                                    <h3 class="portfolio-card__heading">Многоэтажное строительство</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Конструкции -->
+                        <div class="portfolio-cards subcategory-content" data-subcategory="1к" style="display: none;">
+                            <div class="portfolio-card">
+                                <div class="portfolio-slider">
+                                    <div class="slider-container">
+                                        <div class="slide active">
+                                            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                                                alt="Автомобильный мост - фото 1">
+                                        </div>
+                                        <div class="slide">
+                                            <img src="https://images.unsplash.com/photo-1579033061820-4a96d1b6f062?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                                                alt="Автомобильный мост - фото 2">
+                                        </div>
+                                    </div>
+                                    <button class="slider-btn prev-btn">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </button>
+                                    <button class="slider-btn next-btn">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </button>
+                                    <div class="slider-indicators">
+                                        <span class="indicator active" data-slide="0"></span>
+                                        <span class="indicator" data-slide="1"></span>
+                                    </div>
+                                    <div class="slider-counter">
+                                        <span class="current-slide">1</span> / <span class="total-slides">2</span>
+                                    </div>
+                                </div>
+                                <div class="portfolio-card__content">
+                                    <h3 class="portfolio-card__heading">Автомобильный мост</h3>
+                                    <p class="portfolio-card__description">Строительство прочного автомобильного моста с
+                                        монолитными конструкциями. Надежность и долговечность.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ФОК -->
+                        <div class="portfolio-cards subcategory-content" data-subcategory="1ф" style="display: none;">
+                            <div class="coming-soon-projects">
+                                <div class="construction-icon">🚧</div>
+                                <h2>В процессе строительства</h2>
+                                <p>Наша команда усердно трудится над новыми проектами. Скоро здесь будет что-то
+                                    удивительное!</p>
+                                <div class="status-badge">Скоро</div>
+                            </div>
+                        </div>
+
+                        <!-- Бассейны -->
+                        <div class="portfolio-cards subcategory-content" data-subcategory="1п" style="display: none;">
+                            <div class="coming-soon-projects">
+                                <div class="construction-icon">🚧</div>
+                                <h2>В процессе строительства</h2>
+                                <p>Наша команда усердно трудится над новыми проектами. Скоро здесь будет что-то
+                                    удивительное!</p>
+                                <div class="status-badge">Скоро</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Контент для промышленных объектов -->
+                    <div id="tab-2" class="tabs_content">
+                        <div class="subcategory-buttons">
+                            <button class="subcategory-btn active" data-subcategory="2гз">Ангары</button>
+                            <button class="subcategory-btn" data-subcategory="2к">Магазины</button>
+                            <button class="subcategory-btn" data-subcategory="2ф">Конструкции</button>
+                            <button class="subcategory-btn" data-subcategory="2п">Заводы</button>
+                        </div>
+
+                        <!-- Ангары -->
+                        <div class="portfolio-cards subcategory-content active" data-subcategory="2гз">
+                            <div class="portfolio-card">
+                                <div class="portfolio-slider">
+                                    <div class="slider-container">
+                                        <div class="slide active">
+                                            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                                                alt="Производственный ангар - фото 1">
+                                        </div>
+                                        <div class="slide">
+                                            <img src="https://images.unsplash.com/photo-1581094794355-929d0a9af86f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                                                alt="Производственный ангар - фото 2">
+                                        </div>
+                                    </div>
+                                    <button class="slider-btn prev-btn">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </button>
+                                    <button class="slider-btn next-btn">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </button>
+                                    <div class="slider-indicators">
+                                        <span class="indicator active" data-slide="0"></span>
+                                        <span class="indicator" data-slide="1"></span>
+                                    </div>
+                                    <div class="slider-counter">
+                                        <span class="current-slide">1</span> / <span class="total-slides">2</span>
+                                    </div>
+                                </div>
+                                <div class="portfolio-card__content">
+                                    <h3 class="portfolio-card__heading">Производственный ангар</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Магазины -->
+                        <div class="portfolio-cards subcategory-content" data-subcategory="2к" style="display: none;">
+                            <div class="portfolio-card">
+                                <div class="portfolio-slider">
+                                    <div class="slider-container">
+                                        <div class="slide active">
+                                            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                                                alt="Магазин - фото 1">
+                                        </div>
+                                        <div class="slide">
+                                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                                                alt="Магазин - фото 2">
+                                        </div>
+                                    </div>
+                                    <button class="slider-btn prev-btn">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </button>
+                                    <button class="slider-btn next-btn">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </button>
+                                    <div class="slider-indicators">
+                                        <span class="indicator active" data-slide="0"></span>
+                                        <span class="indicator" data-slide="1"></span>
+                                    </div>
+                                    <div class="slider-counter">
+                                        <span class="current-slide">1</span> / <span class="total-slides">2</span>
+                                    </div>
+                                </div>
+                                <div class="portfolio-card__content">
+                                    <h3 class="portfolio-card__heading">Магазин</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Конструкции -->
+                        <div class="portfolio-cards subcategory-content" data-subcategory="2ф" style="display: none;">
+                            <div class="portfolio-card">
+                                <div class="portfolio-slider">
+                                    <div class="slider-container">
+                                        <div class="slide active">
+                                            <img src="https://images.unsplash.com/photo-1581093458791-8a6a6e7beb2e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                                                alt="Автомобильные весы - фото 1">
+                                        </div>
+                                        <div class="slide">
+                                            <img src="https://images.unsplash.com/photo-1581093458883-8b6a6e7beb2e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                                                alt="Автомобильные весы - фото 2">
+                                        </div>
+                                    </div>
+                                    <button class="slider-btn prev-btn">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </button>
+                                    <button class="slider-btn next-btn">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </button>
+                                    <div class="slider-indicators">
+                                        <span class="indicator active" data-slide="0"></span>
+                                        <span class="indicator" data-slide="1"></span>
+                                    </div>
+                                    <div class="slider-counter">
+                                        <span class="current-slide">1</span> / <span class="total-slides">2</span>
+                                    </div>
+                                </div>
+                                <div class="portfolio-card__content">
+                                    <h3 class="portfolio-card__heading">Автомобильные весы</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Заводы -->
+                        <div class="portfolio-cards subcategory-content" data-subcategory="2п" style="display: none;">
+                            <div class="coming-soon-projects">
+                                <div class="construction-icon">🚧</div>
+                                <h2>В процессе строительства</h2>
+                                <p>Наша команда усердно трудится над новыми проектами. Скоро здесь будет что-то
+                                    удивительное!</p>
+                                <div class="status-badge">Скоро</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-
-            <!-- Контент для гражданского строительства -->
-            <div id="tab-1" class="tabs_content">
-                <div class="subcategory-buttons">
-                    <button class="subcategory-btn active" data-subcategory="1гз">Многоквартирные
-                        дома</button>
-                    <button class="subcategory-btn" data-subcategory="1к">Конструкции</button>
-                    <button class="subcategory-btn" data-subcategory="1ф">ФОК</button>
-                    <button class="subcategory-btn" data-subcategory="1п">Бассейны</button>
-                </div>
-
-
-                <div class="portfolio-grid">
-                    <!-- Многоквартирные дома -->
-                    <div class="portfolio-cards subcategory-content active" data-subcategory="1гз">
-                        <div class="portfolio-card" data-subcategory="1гз">
-                            <div class="portfolio-slider">
-                                <div class="slider-container">
-                                    <div class="slide active">
-                                        <img src="фотографии_работ/гражданское/многоэтаж.jpg"
-                                            alt="Многоэтажное строительство - фото 1">
-                                    </div>
-                                    <div class="slide">
-                                        <img src="фотографии_работ/гражданское/многоэтаж1.jpg"
-                                            alt="Многоэтажное строительство - фото 2">
-                                    </div>
-                                    <div class="slide">
-                                        <img src="фотографии_работ/гражданское/многоэтаж3.jpg"
-                                            alt="Многоэтажное строительство - фото 3">
-                                    </div>
-                                    <div class="slide">
-                                        <img src="фотографии_работ/гражданское/многоэтаж4.jpg"
-                                            alt="Многоэтажное строительство - фото 4">
-                                    </div>
-                                    <div class="slide">
-                                        <img src="фотографии_работ/гражданское/многоэтаж5.jpg"
-                                            alt="Многоэтажное строительство - фото 5">
-                                    </div>
-                                    <div class="slide">
-                                        <img src="фотографии_работ/гражданское/многоэтаж6.jpg"
-                                            alt="Многоэтажное строительство - фото 6">
-                                    </div>
-                                    <div class="slide">
-                                        <img src="фотографии_работ/гражданское/многоэтаж7.jpg"
-                                            alt="Многоэтажное строительство - фото 7">
-                                    </div>
-                                </div>
-                                <button class="slider-btn prev-btn">
-                                    <i class="fas fa-chevron-left"></i>
-                                </button>
-                                <button class="slider-btn next-btn">
-                                    <i class="fas fa-chevron-right"></i>
-                                </button>
-                                <div class="slider-indicators">
-                                    <span class="indicator active" data-slide="0"></span>
-                                    <span class="indicator" data-slide="1"></span>
-                                    <span class="indicator" data-slide="2"></span>
-                                    <span class="indicator" data-slide="3"></span>
-                                    <span class="indicator" data-slide="4"></span>
-                                    <span class="indicator" data-slide="5"></span>
-                                    <span class="indicator" data-slide="6"></span>
-                                </div>
-                                <div class="slider-counter">
-                                    <span class="current-slide">1</span> / <span class="total-slides">7</span>
-                                </div>
-                            </div>
-                            <div class="portfolio-card__content">
-
-                                <h3 class="portfolio-card__heading">Многоэтажное строительство</h3>
-
-                            </div>
-                        </div>
-                    </div>
-
-
-
-                    <!-- Конструкции -->
-                    <div class="portfolio-cards subcategory-content" data-subcategory="1к" style="display: none;">
-                        <!-- Автомобильный мост -->
-                        <div class="portfolio-card">
-                            <div class="portfolio-slider">
-                                <div class="slider-container">
-                                    <div class="slide active">
-                                        <img src="фотографии_работ/гражданское/конструкции/автомобильмост.jpg"
-                                            alt="Автомобильный мост - фото 1">
-                                    </div>
-                                    <div class="slide">
-                                        <img src="фотографии_работ/гражданское/конструкции/автомобильмост2.jpg"
-                                            alt="Автомобильный мост - фото 2">
-                                    </div>
-                                    <div class="slide">
-                                        <img src="фотографии_работ/гражданское/конструкции/автомобильмост3.jpg"
-                                            alt="Автомобильный мост - фото 3">
-                                    </div>
-                                    <div class="slide">
-                                        <img src="фотографии_работ/гражданское/конструкции/автомобильмост4.jpg"
-                                            alt="Автомобильный мост - фото 4">
-                                    </div>
-                                    <div class="slide">
-                                        <img src="фотографии_работ/гражданское/конструкции/автомобильмост6.jpg"
-                                            alt="Автомобильный мост - фото 5">
-                                    </div>
-                                    <div class="slide">
-                                        <img src="фотографии_работ/гражданское/конструкции/автомобильмост7.jpg"
-                                            alt="Автомобильный мост - фото 6">
-                                    </div>
-                                </div>
-                                <button class="slider-btn prev-btn">
-                                    <i class="fas fa-chevron-left"></i>
-                                </button>
-                                <button class="slider-btn next-btn">
-                                    <i class="fas fa-chevron-right"></i>
-                                </button>
-                                <div class="slider-indicators">
-                                    <span class="indicator active" data-slide="0"></span>
-                                    <span class="indicator" data-slide="1"></span>
-                                    <span class="indicator" data-slide="2"></span>
-                                    <span class="indicator" data-slide="3"></span>
-                                    <span class="indicator" data-slide="4"></span>
-                                    <span class="indicator" data-slide="5"></span>
-                                </div>
-                                <div class="slider-counter">
-                                    <span class="current-slide">1</span> / <span class="total-slides">6</span>
-                                </div>
-                            </div>
-                            <div class="portfolio-card__content">
-
-                                <h3 class="portfolio-card__heading">Автомобильный мост</h3>
-                                <p class="portfolio-card__description">Строительство прочного автомобильного моста с
-                                    монолитными конструкциями. Надежность и долговечность.</p>
-                            </div>
-                        </div>
-                        <!-- Канава -->
-                        <div class="portfolio-card">
-                            <div class="portfolio-slider">
-                                <div class="slider-container">
-                                    <div class="slide active">
-                                        <img src="фотографии_работ/гражданское/конструкции/канава.jpg"
-                                            alt="Канава - фото 1">
-                                    </div>
-                                    <div class="slide">
-                                        <img src="фотографии_работ/гражданское/конструкции/канава2.jpg"
-                                            alt="Канава - фото 2">
-                                    </div>
-                                    <div class="slide">
-                                        <img src="фотографии_работ/гражданское/конструкции/канава3.jpg"
-                                            alt="Канава - фото 3">
-                                    </div>
-                                </div>
-                                <button class="slider-btn prev-btn">
-                                    <i class="fas fa-chevron-left"></i>
-                                </button>
-                                <button class="slider-btn next-btn">
-                                    <i class="fas fa-chevron-right"></i>
-                                </button>
-                                <div class="slider-indicators">
-                                    <span class="indicator active" data-slide="0"></span>
-                                    <span class="indicator" data-slide="1"></span>
-                                    <span class="indicator" data-slide="2"></span>
-                                </div>
-                                <div class="slider-counter">
-                                    <span class="current-slide">1</span> / <span class="total-slides">3</span>
-                                </div>
-                            </div>
-                            <div class="portfolio-card__content">
-                                <h3 class="portfolio-card__heading">Дренажные системы</h3>
-                                <p class="portfolio-card__description">Устройство дренажных канав для эффективного
-                                    отвода поверхностных вод. Профессиональное решение для благоустройства
-                                    территорий.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Переправа для лодок -->
-                        <div class="portfolio-card">
-                            <div class="portfolio-slider">
-                                <div class="slider-container">
-                                    <div class="slide active">
-                                        <img src="фотографии_работ/гражданское/конструкции/переправадлялодок2.jpg"
-                                            alt="Переправа для лодок - фото 1">
-                                    </div>
-                                    <div class="slide">
-                                        <img src="фотографии_работ/гражданское/конструкции/переправадлялодок6.jpg"
-                                            alt="Переправа для лодок - фото 2">
-                                    </div>
-                                    <div class="slide">
-                                        <img src="фотографии_работ/гражданское/конструкции/переправадлялодок10.jpg"
-                                            alt="Переправа для лодок - фото 3">
-                                    </div>
-                                    <div class="slide">
-                                        <img src="фотографии_работ/гражданское/конструкции/переправадлялодок8.jpg"
-                                            alt="Переправа для лодок - фото 4">
-                                    </div>
-                                    <div class="slide">
-                                        <img src="фотографии_работ/гражданское/конструкции/переправадлялодок5.jpg"
-                                            alt="Переправа для лодок - фото 5">
-                                    </div>
-                                </div>
-                                <button class="slider-btn prev-btn">
-                                    <i class="fas fa-chevron-left"></i>
-                                </button>
-                                <button class="slider-btn next-btn">
-                                    <i class="fas fa-chevron-right"></i>
-                                </button>
-                                <div class="slider-indicators">
-                                    <span class="indicator active" data-slide="0"></span>
-                                    <span class="indicator" data-slide="1"></span>
-                                    <span class="indicator" data-slide="2"></span>
-                                    <span class="indicator" data-slide="3"></span>
-                                    <span class="indicator" data-slide="4"></span>
-                                </div>
-                                <div class="slider-counter">
-                                    <span class="current-slide">1</span> / <span class="total-slides">5</span>
-                                </div>
-                            </div>
-                            <div class="portfolio-card__content">
-
-                                <h3 class="portfolio-card__heading">Монолитная переправа для лодок и сапов</h3>
-                            </div>
-                        </div>
-
-                        <!-- Фундамент раздвижных ворот -->
-                        <div class="portfolio-card">
-                            <div class="portfolio-slider">
-                                <div class="slider-container">
-                                    <div class="slide active">
-                                        <img src="фотографии_работ/гражданское/конструкции/фундраздвижнворот.jpg"
-                                            alt="Фундамент раздвижных ворот - фото 1">
-                                    </div>
-                                    <div class="slide">
-                                        <img src="фотографии_работ/гражданское/конструкции/фундраздвижнворот2.jpg"
-                                            alt="Фундамент раздвижных ворот - фото 2">
-                                    </div>
-                                    <div class="slide">
-                                        <img src="фотографии_работ/гражданское/конструкции/фундраздвижнворот3.jpg"
-                                            alt="Фундамент раздвижных ворот - фото 3">
-                                    </div>
-                                </div>
-                                <button class="slider-btn prev-btn">
-                                    <i class="fas fa-chevron-left"></i>
-                                </button>
-                                <button class="slider-btn next-btn">
-                                    <i class="fas fa-chevron-right"></i>
-                                </button>
-                                <div class="slider-indicators">
-                                    <span class="indicator active" data-slide="0"></span>
-                                    <span class="indicator" data-slide="1"></span>
-                                    <span class="indicator" data-slide="2"></span>
-                                </div>
-                                <div class="slider-counter">
-                                    <span class="current-slide">1</span> / <span class="total-slides">3</span>
-                                </div>
-                            </div>
-                            <div class="portfolio-card__content">
-
-                                <h3 class="portfolio-card__heading">Фундамент раздвижных ворот</h3>
-                                <p class="portfolio-card__description">Профессиональное устройство фундаментов для
-                                    автоматических раздвижных ворот. Надежная основа для тяжелых конструкций.</p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <!-- ФОК -->
-                <div class="portfolio-cards subcategory-content" data-subcategory="1ф" style="display: none;">
-                    <div class="coming-soon-projects">
-                        <div class="construction-icon">🚧</div>
-                        <h2>В процессе строительства</h2>
-                        <p>Наша команда усердно трудится над новыми проектами. Скоро здесь будет что-то
-                            удивительное!
-                        </p>
-                        <div class="status-badge">Скоро</div>
-                    </div>
-                </div>
-
-                <!-- Бассейны -->
-                <div class="portfolio-cards subcategory-content" data-subcategory="1п" style="display: none;">
-                    <div class="coming-soon-projects">
-                        <div class="construction-icon">🚧</div>
-                        <h2>В процессе строительства</h2>
-                        <p>Наша команда усердно трудится над новыми проектами. Скоро здесь будет что-то
-                            удивительное!
-                        </p>
-                        <div class="status-badge">Скоро</div>
-                    </div>
-                </div>
-
-            </div>
-
-
-            <!-- Контент для промышленных объектов -->
-            <div id="tab-2" class="tabs_content">
-
-
-                <div class="subcategory-buttons">
-                    <button class="subcategory-btn active" data-subcategory="2гз">Ангары</button>
-                    <button class="subcategory-btn" data-subcategory="2к">Магазины</button>
-                    <button class="subcategory-btn" data-subcategory="2ф">Конструкции</button>
-                    <button class="subcategory-btn" data-subcategory="2п">Заводы</button>
-                </div>
-
-                <div class="portfolio-grid">
-                    <!-- Ангары -->
-                    <div class="portfolio-cards subcategory-content" data-subcategory="2гз" style="display: none;">
-
-                        <!-- Карточка 1 -->
-                        <div class="portfolio-card">
-                            <div class="portfolio-slider">
-                                <div class="slider-container">
-                                    <div class="slide active">
-                                        <img src="фотографии_работ/промыш/анар.jpg"
-                                            alt="Производственный ангар - фото 1">
-                                    </div>
-                                    <div class="slide">
-                                        <img src="фотографии_работ/промыш/анар1.jpg"
-                                            alt="Производственный ангар - фото 2">
-                                    </div>
-                                </div>
-                                <button class="slider-btn prev-btn">
-                                    <i class="fas fa-chevron-left"></i>
-                                </button>
-                                <button class="slider-btn next-btn">
-                                    <i class="fas fa-chevron-right"></i>
-                                </button>
-                                <div class="slider-indicators">
-                                    <span class="indicator active" data-slide="0"></span>
-                                    <span class="indicator" data-slide="1"></span>
-                                </div>
-                                <div class="slider-counter">
-                                    <span class="current-slide">1</span> / <span class="total-slides">2</span>
-                                </div>
-                            </div>
-                            <div class="portfolio-card__content">
-                                <h3 class="portfolio-card__heading">Производственный ангар</h3>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-                    <!-- Магазины -->
-                    <div class="portfolio-cards subcategory-content" data-subcategory="2к" style="display: none;">
-
-                        <!-- Карточка 1 -->
-                        <div class="portfolio-card">
-                            <div class="portfolio-slider">
-                                <div class="slider-container">
-                                    <div class="slide active">
-                                        <img src="фотографии_работ/промыш/магаз/photo_2025-10-03_20-33-46.jpg"
-                                            alt="Магазин - фото 1">
-                                    </div>
-                                    <div class="slide">
-                                        <img src="фотографии_работ/промыш/магаз/photo_2025-10-03_21-44-57.jpg"
-                                            alt="Магазин - фото 2">
-                                    </div>
-                                </div>
-                                <button class="slider-btn prev-btn">
-                                    <i class="fas fa-chevron-left"></i>
-                                </button>
-                                <button class="slider-btn next-btn">
-                                    <i class="fas fa-chevron-right"></i>
-                                </button>
-                                <div class="slider-indicators">
-                                    <span class="indicator active" data-slide="0"></span>
-                                    <span class="indicator" data-slide="1"></span>
-                                </div>
-                                <div class="slider-counter">
-                                    <span class="current-slide">1</span> / <span class="total-slides">2</span>
-                                </div>
-                            </div>
-                            <div class="portfolio-card__content">
-                                <h3 class="portfolio-card__heading">Магазин</h3>
-                            </div>
-                        </div>
-
-                    </div>
-
-
-
-                    <!-- Конструкции -->
-                    <div class="portfolio-cards subcategory-content" data-subcategory="2ф" style="display: none;">
-
-                        <!-- Карточка 1 -->
-                        <div class="portfolio-card">
-                            <div class="portfolio-slider">
-                                <div class="slider-container">
-                                    <div class="slide active">
-                                        <img src="фотографии_работ/промыш/конструкции/автомобвесы.jpg"
-                                            alt="Автомобильные весы - фото 1">
-                                    </div>
-                                    <div class="slide">
-                                        <img src="фотографии_работ/промыш/конструкции/автомобвесы1.jpg"
-                                            alt="Автомобильные весы - фото 2">
-                                    </div>
-                                    <div class="slide">
-                                        <img src="фотографии_работ/промыш/конструкции/автомобвесы2.jpg"
-                                            alt="Автомобильные весы - фото 3">
-                                    </div>
-                                    <div class="slide">
-                                        <img src="фотографии_работ/промыш/конструкции/автомобвесы3.jpg"
-                                            alt="Автомобильные весы - фото 4">
-                                    </div>
-
-                                </div>
-                                <button class="slider-btn prev-btn">
-                                    <i class="fas fa-chevron-left"></i>
-                                </button>
-                                <button class="slider-btn next-btn">
-                                    <i class="fas fa-chevron-right"></i>
-                                </button>
-                                <div class="slider-indicators">
-                                    <span class="indicator active" data-slide="0"></span>
-                                    <span class="indicator" data-slide="1"></span>
-                                    <span class="indicator" data-slide="2"></span>
-                                    <span class="indicator" data-slide="3"></span>
-                                </div>
-                                <div class="slider-counter">
-                                    <span class="current-slide">1</span> / <span class="total-slides">4</span>
-                                </div>
-                            </div>
-                            <div class="portfolio-card__content">
-                                <h3 class="portfolio-card__heading">Автомобильные весы</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Заводы -->
-                <div class="portfolio-cards subcategory-content" data-subcategory="2п" style="display: none;">
-                    <div class="coming-soon-projects">
-                        <div class="construction-icon">🚧</div>
-                        <h2>В процессе строительства</h2>
-                        <p>Наша команда усердно трудится над новыми проектами. Скоро здесь будет что-то
-                            удивительное!
-                        </p>
-                        <div class="status-badge">Скоро</div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
         </div>
     </section>
+
+    <!-- Модальное окно для полноэкранного просмотра -->
+    <div class="modal" id="imageModal">
+        <button class="modal-close" id="modalClose">
+            <i class="fas fa-times"></i>
+        </button>
+        <button class="modal-nav modal-prev" id="modalPrev">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="modal-nav modal-next" id="modalNext">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="modal-content">
+            <img class="modal-image" id="modalImage" src="" alt="">
+            <div class="modal-counter" id="modalCounter"></div>
+        </div>
+    </div>
+
     <!-- Варианты сотрудничества -->
     <section id="партнерства" class="cooperation-section">
         <div class="container">
