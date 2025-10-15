@@ -2,11 +2,17 @@
     --black: #000000;
     --gold: #D4AF37;
     --vvvbrown: #181717;
-    --dark-brown: #3C2B1E;
+
     --light-gold: #F0E68C;
     --dark-gold: #B8860B;
     --light-brown: #5a4b3c;
+    --white: #ffffff;
+    --dark-brown: #2a2520;
+    --light-gold: #f5e8c8;
+    --medium-gray: #f0f0f0;
+    --border-light: #e0e0e0;
 }
+
 
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
 
@@ -2806,34 +2812,7 @@ footer {
     }
 }
 
-:root {
-    --black: #1a1a1a;
-    --gold: #D4AF37;
-    --white: #ffffff;
-    --dark-brown: #2a2520;
-    --light-gold: #f5e8c8;
-    --medium-gray: #f0f0f0;
-    --border-light: #e0e0e0;
-}
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-body {
-    background-color: var(--white);
-    color: var(--black);
-    line-height: 1.6;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
 
 /* Секция категорий */
 .categories {
