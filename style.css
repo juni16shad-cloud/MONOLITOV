@@ -3345,3 +3345,151 @@ footer {
         font-size: 2rem;
     }
 }
+
+/* Квадратные карточки для гражданского и промышленного строительства */
+.portfolio-cards[data-subcategory="1к"],
+.portfolio-cards[data-subcategory="1гз"],
+.portfolio-cards[data-subcategory="2гз"],
+.portfolio-cards[data-subcategory="2к"],
+.portfolio-cards[data-subcategory="2ф"] {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.portfolio-cards[data-subcategory="1к"] .portfolio-card,
+.portfolio-cards[data-subcategory="1гз"] .portfolio-card,
+.portfolio-cards[data-subcategory="2гз"] .portfolio-card,
+.portfolio-cards[data-subcategory="2к"] .portfolio-card,
+.portfolio-cards[data-subcategory="2ф"] .portfolio-card {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+.portfolio-cards[data-subcategory="1к"] .portfolio-slider,
+.portfolio-cards[data-subcategory="1гз"] .portfolio-slider,
+.portfolio-cards[data-subcategory="2гз"] .portfolio-slider,
+.portfolio-cards[data-subcategory="2к"] .portfolio-slider,
+.portfolio-cards[data-subcategory="2ф"] .portfolio-slider {
+    height: 55%;
+    flex-shrink: 0;
+}
+
+.portfolio-cards[data-subcategory="1к"] .portfolio-card__content,
+.portfolio-cards[data-subcategory="1гз"] .portfolio-card__content,
+.portfolio-cards[data-subcategory="2гз"] .portfolio-card__content,
+.portfolio-cards[data-subcategory="2к"] .portfolio-card__content,
+.portfolio-cards[data-subcategory="2ф"] .portfolio-card__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 16px;
+}
+
+.portfolio-cards[data-subcategory="1к"] .portfolio-card__heading,
+.portfolio-cards[data-subcategory="1гз"] .portfolio-card__heading,
+.portfolio-cards[data-subcategory="2гз"] .portfolio-card__heading,
+.portfolio-cards[data-subcategory="2к"] .portfolio-card__heading,
+.portfolio-cards[data-subcategory="2ф"] .portfolio-card__heading {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.portfolio-cards[data-subcategory="1к"] .portfolio-card__description,
+.portfolio-cards[data-subcategory="1гз"] .portfolio-card__description,
+.portfolio-cards[data-subcategory="2гз"] .portfolio-card__description,
+.portfolio-cards[data-subcategory="2к"] .portfolio-card__description,
+.portfolio-cards[data-subcategory="2ф"] .portfolio-card__description {
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+/* Уменьшаем элементы управления в маленьких карточках */
+.portfolio-cards[data-subcategory="1к"] .slider-btn,
+.portfolio-cards[data-subcategory="1гз"] .slider-btn,
+.portfolio-cards[data-subcategory="2гз"] .slider-btn,
+.portfolio-cards[data-subcategory="2к"] .slider-btn,
+.portfolio-cards[data-subcategory="2ф"] .slider-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+}
+
+.portfolio-cards[data-subcategory="1к"] .slider-counter,
+.portfolio-cards[data-subcategory="1гз"] .slider-counter,
+.portfolio-cards[data-subcategory="2гз"] .slider-counter,
+.portfolio-cards[data-subcategory="2к"] .slider-counter,
+.portfolio-cards[data-subcategory="2ф"] .slider-counter {
+    font-size: 0.75rem;
+    padding: 3px 8px;
+}
+
+.portfolio-cards[data-subcategory="1к"] .indicator,
+.portfolio-cards[data-subcategory="1гз"] .indicator,
+.portfolio-cards[data-subcategory="2гз"] .indicator,
+.portfolio-cards[data-subcategory="2к"] .indicator,
+.portfolio-cards[data-subcategory="2ф"] .indicator {
+    width: 8px;
+    height: 8px;
+}
+
+/* Адаптивность для маленьких квадратных карточек */
+@media (max-width: 768px) {
+
+    .portfolio-cards[data-subcategory="1к"],
+    .portfolio-cards[data-subcategory="1гз"],
+    .portfolio-cards[data-subcategory="2гз"],
+    .portfolio-cards[data-subcategory="2к"],
+    .portfolio-cards[data-subcategory="2ф"] {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 15px;
+    }
+
+    .portfolio-cards[data-subcategory="1к"] .portfolio-card,
+    .portfolio-cards[data-subcategory="1гз"] .portfolio-card,
+    .portfolio-cards[data-subcategory="2гз"] .portfolio-card,
+    .portfolio-cards[data-subcategory="2к"] .portfolio-card,
+    .portfolio-cards[data-subcategory="2ф"] .portfolio-card {
+        max-width: 280px;
+    }
+
+    .portfolio-cards[data-subcategory="1к"] .portfolio-slider,
+    .portfolio-cards[data-subcategory="1гз"] .portfolio-slider,
+    .portfolio-cards[data-subcategory="2гз"] .portfolio-slider,
+    .portfolio-cards[data-subcategory="2к"] .portfolio-slider,
+    .portfolio-cards[data-subcategory="2ф"] .portfolio-slider {
+        height: 50%;
+    }
+
+    .portfolio-cards[data-subcategory="1к"] .portfolio-card__content,
+    .portfolio-cards[data-subcategory="1гз"] .portfolio-card__content,
+    .portfolio-cards[data-subcategory="2гз"] .portfolio-card__content,
+    .portfolio-cards[data-subcategory="2к"] .portfolio-card__content,
+    .portfolio-cards[data-subcategory="2ф"] .portfolio-card__content {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .portfolio-cards[data-subcategory="1к"],
+    .portfolio-cards[data-subcategory="1гз"],
+    .portfolio-cards[data-subcategory="2гз"],
+    .portfolio-cards[data-subcategory="2к"],
+    .portfolio-cards[data-subcategory="2ф"] {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .portfolio-cards[data-subcategory="1к"] .portfolio-card,
+    .portfolio-cards[data-subcategory="1гз"] .portfolio-card,
+    .portfolio-cards[data-subcategory="2гз"] .portfolio-card,
+    .portfolio-cards[data-subcategory="2к"] .portfolio-card,
+    .portfolio-cards[data-subcategory="2ф"] .portfolio-card {
+        max-width: 100%;
+        aspect-ratio: 1 / 1;
+    }
+}
