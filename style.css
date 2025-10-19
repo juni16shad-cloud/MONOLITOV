@@ -554,7 +554,135 @@ header {
 
 
 
+/* Общая секция конструкций */
+.construction-unified-section {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 15px;
+    padding: 30px;
+    margin-top: 50px;
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
 
+.construction-unified-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--dark-gold), var(--gold));
+}
+
+.construction-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.construction-header h3 {
+    color: var(--dark-brown);
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.construction-header p {
+    color: var(--light-brown);
+    font-size: 1rem;
+    font-style: italic;
+}
+
+.construction-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.construction-item {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-align: center;
+    border-left: 3px solid var(--gold);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.construction-item::before {
+    content: '✓';
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gold);
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.construction-item:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
+    padding-left: 35px;
+}
+
+.construction-item:hover::before {
+    opacity: 1;
+}
+
+.construction-item span {
+    color: var(--dark-brown);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+/* Адаптивность для общей секции конструкций */
+@media (max-width: 768px) {
+    .construction-unified-section {
+        padding: 25px 20px;
+        margin-top: 40px;
+    }
+
+    .construction-header h3 {
+        font-size: 1.3rem;
+    }
+
+    .construction-items {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .construction-item {
+        padding: 10px 15px;
+    }
+
+    .construction-item:hover {
+        padding-left: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .construction-unified-section {
+        padding: 20px 15px;
+        margin-top: 30px;
+    }
+
+    .construction-header h3 {
+        font-size: 1.2rem;
+    }
+
+    .construction-header p {
+        font-size: 0.9rem;
+    }
+
+    .construction-item span {
+        font-size: 0.9rem;
+    }
+}
 
 .content-title {
     color: var(--dark-brown);
@@ -599,6 +727,7 @@ header {
     color: #fff;
     box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
 }
+
 
 /* .portfolio-item {
     background: white;
