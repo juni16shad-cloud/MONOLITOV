@@ -2,7 +2,6 @@
     --black: #000000;
     --gold: #D4AF37;
     --vvvbrown: #181717;
-
     --light-gold: #F0E68C;
     --dark-gold: #B8860B;
     --light-brown: #5a4b3c;
@@ -12,7 +11,6 @@
     --medium-gray: #f0f0f0;
     --border-light: #e0e0e0;
 }
-
 
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
 
@@ -24,8 +22,8 @@
 }
 
 body {
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: var(--white);
+    color: var(--black);
     line-height: 1.6;
 }
 
@@ -702,215 +700,19 @@ header {
     font-size: 0.95rem;
 }
 
-/* Адаптивность для общей секции конструкций */
-@media (max-width: 768px) {
-    .construction-unified-section {
-        padding: 25px 20px;
-        margin-top: 40px;
-    }
-
-    .construction-header h3 {
-        font-size: 1.3rem;
-    }
-
-    .construction-items {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-
-    .construction-item {
-        padding: 10px 15px;
-    }
-
-    .construction-item:hover {
-        padding-left: 30px;
-    }
+.categories {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-@media (max-width: 480px) {
-    .construction-unified-section {
-        padding: 20px 15px;
-        margin-top: 30px;
-    }
-
-    .construction-header h3 {
-        font-size: 1.2rem;
-    }
-
-    .construction-header p {
-        font-size: 0.9rem;
-    }
-
-    .construction-item span {
-        font-size: 0.9rem;
-    }
-}
-
-.content-title {
-    color: var(--dark-brown);
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.subcategory-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-bottom: 30px;
-}
-
-.subcategory-btn {
-    padding: 14px 28px;
-    background: #e8dfd4;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    font-weight: 600;
-    color: #5a4b3c;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-
-.subcategory-btn:hover {
-    background: #d4af37;
-    color: #fff;
-    transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.25);
-}
-
-.subcategory-btn.active {
-    background: #d4af37;
-    color: #fff;
-    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
-}
-
-
-/* .portfolio-item {
-    background: white;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border: 1px solid #f0f0f0;
-    display: flex;
-    flex-direction: column;
-    height: fit-content;
-    min-height: 500px;
-}
-
-.portfolio-item:hover {
-    border-color: var(--gold);
-}
-
-
-
-
-.portfolio-info {
-    padding: 20px;
-}
-
-.portfolio-info h3 {
-    color: var(--dark-brown);
-    margin-bottom: 10px;
-    font-size: 1.3rem;
-}
-
-.portfolio-info p {
-    color: var(--text-light);
-    margin-bottom: 0;
-    font-size: 1rem;
-}
- */
-
-
-/* Секция обратной связи */
-.contact {
-    padding: 80px 0;
-    background: linear-gradient(to right, var(--dark-brown), var(--black));
-    color: white;
-    position: relative;
-}
-
-.contact .container {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 30px;
-    align-items: start;
-}
-
-.contact-form {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 40px;
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.form-group {
-    margin-bottom: 25px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: var(--gold);
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 15px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    font-size: 16px;
-    transition: all 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--gold);
-    background: rgba(255, 255, 255, 0.15);
-}
-
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-    color: rgba(255, 255, 255, 0.7);
-}
-
-.form-group textarea {
-    min-height: 140px;
-    resize: vertical;
-}
-
-.submit-btn {
-    background-color: var(--gold);
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
     color: var(--black);
-    border: none;
-    padding: 16px 30px;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    width: 100%;
-    text-transform: uppercase;
+    font-size: 2.5rem;
+    font-weight: 300;
     letter-spacing: 1px;
-}
-
-.submit-btn:hover {
-    background-color: var(--light-gold);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
 }
 
 /* Футер */
@@ -2594,434 +2396,6 @@ footer {
 
 /* Вкладки */
 .tabs {
-    background: var(--dark-brown);
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid var(--dark-gold);
-}
-
-.tabs_navigation {
-    display: flex;
-    background: var(--black);
-}
-
-.tabs_title {
-    flex: 1;
-    padding: 15px 20px;
-    background: none;
-    border: none;
-    color: var(--light-gold);
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s;
-    text-align: center;
-    border-bottom: 3px solid transparent;
-}
-
-.tabs_title.active {
-    background: var(--dark-brown);
-    color: var(--gold);
-    border-bottom: 3px solid var(--gold);
-}
-
-.tabs_title:hover {
-    background: var(--light-brown);
-    color: var(--light-gold);
-}
-
-.tabs_body {
-    padding: 30px;
-}
-
-.tabs_content {
-    display: none;
-}
-
-.tabs_content.active {
-    display: block;
-}
-
-/* Подкатегории */
-.subcategory-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 30px;
-    justify-content: center;
-}
-
-.subcategory-btn {
-    padding: 10px 20px;
-    background: var(--vvvbrown);
-    border: 1px solid var(--dark-gold);
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.3s;
-    color: var(--light-gold);
-}
-
-.subcategory-btn.active,
-.subcategory-btn:hover {
-    background: var(--gold);
-    color: var(--black);
-    border-color: var(--gold);
-}
-
-/* Вкладки для домов и фундаментов */
-.house-tabs-navigation,
-.foundation-tabs-navigation {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 20px;
-    justify-content: center;
-}
-
-.house-tab-btn,
-.foundation-tab-btn {
-    padding: 10px 20px;
-    background: var(--vvvbrown);
-    border: 1px solid var(--dark-gold);
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.3s;
-    color: var(--light-gold);
-}
-
-.house-tab-btn.active,
-.foundation-tab-btn.active,
-.house-tab-btn:hover,
-.foundation-tab-btn:hover {
-    background: var(--gold);
-    color: var(--black);
-    border-color: var(--gold);
-}
-
-.house-tab,
-.foundation-tab {
-    display: none;
-}
-
-.house-tab.active,
-.foundation-tab.active {
-    display: block;
-}
-
-/* Карточки портфолио */
-.portfolio-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 30px;
-}
-
-.portfolio-card {
-    background: var(--dark-brown);
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid var(--dark-gold);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.portfolio-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
-}
-
-/* Слайдер в карточке */
-.portfolio-slider {
-    position: relative;
-    height: 250px;
-    overflow: hidden;
-}
-
-.slider-container {
-    display: flex;
-    height: 100%;
-    transition: transform 0.5s ease;
-}
-
-.slide {
-    min-width: 100%;
-    height: 100%;
-}
-
-.slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    cursor: pointer;
-}
-
-.slider-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.7);
-    color: var(--gold);
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s;
-    z-index: 10;
-    border: 1px solid var(--gold);
-}
-
-.slider-btn:hover {
-    background: var(--gold);
-    color: var(--black);
-}
-
-.prev-btn {
-    left: 10px;
-}
-
-.next-btn {
-    right: 10px;
-}
-
-.slider-indicators {
-    position: absolute;
-    bottom: 10px;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    gap: 5px;
-    z-index: 10;
-}
-
-.indicator {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: rgba(212, 175, 55, 0.5);
-    cursor: pointer;
-    transition: background 0.3s;
-    border: 1px solid var(--gold);
-}
-
-.indicator.active {
-    background: var(--gold);
-}
-
-.slider-counter {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    background: rgba(0, 0, 0, 0.7);
-    color: var(--gold);
-    padding: 2px 8px;
-    border-radius: 10px;
-    font-size: 0.8rem;
-    z-index: 10;
-    border: 1px solid var(--gold);
-}
-
-/* Скрываем элементы управления для одного слайда */
-.portfolio-slider:has(.slide:only-child) .slider-btn,
-.portfolio-slider:has(.slide:only-child) .slider-indicators,
-.portfolio-slider:has(.slide:only-child) .slider-counter {
-    display: none;
-}
-
-.portfolio-card__content {
-    padding: 20px;
-}
-
-.portfolio-card__heading {
-    margin-bottom: 10px;
-    color: var(--gold);
-}
-
-.portfolio-card__description {
-    color: var(--light-gold);
-    font-size: 0.9rem;
-}
-
-/* Сообщение "Скоро" */
-.coming-soon-projects {
-    text-align: center;
-    padding: 60px 20px;
-    background: var(--dark-brown);
-    border-radius: 8px;
-    border: 1px solid var(--dark-gold);
-}
-
-.construction-icon {
-    font-size: 4rem;
-    margin-bottom: 20px;
-    color: var(--gold);
-}
-
-.status-badge {
-    display: inline-block;
-    background: var(--gold);
-    color: var(--black);
-    padding: 5px 15px;
-    border-radius: 20px;
-    margin-top: 15px;
-    font-weight: bold;
-}
-
-/* Модальное окно для полноэкранного просмотра */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.95);
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-}
-
-.modal.active {
-    display: flex;
-}
-
-.modal-content {
-    position: relative;
-    max-width: 90%;
-    max-height: 90%;
-}
-
-.modal-image {
-    max-width: 100%;
-    max-height: 90vh;
-    object-fit: contain;
-    border: 2px solid var(--gold);
-    border-radius: 4px;
-}
-
-.modal-close {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: rgba(0, 0, 0, 0.7);
-    color: var(--gold);
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    font-size: 1.5rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1001;
-    border: 1px solid var(--gold);
-    transition: all 0.3s;
-}
-
-.modal-close:hover {
-    background: var(--gold);
-    color: var(--black);
-}
-
-.modal-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.7);
-    color: var(--gold);
-    border: none;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    font-size: 1.5rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1001;
-    transition: all 0.3s;
-    border: 1px solid var(--gold);
-}
-
-.modal-nav:hover {
-    background: var(--gold);
-    color: var(--black);
-}
-
-.modal-prev {
-    left: 20px;
-}
-
-.modal-next {
-    right: 20px;
-}
-
-.modal-counter {
-    position: absolute;
-    bottom: 20px;
-    left: 0;
-    right: 0;
-    text-align: center;
-    color: var(--gold);
-    font-size: 1.2rem;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 5px 0;
-    border-top: 1px solid var(--gold);
-}
-
-/* Адаптивность */
-@media (max-width: 768px) {
-    .tabs_navigation {
-        flex-direction: column;
-    }
-
-    .portfolio-cards {
-        grid-template-columns: 1fr;
-    }
-
-    .subcategory-buttons,
-    .house-tabs-navigation,
-    .foundation-tabs-navigation {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .modal-nav {
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
-    }
-
-    .modal-prev {
-        left: 10px;
-    }
-
-    .modal-next {
-        right: 10px;
-    }
-}
-
-
-
-/* Секция категорий */
-.categories {
-    padding: 60px 0;
-    background: var(--white);
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 40px;
-    color: var(--black);
-    font-size: 2.5rem;
-    font-weight: 300;
-    letter-spacing: 1px;
-}
-
-/* Вкладки */
-.tabs {
     background: var(--white);
     border-radius: 12px;
     overflow: hidden;
@@ -3132,68 +2506,6 @@ footer {
     border-color: var(--gold);
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
-}
-
-/* Вкладки для домов и фундаментов */
-.house-tabs-navigation,
-.foundation-tabs-navigation {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-bottom: 25px;
-    justify-content: center;
-}
-
-.house-tab-btn,
-.foundation-tab-btn {
-    padding: 12px 24px;
-    background: var(--medium-gray);
-    border: 2px solid transparent;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    color: var(--black);
-    font-weight: 500;
-    position: relative;
-    overflow: hidden;
-}
-
-.house-tab-btn::before,
-.foundation-tab-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, var(--light-gold), transparent);
-    transition: left 0.5s;
-}
-
-.house-tab-btn:hover::before,
-.foundation-tab-btn:hover::before {
-    left: 100%;
-}
-
-.house-tab-btn.active,
-.foundation-tab-btn.active,
-.house-tab-btn:hover,
-.foundation-tab-btn:hover {
-    background: var(--gold);
-    color: var(--black);
-    border-color: var(--gold);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
-}
-
-.house-tab,
-.foundation-tab {
-    display: none;
-}
-
-.house-tab.active,
-.foundation-tab.active {
-    display: block;
 }
 
 /* Карточки портфолио */
@@ -3340,57 +2652,19 @@ footer {
     font-weight: 600;
 }
 
-.portfolio-card__description {
+.portfolio-card__content ul {
+    list-style: none;
+}
+
+.portfolio-card__content li {
+    margin-bottom: 8px;
     color: var(--dark-brown);
     font-size: 0.95rem;
     line-height: 1.5;
 }
 
-/* Сообщение "Скоро" */
-.coming-soon-projects {
-    text-align: center;
-    padding: 60px 20px;
-    background: var(--white);
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-    border: 2px dashed var(--border-light);
-}
-
-.construction-icon {
-    font-size: 4rem;
-    margin-bottom: 20px;
-    color: var(--gold);
-}
-
-.coming-soon-projects h2 {
+.portfolio-card__content strong {
     color: var(--black);
-    margin-bottom: 15px;
-    font-weight: 600;
-}
-
-.coming-soon-projects p {
-    color: var(--dark-brown);
-    max-width: 500px;
-    margin: 0 auto;
-    font-size: 1.1rem;
-}
-
-.status-badge {
-    display: inline-block;
-    background: var(--gold);
-    color: var(--black);
-    padding: 10px 24px;
-    border-radius: 25px;
-    margin-top: 20px;
-    font-weight: 600;
-    font-size: 1rem;
-    border: 2px solid var(--gold);
-    transition: all 0.3s ease;
-}
-
-.status-badge:hover {
-    background: transparent;
-    color: var(--gold);
 }
 
 /* Модальное окно для полноэкранного просмотра */
@@ -3507,9 +2781,7 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .subcategory-buttons,
-    .house-tabs-navigation,
-    .foundation-tabs-navigation {
+    .subcategory-buttons {
         flex-direction: column;
         align-items: center;
     }
@@ -3537,150 +2809,86 @@ footer {
     }
 }
 
-/* Квадратные карточки для гражданского и промышленного строительства */
-.portfolio-cards[data-subcategory="1к"],
-.portfolio-cards[data-subcategory="1гз"],
-.portfolio-cards[data-subcategory="2гз"],
-.portfolio-cards[data-subcategory="2к"],
-.portfolio-cards[data-subcategory="2ф"] {
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
+/* Секция обратной связи */
+.contact {
+    padding: 80px 0;
+    background: linear-gradient(to right, var(--dark-brown), var(--black));
+    color: white;
+    position: relative;
 }
 
-.portfolio-cards[data-subcategory="1к"] .portfolio-card,
-.portfolio-cards[data-subcategory="1гз"] .portfolio-card,
-.portfolio-cards[data-subcategory="2гз"] .portfolio-card,
-.portfolio-cards[data-subcategory="2к"] .portfolio-card,
-.portfolio-cards[data-subcategory="2ф"] .portfolio-card {
-    aspect-ratio: 1 / 1;
-    display: flex;
-    flex-direction: column;
-    max-width: 320px;
-    margin: 0 auto;
+.contact .container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    align-items: start;
 }
 
-.portfolio-cards[data-subcategory="1к"] .portfolio-slider,
-.portfolio-cards[data-subcategory="1гз"] .portfolio-slider,
-.portfolio-cards[data-subcategory="2гз"] .portfolio-slider,
-.portfolio-cards[data-subcategory="2к"] .portfolio-slider,
-.portfolio-cards[data-subcategory="2ф"] .portfolio-slider {
-    height: 55%;
-    flex-shrink: 0;
+.contact-form {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.portfolio-cards[data-subcategory="1к"] .portfolio-card__content,
-.portfolio-cards[data-subcategory="1гз"] .portfolio-card__content,
-.portfolio-cards[data-subcategory="2гз"] .portfolio-card__content,
-.portfolio-cards[data-subcategory="2к"] .portfolio-card__content,
-.portfolio-cards[data-subcategory="2ф"] .portfolio-card__content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 16px;
+.form-group {
+    margin-bottom: 25px;
 }
 
-.portfolio-cards[data-subcategory="1к"] .portfolio-card__heading,
-.portfolio-cards[data-subcategory="1гз"] .portfolio-card__heading,
-.portfolio-cards[data-subcategory="2гз"] .portfolio-card__heading,
-.portfolio-cards[data-subcategory="2к"] .portfolio-card__heading,
-.portfolio-cards[data-subcategory="2ф"] .portfolio-card__heading {
-    font-size: 1.1rem;
+.form-group label {
+    display: block;
     margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--gold);
 }
 
-.portfolio-cards[data-subcategory="1к"] .portfolio-card__description,
-.portfolio-cards[data-subcategory="1гз"] .portfolio-card__description,
-.portfolio-cards[data-subcategory="2гз"] .portfolio-card__description,
-.portfolio-cards[data-subcategory="2к"] .portfolio-card__description,
-.portfolio-cards[data-subcategory="2ф"] .portfolio-card__description {
-    font-size: 0.85rem;
-    line-height: 1.4;
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 16px;
+    transition: all 0.3s ease;
 }
 
-/* Уменьшаем элементы управления в маленьких карточках */
-.portfolio-cards[data-subcategory="1к"] .slider-btn,
-.portfolio-cards[data-subcategory="1гз"] .slider-btn,
-.portfolio-cards[data-subcategory="2гз"] .slider-btn,
-.portfolio-cards[data-subcategory="2к"] .slider-btn,
-.portfolio-cards[data-subcategory="2ф"] .slider-btn {
-    width: 36px;
-    height: 36px;
-    font-size: 0.9rem;
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+    background: rgba(255, 255, 255, 0.15);
 }
 
-.portfolio-cards[data-subcategory="1к"] .slider-counter,
-.portfolio-cards[data-subcategory="1гз"] .slider-counter,
-.portfolio-cards[data-subcategory="2гз"] .slider-counter,
-.portfolio-cards[data-subcategory="2к"] .slider-counter,
-.portfolio-cards[data-subcategory="2ф"] .slider-counter {
-    font-size: 0.75rem;
-    padding: 3px 8px;
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
 }
 
-.portfolio-cards[data-subcategory="1к"] .indicator,
-.portfolio-cards[data-subcategory="1гз"] .indicator,
-.portfolio-cards[data-subcategory="2гз"] .indicator,
-.portfolio-cards[data-subcategory="2к"] .indicator,
-.portfolio-cards[data-subcategory="2ф"] .indicator {
-    width: 8px;
-    height: 8px;
+.form-group textarea {
+    min-height: 140px;
+    resize: vertical;
 }
 
-/* Адаптивность для маленьких квадратных карточек */
-@media (max-width: 768px) {
-
-    .portfolio-cards[data-subcategory="1к"],
-    .portfolio-cards[data-subcategory="1гз"],
-    .portfolio-cards[data-subcategory="2гз"],
-    .portfolio-cards[data-subcategory="2к"],
-    .portfolio-cards[data-subcategory="2ф"] {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 15px;
-    }
-
-    .portfolio-cards[data-subcategory="1к"] .portfolio-card,
-    .portfolio-cards[data-subcategory="1гз"] .portfolio-card,
-    .portfolio-cards[data-subcategory="2гз"] .portfolio-card,
-    .portfolio-cards[data-subcategory="2к"] .portfolio-card,
-    .portfolio-cards[data-subcategory="2ф"] .portfolio-card {
-        max-width: 280px;
-    }
-
-    .portfolio-cards[data-subcategory="1к"] .portfolio-slider,
-    .portfolio-cards[data-subcategory="1гз"] .portfolio-slider,
-    .portfolio-cards[data-subcategory="2гз"] .portfolio-slider,
-    .portfolio-cards[data-subcategory="2к"] .portfolio-slider,
-    .portfolio-cards[data-subcategory="2ф"] .portfolio-slider {
-        height: 50%;
-    }
-
-    .portfolio-cards[data-subcategory="1к"] .portfolio-card__content,
-    .portfolio-cards[data-subcategory="1гз"] .portfolio-card__content,
-    .portfolio-cards[data-subcategory="2гз"] .portfolio-card__content,
-    .portfolio-cards[data-subcategory="2к"] .portfolio-card__content,
-    .portfolio-cards[data-subcategory="2ф"] .portfolio-card__content {
-        padding: 12px;
-    }
+.submit-btn {
+    background-color: var(--gold);
+    color: var(--black);
+    border: none;
+    padding: 16px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-@media (max-width: 480px) {
-
-    .portfolio-cards[data-subcategory="1к"],
-    .portfolio-cards[data-subcategory="1гз"],
-    .portfolio-cards[data-subcategory="2гз"],
-    .portfolio-cards[data-subcategory="2к"],
-    .portfolio-cards[data-subcategory="2ф"] {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-
-    .portfolio-cards[data-subcategory="1к"] .portfolio-card,
-    .portfolio-cards[data-subcategory="1гз"] .portfolio-card,
-    .portfolio-cards[data-subcategory="2гз"] .portfolio-card,
-    .portfolio-cards[data-subcategory="2к"] .portfolio-card,
-    .portfolio-cards[data-subcategory="2ф"] .portfolio-card {
-        max-width: 100%;
-        aspect-ratio: 1 / 1;
-    }
+.submit-btn:hover {
+    background-color: var(--light-gold);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
 }
