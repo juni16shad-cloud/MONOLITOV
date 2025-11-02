@@ -176,3 +176,38 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+
+    // Обработчики для кнопок табов (если их еще нет)
+    const tabButtons = document.querySelectorAll('.tabs_title');
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const tabId = this.getAttribute('data-tab');
+            activateTab(tabId);
+        });
+    });
+});
+// Инициализация навигации для .navtel
+function initMobileHeaderNav() {
+    const telNavLinks = document.querySelectorAll('.tel-nav a[href^="#tab-"]');
+
+    telNavLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            // Получаем ID таба из href (убираем #tab-)
+            const tabId = this.getAttribute('href').replace('#tab-', '');
+
+            // Активируем таб
+            activateTab(tabId);
+
+            // Прокручиваем к секции с табами
+            const tabsSection = document.querySelector('.categories.raboti');
+            if (tabsSection) {
+                tabsSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+}
