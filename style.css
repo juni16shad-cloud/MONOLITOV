@@ -2892,3 +2892,222 @@ footer {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
 }
+
+/* Адаптация секции контактов для мобильных устройств */
+@media (max-width: 768px) {
+    .contact {
+        padding: 40px 0;
+    }
+
+    .contact .container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 15px;
+    }
+
+    .contact-form {
+        padding: 25px 20px;
+        order: 1;
+    }
+
+    .privacy-section {
+        order: 3;
+        padding: 20px;
+        margin-top: 20px;
+    }
+
+    .contact-methods {
+        order: 2;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        margin-top: 30px;
+        padding-top: 30px;
+    }
+
+    .contact-method {
+        padding: 15px 10px;
+        min-height: 120px;
+    }
+
+    .contact-method i {
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+
+    .contact-method h4 {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+
+    .contact-method a {
+        font-size: 12px;
+        margin-bottom: 4px;
+    }
+
+    .contact .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        grid-column: 1;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .submit-btn {
+        padding: 14px 20px;
+        font-size: 16px;
+    }
+
+    .privacy-header h2 {
+        font-size: 16px;
+    }
+
+    .privacy-header p {
+        font-size: 13px;
+    }
+
+    .privacy-content p {
+        font-size: 13px;
+    }
+
+    .pdf-btn {
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 480px) {
+    .contact {
+        padding: 30px 0;
+    }
+
+    .contact .container {
+        padding: 0 10px;
+    }
+
+    .contact-form {
+        padding: 20px 15px;
+    }
+
+    .contact-methods {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .contact-method {
+        min-height: 100px;
+        padding: 12px 8px;
+    }
+
+    .contact-method:nth-child(2) {
+        flex-direction: column;
+    }
+
+    .contact-method:nth-child(2) a {
+        font-size: 11px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    .submit-btn {
+        padding: 12px 15px;
+        font-size: 15px;
+    }
+
+    .privacy-section {
+        padding: 15px;
+    }
+
+    .contact .section-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* Для экстремально маленьких устройств */
+@media (max-width: 360px) {
+    .contact {
+        padding: 20px 0;
+    }
+
+    .contact-form {
+        padding: 15px 12px;
+    }
+
+    .contact-method {
+        min-height: 90px;
+        padding: 10px 6px;
+    }
+
+    .contact-method i {
+        font-size: 18px;
+    }
+
+    .contact-method h4 {
+        font-size: 13px;
+    }
+
+    .contact-method a {
+        font-size: 11px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 8px;
+    }
+
+    .submit-btn {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+}
+
+/* Улучшение для тач-интерфейса */
+@media (hover: none) and (pointer: coarse) {
+
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form button,
+    .contact-method,
+    .pdf-btn {
+        min-height: 44px;
+    }
+
+    .contact-method {
+        min-height: 44px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .submit-btn {
+        min-height: 50px;
+    }
+}
+
+/* Улучшение читаемости на мобильных */
+@media (max-width: 768px) {
+    .contact-form {
+        backdrop-filter: blur(5px);
+    }
+
+    .form-group label {
+        font-size: 14px;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+        font-size: 13px;
+    }
+}
