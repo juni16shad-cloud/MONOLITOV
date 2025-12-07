@@ -96,36 +96,31 @@
     <!-- Контакты -->
     <section class="contacts-section">
         <div class="contacts-container">
-            <a href="tel:+78126112800" class="contact-item phone">
+            <a href="javascript:void(0)" class="contact-item phone open-modal-contact" data-modal="phoneModalContact">
                 <div class="icon-wrapper phone">
                     <i class="fas fa-phone"></i>
                 </div>
-                <!-- <span class="contact-text">+7 (991) 000-98-11</span> -->
             </a>
 
-            <a href="mailto:Info@монолтов.рф" class="contact-item email">
+            <a href="javascript:void(0)" class="contact-item email open-modal-contact" data-modal="emailModalContact">
                 <div class="icon-wrapper email">
                     <i class="fas fa-envelope"></i>
                 </div>
-                <!-- <span class="contact-text">Написть на почту</span> -->
             </a>
 
             <a href="https://t.me/olgabiznesmen" target="_blank" class="contact-item telegram">
                 <div class="icon-wrapper telegram">
                     <i class="fab fa-telegram"></i>
                 </div>
-                <!-- <span class="contact-text">Написать Telegram</span> -->
             </a>
 
             <a href="https://wa.me/79910009811" target="_blank" class="contact-item whatsapp">
                 <div class="icon-wrapper whatsapp">
                     <i class="fab fa-whatsapp"></i>
                 </div>
-                <!-- <span class="contact-text">Написать WhatsApp</span> -->
             </a>
         </div>
     </section>
-
 
     <!-- Герой секция -->
     <section class="hero">
@@ -182,7 +177,7 @@
                             </div>
                             <div class="feature-text">
                                 <h4>Качество без компромиссов</h4>
-                                <p>Мы не экономим на материалах и строго соблюдаем технологии согласно ГОСТ и СНиП.
+                                <p>Мы не экономим на материалах и строго соблюдаем технологии согласно ГОСТ и СП.
                                     Работаем только по утвержденным проектам, не отступая от технических требований.</p>
                             </div>
                         </div>
@@ -235,7 +230,7 @@
                             <i class="fas fa-clipboard-check"></i>
                         </div>
                         <h4>Соответствие стандартам</h4>
-                        <p>Строгое соблюдение всех требований СНиП и ГОСТ. Гарантируем качество и надежность конструкций
+                        <p>Строгое соблюдение всех требований СП и ГОСТ. Гарантируем качество и надежность конструкций
                         </p>
                     </div>
                     <div class="advantage-card">
@@ -2564,7 +2559,138 @@
                     }
                 });
             </script>
+            <script>
+                // Модальные окна для контактов
+                document.addEventListener('DOMContentLoaded', function () {
+                    // Модальные окна контактов (новые классы)
+                    const contactModals = {
+                        phoneModalContact: document.getElementById('phoneModalContact'),
+                        emailModalContact: document.getElementById('emailModalContact')
+                    };
+
+                    // Модальное окно для изображений (старое)
+                    const imageModal = document.getElementById('imageModal');
+
+                    // Кнопки открытия контактных модальных окон
+                    const openContactButtons = document.querySelectorAll('.open-modal-contact');
+
+                    // Кнопки закрытия контактных модальных окон
+                    const closeContactButtons = document.querySelectorAll('.close-modal-contact');
+
+                    // Открытие контактного модального окна
+                    openContactButtons.forEach(button => {
+                        button.addEventListener('click', function (e) {
+                            e.preventDefault();
+                            const modalId = this.getAttribute('data-modal');
+                            if (contactModals[modalId]) {
+                                // Закрываем модальное окно изображений если открыто
+                                if (imageModal && imageModal.classList.contains('active')) {
+                                    imageModal.classList.remove('active');
+                                }
+
+                                // Открываем контактное модальное окно
+                                contactModals[modalId].classList.add('active');
+                                document.body.style.overflow = 'hidden';
+                            }
+                        });
+                    });
+
+                    // Закрытие контактного модального окна
+                    closeContactButtons.forEach(button => {
+                        button.addEventListener('click', function () {
+                            const modal = this.closest('.modal-contact');
+                            if (modal) {
+                                modal.classList.remove('active');
+                                document.body.style.overflow = '';
+                            }
+                        });
+                    });
+
+                    // Закрытие контактного модального окна при клике вне окна
+                    window.addEventListener('click', function (event) {
+                        if (event.target.classList.contains('modal-contact')) {
+                            event.target.classList.remove('active');
+                            document.body.style.overflow = '';
+                        }
+                    });
+
+                    // Функция копирования в буфер обмена (для контактов)
+                    document.querySelectorAll('.copy-btn').forEach(button => {
+                        button.addEventListener('click', function () {
+                            const text = this.getAttribute('data-clipboard-text');
+
+                            // Создаем временный элемент для копирования
+                            const tempInput = document.createElement('input');
+                            tempInput.value = text;
+                            document.body.appendChild(tempInput);
+                            tempInput.select();
+                            document.execCommand('copy');
+                            document.body.removeChild(tempInput);
+
+                            // Визуальная обратная связь
+                            const originalText = this.innerHTML;
+                            const originalBackground = this.style.background;
+
+                            this.innerHTML = '<i class="fas fa-check"></i> Скопировано!';
+                            this.style.background = '#28a745';
+                            this.style.color = 'white';
+
+                            setTimeout(() => {
+                                this.innerHTML = originalText;
+                                this.style.background = originalBackground;
+                                this.style.color = '';
+                            }, 2000);
+                        });
+                    });
+
+                    // Закрытие по Escape (работает для всех модальных окон)
+                    document.addEventListener('keydown', function (event) {
+                        if (event.key === 'Escape') {
+                            // Закрываем все контактные модальные окна
+                            Object.values(contactModals).forEach(modal => {
+                                if (modal) modal.classList.remove('active');
+                            });
+
+                            // Закрываем модальное окно изображений
+                            if (imageModal && imageModal.classList.contains('active')) {
+                                imageModal.classList.remove('active');
+                            }
+
+                            document.body.style.overflow = '';
+                        }
+                    });
+                });
+            </script>
             <script src="script.js"></script>
+            <div id="phoneModalContact" class="modal-contact">
+                <div class="modal-contact-content">
+                    <span class="close-modal-contact">&times;</span>
+                    <h3>Позвонить нам</h3>
+                    <p>Наш номер телефона:</p>
+                    <a href="tel:+78126112800" class="full-contact-link">
+                        <i class="fas fa-phone"></i>
+                        +7 (812) 611-28-00
+                    </a>
+                    <button class="copy-btn" data-clipboard-text="+78126112800">
+                        <i class="far fa-copy"></i> Копировать номер
+                    </button>
+                </div>
+            </div>
+
+            <div id="emailModalContact" class="modal-contact">
+                <div class="modal-contact-content">
+                    <span class="close-modal-contact">&times;</span>
+                    <h3>Написать нам</h3>
+                    <p>Наш email адрес:</p>
+                    <a href="mailto:Info@монолтов.рф" class="full-contact-link">
+                        <i class="fas fa-envelope"></i>
+                        Info@монолтов.рф
+                    </a>
+                    <button class="copy-btn" data-clipboard-text="Info@монолтов.рф">
+                        <i class="far fa-copy"></i> Копировать email
+                    </button>
+                </div>
+            </div>
     </body>
 
 </html>
