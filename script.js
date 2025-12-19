@@ -210,4 +210,47 @@ function initMobileHeaderNav() {
             }
         });
     });
+
 }
+// от вверха к примерам 
+// Инициализация навигации для .tel-nav
+function initTelNav() {
+    const telNavLinks = document.querySelectorAll('.tel-nav a');
+    const targetSection = document.getElementById('primery');
+
+    telNavLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Получаем номер вкладки из href (#tab-1 → 1, #tab-2 → 2 и т.д.)
+            const href = this.getAttribute('href');
+            const tabId = href.replace('#tab-', '');
+            
+            console.log('Клик по .tel-nav ссылке, tabId:', tabId); // Для отладки
+            
+            // Плавный скролл к секции с примерами работ
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+            
+            // Активируем вкладку с небольшой задержкой для завершения скролла
+            setTimeout(() => {
+                activateTab(tabId);
+            }, 300);
+        });
+    });
+}
+
+// Инициализация всех компонентов
+document.addEventListener('DOMContentLoaded', function() {
+    // ... существующий код ...
+    
+    // Добавляем инициализацию .tel-nav
+    initTelNav();
+    
+    
+});
+
