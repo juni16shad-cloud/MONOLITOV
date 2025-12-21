@@ -3252,3 +3252,407 @@ footer {
         font-size: 0.95rem;
     }
 }
+/* телеграм для мобилок */
+
+   /* Секция промо Telegram (только для мобильных) */
+        .telegram-strip {
+            display: none;
+        }
+
+        /* Стили для мобильных устройств */
+        @media (max-width: 768px) {
+            .telegram-strip {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background-color: #000000;
+                padding: 12px 15px;
+                border-bottom: 1px solid #333;
+                animation: slideDown 0.5s ease-out;
+                position: relative;
+                overflow: hidden;
+            }
+
+            /* Эффект свечения */
+            .telegram-strip::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, 
+                    transparent, 
+                    rgba(0, 136, 204, 0.1), 
+                    transparent);
+                animation: shimmer 3s infinite;
+            }
+
+            .telegram-text {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-size: 14px;
+                color: #f0f0f0;
+                position: relative;
+                z-index: 2;
+            }
+
+            .telegram-icon {
+                color: #0088cc;
+                font-size: 18px;
+                filter: drop-shadow(0 0 5px rgba(0, 136, 204, 0.7));
+                animation: pulseIcon 2s infinite;
+            }
+
+            .subscribe-btn {
+                background: linear-gradient(135deg, #0088cc 0%, #005f8a 100%);
+                color: white;
+                border: none;
+                padding: 8px 15px;
+                border-radius: 20px;
+                font-size: 13px;
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                box-shadow: 0 3px 10px rgba(0, 136, 204, 0.3);
+                position: relative;
+                z-index: 2;
+                text-decoration: none;
+            }
+
+            .subscribe-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(0, 136, 204, 0.5);
+                background: linear-gradient(135deg, #0099e6 0%, #0077b3 100%);
+            }
+
+            .subscribe-btn:active {
+                transform: translateY(0);
+            }
+
+            .btn-arrow {
+                font-size: 10px;
+                transition: transform 0.3s;
+            }
+
+            .subscribe-btn:hover .btn-arrow {
+                transform: translateX(3px);
+            }
+
+            /* Анимации */
+            @keyframes slideDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes shimmer {
+                0% {
+                    left: -100%;
+                }
+                100% {
+                    left: 100%;
+                }
+            }
+
+            @keyframes pulseIcon {
+                0%, 100% {
+                    filter: drop-shadow(0 0 5px rgba(0, 136, 204, 0.7));
+                }
+                50% {
+                    filter: drop-shadow(0 0 10px rgba(0, 136, 204, 1));
+                }
+            }
+
+            /* Адаптация шапки для мобильных */
+            .nav-desktop {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                background: none;
+                border: none;
+                color: #ccc;
+                font-size: 20px;
+                cursor: pointer;
+            }
+        }
+
+        /* Основной контент */
+        .content {
+            padding: 30px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            color: #ccc;
+        }
+
+        /* Индикатор для десктопов */
+        .desktop-note {
+            display: none;
+        }
+
+        @media (min-width: 769px) {
+            .desktop-note {
+                display: block;
+                background-color: #1a1a1a;
+                padding: 20px;
+                border-radius: 10px;
+                margin-top: 30px;
+                border-left: 4px solid #0088cc;
+            }
+            
+            .mobile-menu-btn {
+                display: none;
+            }
+        }
+        /* Стили для секции "О компании" */
+.about-section {
+    padding: 80px 0;
+    background: linear-gradient(to bottom, #ffffff, #f8f9fa);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
+    align-items: start;
+    margin-bottom: 60px;
+}
+
+.about-header h2 {
+    font-size: 2.8rem;
+    color: var(--dark-brown);
+    margin-bottom: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.gold-text {
+    color: var(--gold);
+}
+
+.decoration-line {
+    width: 80px;
+    height: 5px;
+    background: var(--gold);
+    margin: 25px 0;
+    border-radius: 2px;
+}
+
+.company-description {
+    font-size: 1.25rem;
+    line-height: 1.7;
+    color: var(--dark-brown);
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.company-tagline {
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--gold);
+    font-weight: 600;
+    margin-top: 25px;
+    padding-left: 20px;
+    border-left: 3px solid var(--gold);
+}
+
+/* Сетка преимуществ */
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.advantage-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.advantage-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--gold);
+}
+
+.advantage-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+    border-color: var(--gold);
+}
+
+.advantage-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--gold), var(--dark-gold));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: white;
+    flex-shrink: 0;
+}
+
+.advantage-icon i {
+    font-size: 1.5rem;
+}
+
+.advantage-content h4 {
+    color: var(--dark-brown);
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.advantage-content p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* А теперь сделаем цитату менее контрастной */
+.quote-section {
+    background: linear-gradient(to bottom, #f8f9fa, #f0f0f0);
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.quote-text {
+    color: #555;
+    font-weight: 400;
+}
+
+.quote-author {
+    color: #777;
+    background: linear-gradient(to right, transparent, #f0f0f020, transparent);
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+    .about-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 992px) {
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .about-header {
+        text-align: center;
+    }
+    
+    .decoration-line {
+        margin: 25px auto;
+    }
+    
+    .company-tagline {
+        text-align: center;
+        padding-left: 0;
+        border-left: none;
+        border-top: 3px solid var(--gold);
+        padding-top: 15px;
+    }
+    
+    .advantages-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        padding: 60px 0;
+    }
+    
+    .about-header h2 {
+        font-size: 2.2rem;
+    }
+    
+    .company-description {
+        font-size: 1.1rem;
+    }
+    
+    .company-tagline {
+        font-size: 1.15rem;
+    }
+    
+    .advantages-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .advantage-card {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .company-description {
+        font-size: 1rem;
+    }
+    
+    .company-tagline {
+        font-size: 1.05rem;
+    }
+    
+    .advantage-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 15px;
+    }
+    
+    .advantage-icon i {
+        font-size: 1.3rem;
+    }
+    
+    .advantage-content h4 {
+        font-size: 1.1rem;
+    }
+    
+    .advantage-content p {
+        font-size: 0.9rem;
+    }
+}
