@@ -1,7 +1,3 @@
-
-
-
-
 // Функция для обработки мобильного меню
 function initMobileMenu() {
     const burgerMenu = document.querySelector('.burger-menu');
@@ -157,10 +153,10 @@ document.addEventListener('DOMContentLoaded', function () {
             // Активируем таб
             activateTab(tabId);
 
-            // Прокручиваем к секции с табами
-            const tabsSection = document.querySelector('.categories.raboti');
-            if (tabsSection) {
-                tabsSection.scrollIntoView({
+            // Прокручиваем к секции primery (примеры работ)
+            const primerySection = document.getElementById('primery');
+            if (primerySection) {
+                primerySection.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'
                 });
@@ -253,4 +249,100 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
 });
+// прокрутка веб версии к низу
+// Функция для активации табов и прокрутки к секции
+function activateTabAndScroll(tabId) {
+    // Активируем таб
+    const tabButtons = document.querySelectorAll('.tabs_title');
+    tabButtons.forEach(button => button.classList.remove('active'));
+    
+    const tabContents = document.querySelectorAll('.tabs_content');
+    tabContents.forEach(content => content.classList.remove('active'));
+    
+    const targetButton = document.querySelector(`.tabs_title[data-tab="${tabId}"]`);
+    const targetContent = document.getElementById(`tab-${tabId}`);
+    
+    if (targetButton && targetContent) {
+        targetButton.classList.add('active');
+        targetContent.classList.add('active');
+    }
+    
+    // Прокручиваем к секции primery (примеры работ)
+    const primerySection = document.getElementById('primery');
+    if (primerySection) {
+        // Небольшая задержка для плавности
+        setTimeout(() => {
+            primerySection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }, 100);
+    }
+}
 
+// Инициализация навигации в основной шапке
+function initHeaderNav() {
+    const headerNavLinks = document.querySelectorAll('.main-nav a[href^="#tab-"]');
+    
+    headerNavLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Получаем ID таба из href или data-tab
+            const href = this.getAttribute('href');
+            const tabId = href.replace('#tab-', '');
+            
+            // Активируем таб и прокручиваем
+            activateTabAndScroll(tabId);
+            
+            // Закрываем мобильное меню если оно открыто
+            const mobileNav = document.querySelector('#mobile-nav');
+            const burgerMenu = document.querySelector('.burger-menu');
+            if (mobileNav && mobileNav.classList.contains('show')) {
+                mobileNav.classList.remove('show');
+                if (burgerMenu) burgerMenu.classList.remove('clicked');
+                document.body.style.overflow = '';
+            }
+        });
+    });
+}
+
+// Инициализация для .navtel (оставляем как есть, он работает)
+function initTelNav() {
+    const telNavLinks = document.querySelectorAll('.tel-nav a');
+    
+    telNavLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const href = this.getAttribute('href');
+            const tabId = href.replace('#tab-', '');
+            
+            // Прокручиваем к секции primery
+            const primerySection = document.getElementById('primery');
+            if (primerySection) {
+                primerySection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+            
+            // Активируем вкладку
+            setTimeout(() => {
+                activateTabAndScroll(tabId);
+            }, 300);
+        });
+    });
+}
+
+// Обработчики для кнопок табов (внутри секции)
+function initTabButtons() {
+    const tabButtons = document.querySelectorAll('.tabs_title');
+    
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const tabId = this.getAttribute('data-tab');
+            activateTabAndScroll(tabId);
+        });
+    });
+}
